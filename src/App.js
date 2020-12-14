@@ -6,7 +6,7 @@ export default class App  extends Component  {
   return (
     <div className="App">
       <h1>beate's Branch</h1>
-      <h2>Hi</h2>
+      <h2>Hi Ali</h2>
     </div>
   );
   }
