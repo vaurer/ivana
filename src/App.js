@@ -53,6 +53,7 @@ export default class App extends Component {
         <div>Work in progress...</div>
         <PicAndTextHolder picandtextArray={this.state.picandtextArray}/>
       </div>
+      
     );
   }
 }
