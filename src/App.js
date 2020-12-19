@@ -31,7 +31,6 @@ export default class App extends Component {
               }
               temppicandtextArray.push(line);
             }
-            //console.log(element)
           });
           this.setState({
             isLoaded: true,
