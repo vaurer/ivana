@@ -12,7 +12,7 @@ export default class App extends Component {
 
   componentDidMount() {
     let temppicandtextArray = [];
-    fetch("https://174.138.0.120/ivanahairart/items/aboutus?fields=*.*.*")
+    fetch("http://174.138.0.120/ivanahairart/items/aboutus?fields=*.*.*")
       .then((res) => res.json())
       .then(
         (result) => {
@@ -49,7 +49,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <div>Work in progress...</div>
+        <div>Work in progress......</div>
         <PicAndTextHolder picandtextArray={this.state.picandtextArray}/>
       </div>
       
