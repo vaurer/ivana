@@ -12,7 +12,7 @@ export default class App extends Component {
 
   componentDidMount() {
     let temppicandtextArray = [];
-    fetch("http://174.138.0.120/ivanahairart/items/aboutus?fields=*.*.*")
+    fetch("https://174.138.0.120/ivanahairart/items/aboutus?fields=*.*.*")
       .then((res) => res.json())
       .then(
         (result) => {
