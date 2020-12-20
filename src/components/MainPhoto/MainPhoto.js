@@ -10,6 +10,7 @@ class MainPhoto extends Component {
             <div className={styles.container}>
                 <img alt={this.props.alt} src={this.props.src}>{this.checkprops() }</img>
                 <div className={styles.topLeft}>{this.props.maintitle}</div>
+                <div className={styles.bottomRight}>{this.props.maintext}</div>
             </div>
          );
     }

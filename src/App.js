@@ -81,7 +81,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <div>Work in progress......</div>
-        <MainPhoto alt={this.state.mainalt} src={this.state.mainimage} maintitle={this.state.maintitle}></MainPhoto>
+        <MainPhoto alt={this.state.mainalt} src={this.state.mainimage} maintitle={this.state.maintitle} maintext={this.state.maintext}></MainPhoto>
         <PicAndTextHolder picandtextArray={this.state.picandtextArray} />
       </div>
     );
