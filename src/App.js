@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { Component } from "react";
 import PicAndTextHolder from "./components/PicAndTextHolder/PicAndTextHolder";
+import MainPhoto from './components/MainPhoto/MainPhoto'
 
 export default class App extends Component {
   constructor(props) {
@@ -10,6 +11,11 @@ export default class App extends Component {
       mainphoto: [],
       isLoaded: false,
       isLoaded1: false,
+      mainid: '',
+      mainalt: 'null',
+      maintitle: 'null',
+      maintext: 'null',
+      mainimage: 'null',
     };
   }
 
@@ -48,26 +54,20 @@ export default class App extends Component {
         }
       );
 
-    let mainphoto = [];
     fetch("http://174.138.0.120/ivanahairart/items/mainpicture?fields=*.*.*")
-      .then((res) => res.json())
+      .then((res2) => res2.json())
       .then(
-        (result) => {
+        (result2) => {
           this.setState({
             isLoaded: true,
-            items: result.data,
+            mainid: result2.data[0].id,
+            mainalt: result2.data[0].alt,
+            maintitle: result2.data[0].title,
+            maintext: result2.data[0].textarea,
+            mainimage: result2.data[0].picture.data.thumbnails[5].url,
           });
-
-          let line = {
-            id: this.state.items.id,
-            alt: this.state.items.alt,
-            title: this.state.items.title,
-            text: this.state.items.text,
-            image: this.state.items.picture.data.thumbnails[3].url,
-          };
-          mainphoto.push(line);
+          console.log(this.state.mainalt)
         },
-        
         (error) => {
           this.setState({
             isLoaded: true,
@@ -81,10 +81,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <div>Work in progress......</div>
-        <div>
-          <img alt={this.state.mainphoto.alt}>{this.state.mainphoto.image}</img>
-          <p>test</p>
-        </div>
+        <MainPhoto alt={this.state.mainalt} src={this.state.mainimage} maintitle={this.state.maintitle}></MainPhoto>
         <PicAndTextHolder picandtextArray={this.state.picandtextArray} />
       </div>
     );
