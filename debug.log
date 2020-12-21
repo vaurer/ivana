@@ -8,3 +8,4 @@
 [1219/094930.465:ERROR:crash_report_database_win.cc(455)] unexpected header
 [1219/100430.467:ERROR:crash_report_database_win.cc(455)] unexpected header
 [1219/110848.058:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1220/114353.204:ERROR:directory_reader_win.cc(43)] FindFirstFile: Das System kann den angegebenen Pfad nicht finden. (0x3)

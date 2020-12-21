@@ -1,7 +1,10 @@
 import "./App.css";
 import React, { Component } from "react";
 import PicAndTextHolder from "./components/PicAndTextHolder/PicAndTextHolder";
+
+import Navbar from "./components/Navbar/Navbar";
 import MainPhoto from './components/MainPhoto/MainPhoto'
+
 
 export default class App extends Component {
   constructor(props) {
@@ -81,8 +84,18 @@ export default class App extends Component {
     return (
       <div className="App">
         <div>Work in progress......</div>
+
+        <div>
+        <Navbar/>
+        </div>
+       
         <MainPhoto alt={this.state.mainalt} src={this.state.mainimage} maintitle={this.state.maintitle} maintext={this.state.maintext}></MainPhoto>
         <PicAndTextHolder picandtextArray={this.state.picandtextArray} />
+        <PicAndTextHolder picandtextArray={this.state.picandtextArray}/>
+        <PicAndTextHolder picandtextArray={this.state.picandtextArray}/>
+        <PicAndTextHolder picandtextArray={this.state.picandtextArray}/>
+        <PicAndTextHolder picandtextArray={this.state.picandtextArray}/>
+
       </div>
     );
   }
