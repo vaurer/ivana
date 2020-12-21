@@ -24,7 +24,7 @@ export default class App extends Component {
 
   componentDidMount() {
     let temppicandtextArray = [];
-    fetch("http://174.138.0.120/ivanahairart/items/aboutus?fields=*.*.*")
+    fetch("https://cms.ivanahairart.ch/ivanahairart/items/aboutus?fields=*.*.*")
       .then((res) => res.json())
       .then(
         (result) => {
@@ -57,7 +57,7 @@ export default class App extends Component {
         }
       );
 
-    fetch("http://174.138.0.120/ivanahairart/items/mainpicture?fields=*.*.*")
+    fetch("https://cms.ivanahairart.ch/ivanahairart/items/mainpicture?fields=*.*.*")
       .then((res2) => res2.json())
       .then(
         (result2) => {
@@ -95,10 +95,6 @@ export default class App extends Component {
           maintitle={this.state.maintitle}
           maintext={this.state.maintext}
         ></MainPhoto>
-        <PicAndTextHolder picandtextArray={this.state.picandtextArray} />
-        <PicAndTextHolder picandtextArray={this.state.picandtextArray} />
-        <PicAndTextHolder picandtextArray={this.state.picandtextArray} />
-        <PicAndTextHolder picandtextArray={this.state.picandtextArray} />
         <PicAndTextHolder picandtextArray={this.state.picandtextArray} />
         <FooterHolder/>
       </div>
