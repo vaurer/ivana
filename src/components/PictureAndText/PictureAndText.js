@@ -15,6 +15,7 @@ class PictureAndText extends Component {
     return (
       <div className={styles.container}>
         <div key={this.props.element.id} className={styles.pictureContainer}>
+          {this.props.positionOfText}
           <img
             src={this.props.element.image}
             alt={this.props.element.alt}

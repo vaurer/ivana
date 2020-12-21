@@ -5,6 +5,8 @@ import PicAndTextHolder from "./components/PicAndTextHolder/PicAndTextHolder";
 import Navbar from "./components/Navbar/Navbar";
 import MainPhoto from "./components/MainPhoto/MainPhoto";
 import FooterHolder from './components/Footer/FooterHolder'
+import Constants from "./helper/Constants";
+
 
 export default class App extends Component {
   constructor(props) {
@@ -24,7 +26,7 @@ export default class App extends Component {
 
   componentDidMount() {
     let temppicandtextArray = [];
-    fetch("https://cms.ivanahairart.ch/ivanahairart/items/aboutus?fields=*.*.*")
+    fetch(Constants.aboutURL)
       .then((res) => res.json())
       .then(
         (result) => {
@@ -56,8 +58,9 @@ export default class App extends Component {
           });
         }
       );
+      
 
-    fetch("https://cms.ivanahairart.ch/ivanahairart/items/mainpicture?fields=*.*.*")
+    fetch(Constants.restMainPicture)
       .then((res2) => res2.json())
       .then(
         (result2) => {
