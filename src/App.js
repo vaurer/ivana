@@ -3,8 +3,7 @@ import React, { Component } from "react";
 import PicAndTextHolder from "./components/PicAndTextHolder/PicAndTextHolder";
 
 import Navbar from "./components/Navbar/Navbar";
-import MainPhoto from './components/MainPhoto/MainPhoto'
-
+import MainPhoto from "./components/MainPhoto/MainPhoto";
 
 export default class App extends Component {
   constructor(props) {
@@ -14,11 +13,11 @@ export default class App extends Component {
       mainphoto: [],
       isLoaded: false,
       isLoaded1: false,
-      mainid: '',
-      mainalt: 'null',
-      maintitle: 'null',
-      maintext: 'null',
-      mainimage: 'null',
+      mainid: "",
+      mainalt: "null",
+      maintitle: "null",
+      maintext: "null",
+      mainimage: "null",
     };
   }
 
@@ -69,7 +68,7 @@ export default class App extends Component {
             maintext: result2.data[0].textarea,
             mainimage: result2.data[0].picture.data.thumbnails[5].url,
           });
-          console.log(this.state.mainalt)
+          console.log(this.state.mainalt);
         },
         (error) => {
           this.setState({
@@ -83,20 +82,25 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <div>Work in progress......</div>
-
+        
         <div>
-        <Navbar/>
+          <Navbar />
         </div>
        
-        <MainPhoto alt={this.state.mainalt} src={this.state.mainimage} maintitle={this.state.maintitle} maintext={this.state.maintext}></MainPhoto>
-        <PicAndTextHolder picandtextArray={this.state.picandtextArray} />
-        <PicAndTextHolder picandtextArray={this.state.picandtextArray}/>
-        <PicAndTextHolder picandtextArray={this.state.picandtextArray}/>
-        <PicAndTextHolder picandtextArray={this.state.picandtextArray}/>
-        <PicAndTextHolder picandtextArray={this.state.picandtextArray}/>
 
+        <MainPhoto
+          alt={this.state.mainalt}
+          src={this.state.mainimage}
+          maintitle={this.state.maintitle}
+          maintext={this.state.maintext}
+        ></MainPhoto>
+        <PicAndTextHolder picandtextArray={this.state.picandtextArray} />
+        <PicAndTextHolder picandtextArray={this.state.picandtextArray} />
+        <PicAndTextHolder picandtextArray={this.state.picandtextArray} />
+        <PicAndTextHolder picandtextArray={this.state.picandtextArray} />
+        <PicAndTextHolder picandtextArray={this.state.picandtextArray} />
       </div>
+      
     );
   }
 }
