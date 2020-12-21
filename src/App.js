@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { Component } from "react";
 import PicAndTextHolder from "./components/PicAndTextHolder/PicAndTextHolder";
+import Navbar from "./components/Navbar/Navbar";
 
 export default class App extends Component {
   constructor(props) {
@@ -50,6 +51,13 @@ export default class App extends Component {
     return (
       <div className="App">
         <div>Work in progress......</div>
+        <div>
+        <Navbar/>
+        </div>
+        
+        <PicAndTextHolder picandtextArray={this.state.picandtextArray}/>
+        <PicAndTextHolder picandtextArray={this.state.picandtextArray}/>
+        <PicAndTextHolder picandtextArray={this.state.picandtextArray}/>
         <PicAndTextHolder picandtextArray={this.state.picandtextArray}/>
       </div>
       
