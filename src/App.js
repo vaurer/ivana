@@ -4,6 +4,7 @@ import PicAndTextHolder from "./components/PicAndTextHolder/PicAndTextHolder";
 
 import Navbar from "./components/Navbar/Navbar";
 import MainPhoto from "./components/MainPhoto/MainPhoto";
+import FooterHolder from './components/Footer/FooterHolder'
 
 export default class App extends Component {
   constructor(props) {
@@ -99,6 +100,7 @@ export default class App extends Component {
         <PicAndTextHolder picandtextArray={this.state.picandtextArray} />
         <PicAndTextHolder picandtextArray={this.state.picandtextArray} />
         <PicAndTextHolder picandtextArray={this.state.picandtextArray} />
+        <FooterHolder/>
       </div>
       
     );
