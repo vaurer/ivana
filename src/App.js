@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar/Navbar";
 import MainPhoto from "./components/MainPhoto/MainPhoto";
 import FooterHolder from './components/Footer/FooterHolder'
 import Constants from "./helper/Constants";
+import Section from "./components/Section";
 
 
 export default class App extends Component {
@@ -87,9 +88,12 @@ export default class App extends Component {
     return (
       <div className="App">
         
-        <div>
+     
           <Navbar />
-        </div>
+        
+        <Section bgimage="./static/images/cards/1.jpg">
+          <div> TEST </div>
+        </Section>
        
 
         <MainPhoto

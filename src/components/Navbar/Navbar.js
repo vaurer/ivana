@@ -13,7 +13,7 @@ class Navbar extends Component {
   
   render() { 
     return ( 
-      <div>
+      
         <nav className="NavbarItems">
           <h1 className="navbar-logo">Ivana<i className="fas fa-cut"></i> </h1>
           <div className="menu-icon" onClick={this.handleClick}>
@@ -31,7 +31,7 @@ class Navbar extends Component {
             })}         
           </ul>
         </nav>
-      </div>
+      
      );
   }
 }
