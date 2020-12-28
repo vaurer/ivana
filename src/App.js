@@ -1,13 +1,13 @@
 import "./App.css";
 import React, { Component } from "react";
-import PicAndTextHolder from "./components/PicAndTextHolder/PicAndTextHolder";
-
+import ParallaxHolder from './components/ParallaxHolder/ParallaxHolder'
+// import PicAndTextHolder from "./components/PicAndTextHolder/PicAndTextHolder";
+// import { Parallax, ParallaxLayer } from 'react-spring/addons'
 import Navbar from "./components/Navbar/Navbar";
-import MainPhoto from "./components/MainPhoto/MainPhoto";
-import FooterHolder from './components/Footer/FooterHolder'
+// import MainPhoto from "./components/MainPhoto/MainPhoto";
+import FooterHolder from "./components/Footer/FooterHolder";
 import Constants from "./helper/Constants";
-import Section from "./components/Section";
-
+// import Section from "./components/Section";
 
 export default class App extends Component {
   constructor(props) {
@@ -59,7 +59,6 @@ export default class App extends Component {
           });
         }
       );
-      
 
     fetch(Constants.restMainPicture)
       .then((res2) => res2.json())
@@ -85,27 +84,25 @@ export default class App extends Component {
   }
 
   render() {
+    
+
     return (
       <div className="App">
-        
-     
-          <Navbar />
-        
-        <Section bgimage="./static/images/cards/1.jpg">
-          <div> TEST </div>
-        </Section>
-       
-
-        <MainPhoto
+        <Navbar />
+        {/* <MainPhoto
           alt={this.state.mainalt}
           src={this.state.mainimage}
           maintitle={this.state.maintitle}
           maintext={this.state.maintext}
         ></MainPhoto>
-        <PicAndTextHolder picandtextArray={this.state.picandtextArray} />
-        <FooterHolder/>
+        <Section bgimage="./static/images/cards/1.jpg">
+          <div> TEST </div>
+        </Section>
+        <PicAndTextHolder picandtextArray={this.state.picandtextArray} /> */}
+
+        <ParallaxHolder src={this.state.mainimage}/>
+        <FooterHolder />
       </div>
-      
     );
   }
 }
