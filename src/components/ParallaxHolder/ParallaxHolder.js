@@ -19,7 +19,7 @@ export default class ParallaxHolder extends Component {
 
         <ParallaxLayer offset={0} speed={0} factor={3} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />
 
-        <ParallaxLayer offset={1.3} speed={-0.3} style={{ pointerEvents: 'none' }}>
+        {/* <ParallaxLayer offset={1.3} speed={-0.3} style={{ pointerEvents: 'none' }}>
           <img src={url('satellite4')} alt={'1'} style={{ width: '15%', marginLeft: '70%' }} />
         </ParallaxLayer>
 
@@ -51,7 +51,7 @@ export default class ParallaxHolder extends Component {
 
         <ParallaxLayer offset={2.5} speed={-0.4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
           <img src={url('earth')} alt={'1'} style={{ width: '60%' }} />
-        </ParallaxLayer>
+        </ParallaxLayer> */}
 
         <ParallaxLayer
           offset={2}
@@ -59,7 +59,7 @@ export default class ParallaxHolder extends Component {
           style={{
             backgroundSize: '80%',
             backgroundPosition: 'center',
-            backgroundImage: url('clients', true)
+            backgroundImage: url('clients', false)
           }}
         />
         <ParallaxLayer
