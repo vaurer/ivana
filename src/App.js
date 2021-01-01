@@ -22,7 +22,26 @@ export default class App extends Component {
       maintitle: "null",
       maintext: "null",
       mainimage: "null",
+      main2id: "",
+      main2alt: "null",
+      main2title: "null",
+      main2text: "null",
+      main2image: "null",
+      main3id: "",
+      main3alt: "null",
+      main3title: "null",
+      main3text: "null",
+      main3image: "null",
     };
+  }
+
+  showAll=()=>{
+    console.log(this.state.mainimage)
+    console.log(this.state.maintitle)
+    console.log(this.state.main2image)
+    console.log(this.state.main2title)
+    console.log(this.state.main2image)
+    console.log(this.state.main3title)
   }
 
   componentDidMount() {
@@ -60,27 +79,59 @@ export default class App extends Component {
         }
       );
 
-    fetch(Constants.restMainPicture)
-      .then((res2) => res2.json())
-      .then(
-        (result2) => {
-          this.setState({
-            isLoaded: true,
-            mainid: result2.data[0].id,
-            mainalt: result2.data[0].alt,
-            maintitle: result2.data[0].title,
-            maintext: result2.data[0].textarea,
-            mainimage: result2.data[0].picture.data.thumbnails[5].url,
-          });
-          console.log(this.state.mainalt);
-        },
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error,
-          });
-        }
-      );
+    // fetch(Constants.restMainPicture)
+    //   .then((res2) => res2.json())
+    //   .then(
+    //     (result2) => {
+    //       this.setState({
+    //         isLoaded: true,
+    //         mainid: result2.data[0].id,
+    //         mainalt: result2.data[0].alt,
+    //         maintitle: result2.data[0].title,
+    //         maintext: result2.data[0].textarea,
+    //         mainimage: result2.data[0].picture.data.thumbnails[5].url,
+    //       });
+    //       console.log(this.state.mainalt);
+    //     },
+    //     (error) => {
+    //       this.setState({
+    //         isLoaded: true,
+    //         error,
+    //       });
+    //     }
+    //   );
+    fetch(Constants.aboutURL)
+    .then((res2) => res2.json())
+    .then(
+      (result2) => {
+        this.setState({
+          isLoaded: true,
+          mainid: result2.data[2].id,
+          mainalt: result2.data[2].alt,
+          maintitle: result2.data[2].title,
+          maintext: result2.data[2].textarea,
+          mainimage: result2.data[2].image.data.thumbnails[5].url,
+          main2id: result2.data[3].id,
+          main2alt: result2.data[3].alt,
+          main2title: result2.data[3].title,
+          main2text: result2.data[3].textarea,
+          main2image: result2.data[3].image.data.thumbnails[5].url,
+          main3id: result2.data[4].id,
+          main3alt: result2.data[4].alt,
+          main3title: result2.data[4].title,
+          main3text: result2.data[4].textarea,
+          main3image: result2.data[4].image.data.thumbnails[5].url,
+        });
+        console.log(this.state.main3image);
+        this.showAll();
+      },
+      (error) => {
+        this.setState({
+          isLoaded: true,
+          error,
+        });
+      }
+    );
   }
 
   render() {
@@ -100,7 +151,7 @@ export default class App extends Component {
         </Section>
         <PicAndTextHolder picandtextArray={this.state.picandtextArray} /> */}
 
-        <ParallaxHolder src={this.state.mainimage}/>
+        <ParallaxHolder src={this.state.mainimage} maintitle={this.state.maintitle} src2={this.state.main2image} maintitle2={this.state.main2title} src3={this.state.main3image} maintitle3={this.state.main3title}/>
         <FooterHolder />
       </div>
     );

@@ -1,10 +1,18 @@
 import React, { Component } from "react";
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons.cjs';
-// import styles from './ParallaxHolder.module.css';
+ import styles from './ParallaxHolder.module.css';
 
 export default class ParallaxHolder extends Component {
+  showAll=()=>{
+    console.log(this.props.src)
+    console.log(this.props.maintitle)
+    console.log(this.props.src1)
+    console.log(this.props.maintitle1)
+    console.log(this.props.src2)
+    console.log(this.props.maintitle2)
+  }
     render(){
-        const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
+        // const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
         // const Pink = ({ children }) => <span style={{ color: '#FF6AC1' }}>{children}</span>
         // const Yellow = ({ children }) => <span style={{ color: '#EFF59B' }}>{children}</span>
         // const Lightblue = ({ children }) => <span style={{ color: '#9AEDFE' }}>{children}</span>
@@ -13,9 +21,9 @@ export default class ParallaxHolder extends Component {
         //  const Gray = ({ children }) => <span style={{ color: '#909090' }}>{children}</span>
         return(
             <div>
-               <Parallax ref={(ref) => (this.parallax = ref)} pages={3} style={{ backgroundColor: 'Gray' }}>
-        <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#805E73' }} />
-        <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} />
+                <Parallax ref={(ref) => (this.parallax = ref)} pages={3} style={{ backgroundColor: '#a69c8f' }}>
+                <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#8d8578' }} />
+                <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#afa596' }} />
 
         {/* <ParallaxLayer offset={0} speed={0} factor={3} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} /> */}
 
@@ -53,7 +61,7 @@ export default class ParallaxHolder extends Component {
           <img src={url('earth')} alt={'1'} style={{ width: '60%' }} />
         </ParallaxLayer> */}
 
-        <ParallaxLayer
+        {/* <ParallaxLayer
           offset={2}
           speed={-0.3}
           style={{
@@ -61,13 +69,14 @@ export default class ParallaxHolder extends Component {
             backgroundPosition: 'center',
             backgroundImage: url('clients', false)
           }}
-        />
+        /> */}
         <ParallaxLayer
           offset={0}
           speed={0.1}
           onClick={() => this.parallax.scrollTo(1)}
           style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <img src={this.props.src} alt={'1'} style={{ width: 'auto', opacity: 0.7 }} />
+          <img src={this.props.src} alt={'1'} style={{ width: 'auto', opacity: 1 }}/>
+          <div className={styles.container}> <p className={styles.centered}>{this.props.maintitle}</p></div>
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -75,15 +84,17 @@ export default class ParallaxHolder extends Component {
           speed={0.1}
           onClick={() => this.parallax.scrollTo(2)}
           style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <img src={this.props.src} alt={'1'} style={{ width: '40%' }} />
+          <img src={this.props.src2} alt={'1'} style={{ width: 'auto', opacity: 1 }}/>
+          <div className={styles.container}> <p className={styles.centered}>{this.props.maintitle3}</p></div>
         </ParallaxLayer>
 
         <ParallaxLayer
           offset={2}
           speed={-0}
-          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-          onClick={() => this.parallax.scrollTo(0)}>
-          <img src={this.props.src} alt={'1'} style={{ width: '40%' }} /> 
+          onClick={() => this.parallax.scrollTo(0)}
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <img src={this.props.src3} alt={'1'} style={{ width: 'auto', opacity: 1 }}/>
+          <div className={styles.container}> <p className={styles.centered}>{this.props.maintitle3}</p></div>
         </ParallaxLayer>
       </Parallax>
             </div>
