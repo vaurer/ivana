@@ -35,14 +35,14 @@ export default class App extends Component {
     };
   }
 
-  showAll=()=>{
-    console.log(this.state.mainimage)
-    console.log(this.state.maintitle)
-    console.log(this.state.main2image)
-    console.log(this.state.main2title)
-    console.log(this.state.main2image)
-    console.log(this.state.main3title)
-  }
+  // showAll=()=>{
+  //   console.log(this.state.mainimage)
+  //   console.log(this.state.maintitle)
+  //   console.log(this.state.main2image)
+  //   console.log(this.state.main2title)
+  //   console.log(this.state.main2image)
+  //   console.log(this.state.main3title)
+  // }
 
   componentDidMount() {
     let temppicandtextArray = [];
@@ -123,7 +123,7 @@ export default class App extends Component {
           main3image: result2.data[4].image.data.thumbnails[5].url,
         });
         console.log(this.state.main3image);
-        this.showAll();
+        // this.showAll();
       },
       (error) => {
         this.setState({

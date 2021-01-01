@@ -3,14 +3,14 @@ import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons.cjs';
  import styles from './ParallaxHolder.module.css';
 
 export default class ParallaxHolder extends Component {
-  showAll=()=>{
-    console.log(this.props.src)
-    console.log(this.props.maintitle)
-    console.log(this.props.src1)
-    console.log(this.props.maintitle1)
-    console.log(this.props.src2)
-    console.log(this.props.maintitle2)
-  }
+  // showAll=()=>{
+  //   console.log(this.props.src)
+  //   console.log(this.props.maintitle)
+  //   console.log(this.props.src1)
+  //   console.log(this.props.maintitle1)
+  //   console.log(this.props.src2)
+  //   console.log(this.props.maintitle2)
+  // }
     render(){
         // const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
         // const Pink = ({ children }) => <span style={{ color: '#FF6AC1' }}>{children}</span>
