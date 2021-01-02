@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { config } from 'react-spring/renderprops'
 import Grid from './Grid'
 import { Slug, Fade } from './Primitives'
-import data from './data'
+// import data from './data'
 import './Styles.css'
 import 'antd/dist/antd.css'
 // import { Icon } from 'antd'
@@ -12,7 +12,8 @@ import Constants from "../../helper/Constants";
 class Cell extends Component {
 
     render() {
-      const { toggle, name, description, css, active } = this.props
+      // const { toggle, name, description, css, active } = this.props
+      const { toggle, description, css, active } = this.props
       return (
         <div
           className="cell"
@@ -29,7 +30,7 @@ class Cell extends Component {
                     onClick={toggle}
                   />
                 </div>
-                <img src={this.props.fullphoto}></img>
+                <img src={this.props.fullphoto} alt={this.props.alt}></img>
                 <p>{description}</p>
               </Slug>
             </div>
@@ -41,7 +42,7 @@ class Cell extends Component {
             leave={{ opacity: 0, transform: 'translate3d(0,-50px,0)' }}
             delay={active ? 0 : 400}>
             <div className="default">
-              <div style={{ zIndex: 1 }}><img src={this.props.src}></img></div>
+              <div style={{ zIndex: 1 }}><img src={this.props.src} alt={this.props.alt}></img></div>
             </div>
           </Fade>
         </div>
