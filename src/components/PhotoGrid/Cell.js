@@ -3,7 +3,7 @@ import { config } from 'react-spring/renderprops'
 import Grid from './Grid'
 import { Slug, Fade } from './Primitives'
 // import data from './data'
-import './Styles.css'
+import './styles.css'
 import 'antd/dist/antd.css'
 // import { Icon } from 'antd'
 import Icon from '@ant-design/icons';
@@ -70,7 +70,7 @@ class Cell extends Component {
                   name: element.name,
                   src: element.photo.data.thumbnails[3].url,
                   description: element.name,
-                  fullphoto: element.photo.data.thumbnails[5].url,
+                  fullphoto: element.photo.data.full_url,
                   css: 'linear-gradient(-20deg, #ddd6f3 0%, #faaca8 100%, #faaca8 100%)',
                   height: 340,
                 };
