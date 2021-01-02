@@ -1,11 +1,9 @@
-import React, { Component } from 'react'
-import { config } from 'react-spring/renderprops'
-import Grid from './Grid'
-import { Slug, Fade } from './Primitives'
-// import data from './data'
-import './styles.css'
-import 'antd/dist/antd.css'
-// import { Icon } from 'antd'
+import React, { Component } from 'react';
+import { config } from 'react-spring/renderprops';
+import Grid from './Grid';
+import { Slug, Fade } from './Primitives';
+import styles from './Cell.module.css'
+import 'antd/dist/antd.css';
 import Icon from '@ant-design/icons';
 import Constants from "../../helper/Constants";
 
@@ -16,14 +14,14 @@ class Cell extends Component {
       const { toggle, description, css, active } = this.props
       return (
         <div
-          className="cell"
+          className={styles.cell}
           style={{ backgroundImage: css, cursor: !active ? 'pointer' : 'auto' }}
           onClick={!active ? toggle : undefined}>
           <Fade show={active} delay={active ? 500 : 0}>
-            <div className="details">
+            <div className={styles.details}>
               <Slug delay={600}>
                 {/* <div className="circle" style={{ background: css }} /> */}
-                <div className="close">
+                <div className={styles.close}>
                   <Icon
                     type="close"
                     style={{ cursor: 'pointer' }}
@@ -41,7 +39,7 @@ class Cell extends Component {
             enter={{ opacity: 1, transform: 'translate3d(0,0px,0)' }}
             leave={{ opacity: 0, transform: 'translate3d(0,-50px,0)' }}
             delay={active ? 0 : 400}>
-            <div className="default">
+            <div className={styles.default}>
               <div style={{ zIndex: 1 }}><img src={this.props.src} alt={this.props.alt}></img></div>
             </div>
           </Fade>
@@ -71,7 +69,7 @@ class Cell extends Component {
                   src: element.photo.data.thumbnails[3].url,
                   description: element.name,
                   fullphoto: element.photo.data.full_url,
-                  css: 'linear-gradient(-20deg, #ddd6f3 0%, #faaca8 100%, #faaca8 100%)',
+                  css: 'linear-gradient(-20deg, #8d8578 0%, #afa596 100%, #afa596 100%)',
                   height: 340,
                 };
                 tempdata.push(line);
@@ -95,7 +93,7 @@ class Cell extends Component {
     render() {
       return (
         <Grid
-          className="grid"
+          className={styles.grid}
           // Arbitrary data, should contain keys, possibly heights, etc.
           data={this.state.data}
           // Key accessor, instructs grid on how to fet individual keys from the data set
