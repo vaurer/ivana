@@ -70,8 +70,8 @@ class Cell extends Component {
                   name: element.name,
                   src: element.photo.data.thumbnails[3].url,
                   description: element.name,
-                  fullphoto: element.photo.data.full_url,
-                  css: "linear-gradient(to top, #a8edea 0%, #fed6e3 100%)",
+                  fullphoto: element.photo.data.thumbnails[5].url,
+                  css: 'linear-gradient(-20deg, #ddd6f3 0%, #faaca8 100%, #faaca8 100%)',
                   height: 340,
                 };
                 tempdata.push(line);
