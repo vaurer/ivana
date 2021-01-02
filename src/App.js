@@ -4,10 +4,11 @@ import ParallaxHolder from './components/ParallaxHolder/ParallaxHolder'
 // import PicAndTextHolder from "./components/PicAndTextHolder/PicAndTextHolder";
 // import { Parallax, ParallaxLayer } from 'react-spring/addons'
 import Navbar from "./components/Navbar/Navbar";
-// import MainPhoto from "./components/MainPhoto/MainPhoto";
+import MainPhoto from "./components/MainPhoto/MainPhoto";
 import FooterHolder from "./components/Footer/FooterHolder";
 import Constants from "./helper/Constants";
 // import Section from "./components/Section";
+import Cell from './components/PhotoGrid/Cell'
 
 export default class App extends Component {
   constructor(props) {
@@ -140,18 +141,20 @@ export default class App extends Component {
     return (
       <div className="App">
         <Navbar />
-        {/* <MainPhoto
+        <MainPhoto
           alt={this.state.mainalt}
           src={this.state.mainimage}
           maintitle={this.state.maintitle}
           maintext={this.state.maintext}
         ></MainPhoto>
-        <Section bgimage="./static/images/cards/1.jpg">
+         <Cell/>
+        {/* <Section bgimage="./static/images/cards/1.jpg">
           <div> TEST </div>
         </Section>
         <PicAndTextHolder picandtextArray={this.state.picandtextArray} /> */}
 
         <ParallaxHolder src={this.state.mainimage} maintitle={this.state.maintitle} src2={this.state.main2image} maintitle2={this.state.main2title} src3={this.state.main3image} maintitle3={this.state.main3title}/>
+  
         <FooterHolder />
       </div>
     );
