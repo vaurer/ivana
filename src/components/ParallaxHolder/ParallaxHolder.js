@@ -82,7 +82,7 @@ export default class ParallaxHolder extends Component {
         <ParallaxLayer
           offset={1}
           speed={0.1}
-          onClick={() => this.parallax.scrollTo(2)}
+          onClick={this.props.videosToggleHandler}
           style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <img src={this.props.src2} alt={'1'} style={{ width: 'auto', opacity: 1 }}/>
           <div className={styles.container}> <p className={styles.centered}>{this.props.maintitle3}</p></div>

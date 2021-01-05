@@ -19,7 +19,18 @@ export default class App extends Component {
   galeryToggleHandler = () => {
     this.setState((prevState) => {
       return { 
-        showGalery: !prevState.showGalery ,
+        showGalery: !prevState.showGalery,
+        showVideos: !prevState.showVideos,
+        showMain: !prevState.showMain,
+        showCell: !prevState.showCell
+      };
+    });
+  };
+
+  videosToggleHandler = () => {
+    this.setState((prevState) => {
+      return { 
+        showVideos: !prevState.showVideos,
         showMain: !prevState.showMain,
         showCell: !prevState.showCell
       };
@@ -31,7 +42,7 @@ export default class App extends Component {
       return { showCell: !prevState.showCell };
     });
   };
-  
+
   formToggleHandler = (e) => {
     e.preventDefault();
     console.log('formToggleHandler')
@@ -50,6 +61,7 @@ export default class App extends Component {
       showGalery: false,
       showCell:true,
       showForm:false,
+      showVideos:false,
       picandtextArray: [],
       mainphoto: [],
       isLoaded: false,
@@ -155,7 +167,7 @@ export default class App extends Component {
           maintitle={this.state.maintitle}
           maintext={this.state.maintext}
         ></MainPhoto>
-        <ParallaxHolder src={this.state.mainimage} maintitle={this.state.maintitle} src2={this.state.main2image} maintitle2={this.state.main2title} src3={this.state.main3image} maintitle3={this.state.main3title} formToggleHandler={this.formToggleHandler}/>
+        <ParallaxHolder src={this.state.mainimage} maintitle={this.state.maintitle} src2={this.state.main2image} maintitle2={this.state.main2title} src3={this.state.main3image} maintitle3={this.state.main3title} formToggleHandler={this.formToggleHandler} galeryToggleHandler={this.galeryToggleHandler} videosToggleHandler={this.videosToggleHandler}/>
         </If>
 
         <If condition={this.state.showGalery} >
