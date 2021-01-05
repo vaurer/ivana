@@ -1,19 +1,33 @@
 import "./App.css";
 import React, { Component } from "react";
 import ParallaxHolder from './components/ParallaxHolder/ParallaxHolder'
-// import PicAndTextHolder from "./components/PicAndTextHolder/PicAndTextHolder";
-// import { Parallax, ParallaxLayer } from 'react-spring/addons'
 import Navbar from "./components/Navbar/Navbar";
 import MainPhoto from "./components/MainPhoto/MainPhoto";
 import FooterHolder from "./components/Footer/FooterHolder";
 import Constants from "./helper/Constants";
-// import Section from "./components/Section";
 import Cell from './components/PhotoGrid/Cell'
+import { If } from 'rc-if-else';
 
 export default class App extends Component {
+
+  mainSiteToggleHandler = () => {
+    this.setState((prevState) => {
+      return { showMain: !prevState.showMain };
+    });
+    console.log(this.state.showMain)
+  };
+
+  galeryToggleHandler = () => {
+    this.setState((prevState) => {
+      return { showGalery: !prevState.showGalery };
+    });
+  };
+
   constructor(props) {
     super(props);
     this.state = {
+      showMain: true,
+      showGalery: false,
       picandtextArray: [],
       mainphoto: [],
       isLoaded: false,
@@ -35,15 +49,6 @@ export default class App extends Component {
       main3image: "null",
     };
   }
-
-  // showAll=()=>{
-  //   console.log(this.state.mainimage)
-  //   console.log(this.state.maintitle)
-  //   console.log(this.state.main2image)
-  //   console.log(this.state.main2title)
-  //   console.log(this.state.main2image)
-  //   console.log(this.state.main3title)
-  // }
 
   componentDidMount() {
     let temppicandtextArray = [];
@@ -80,27 +85,6 @@ export default class App extends Component {
         }
       );
 
-    // fetch(Constants.restMainPicture)
-    //   .then((res2) => res2.json())
-    //   .then(
-    //     (result2) => {
-    //       this.setState({
-    //         isLoaded: true,
-    //         mainid: result2.data[0].id,
-    //         mainalt: result2.data[0].alt,
-    //         maintitle: result2.data[0].title,
-    //         maintext: result2.data[0].textarea,
-    //         mainimage: result2.data[0].picture.data.thumbnails[5].url,
-    //       });
-    //       console.log(this.state.mainalt);
-    //     },
-    //     (error) => {
-    //       this.setState({
-    //         isLoaded: true,
-    //         error,
-    //       });
-    //     }
-    //   );
     fetch(Constants.aboutURL)
     .then((res2) => res2.json())
     .then(
@@ -124,7 +108,6 @@ export default class App extends Component {
           main3image: result2.data[4].image.data.thumbnails[5].url,
         });
         console.log(this.state.main3image);
-        // this.showAll();
       },
       (error) => {
         this.setState({
@@ -140,13 +123,19 @@ export default class App extends Component {
 
     return (
       <div className="App">
-        <Navbar />
+        <Navbar clickMain={this.mainSiteToggleHandler}/>
+
+        <If condition={this.state.showMain} >
         <MainPhoto
+          
+          show={this.state.showMain}
           alt={this.state.mainalt}
           src={this.state.mainimage}
           maintitle={this.state.maintitle}
           maintext={this.state.maintext}
         ></MainPhoto>
+        </If>
+        
          <Cell/>
         {/* <Section bgimage="./static/images/cards/1.jpg">
           <div> TEST </div>

@@ -4,7 +4,7 @@ import Grid from './Grid';
 import { Slug, Fade } from './Primitives';
 import styles from './Cell.module.css'
 import 'antd/dist/antd.css';
-import Icon from '@ant-design/icons';
+import {CloseOutlined} from '@ant-design/icons';
 import Constants from "../../helper/Constants";
 
 class Cell extends Component {
@@ -22,7 +22,7 @@ class Cell extends Component {
               <Slug delay={600}>
                 {/* <div className="circle" style={{ background: css }} /> */}
                 <div className={styles.close}>
-                  <Icon
+                  <CloseOutlined
                     type="close"
                     style={{ cursor: 'pointer' }}
                     onClick={toggle}
