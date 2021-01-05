@@ -5,7 +5,7 @@
 }
 
 .text {
-  pointer-events: none;
+  /* pointer-events: none; */
   justify-content: start !important;
   font-family: "Kanit", sans-serif;
   line-height: 0px;
@@ -104,7 +104,7 @@
   color: white;
 }
 
-container a {
+.container a {
   /* background-color: rgb(184, 137, 228); */
   color: black;
   text-decoration: none;

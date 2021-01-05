@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import ParallaxHolder from './components/ParallaxHolder/ParallaxHolder'
 import Navbar from "./components/Navbar/Navbar";
 import MainPhoto from "./components/MainPhoto/MainPhoto";
-// import FooterHolder from "./components/Footer/FooterHolder";
 import Constants from "./helper/Constants";
 import Cell from './components/PhotoGrid/Cell'
 import { If } from 'rc-if-else';
@@ -12,24 +11,34 @@ import Form from './components/Footer/Form'
 export default class App extends Component {
 
   mainSiteToggleHandler = () => {
-    this.setState((prevState) => {
-      return { showMain: !prevState.showMain };
-    });
+    this.setState({ showGalery: false });
+    this.setState({ showMain: true });
+    this.setState({ showForm: false });
   };
 
   galeryToggleHandler = () => {
     this.setState((prevState) => {
-      return { showGalery: !prevState.showGalery };
+      return { 
+        showGalery: !prevState.showGalery ,
+        showMain: !prevState.showMain,
+        showCell: !prevState.showCell
+      };
     });
   };
+
   cellToggleHandler = () => {
     this.setState((prevState) => {
       return { showCell: !prevState.showCell };
     });
   };
-  formToggleHandler = () => {
+  
+  formToggleHandler = (e) => {
+    e.preventDefault();
+    console.log('formToggleHandler')
     this.setState((prevState) => {
-      return { showForm: !prevState.showForm };
+      return { showForm: !prevState.showForm,
+        showMain: !prevState.showMain
+      };
     });
   };
   
@@ -136,32 +145,26 @@ export default class App extends Component {
 
     return (
       <div className="App">
-        <Navbar clickMain={this.mainSiteToggleHandler}/>
+        <Navbar mainSiteToggleHandler={this.mainSiteToggleHandler}/>
 
         <If condition={this.state.showMain} >
         <MainPhoto
-          
           show={this.state.showMain}
           alt={this.state.mainalt}
           src={this.state.mainimage}
           maintitle={this.state.maintitle}
           maintext={this.state.maintext}
         ></MainPhoto>
-         <Cell/>
-         </If>
-        {/* <Section bgimage="./static/images/cards/1.jpg">
-          <div> TEST </div>
-        </Section>
-        <PicAndTextHolder picandtextArray={this.state.picandtextArray} /> */}
-
-
-        <If condition={this.state.showCell} >
-        <ParallaxHolder src={this.state.mainimage} maintitle={this.state.maintitle} src2={this.state.main2image} maintitle2={this.state.main2title} src3={this.state.main3image} maintitle3={this.state.main3title} form={this.formToggleHandler}/>
+        <ParallaxHolder src={this.state.mainimage} maintitle={this.state.maintitle} src2={this.state.main2image} maintitle2={this.state.main2title} src3={this.state.main3image} maintitle3={this.state.main3title} formToggleHandler={this.formToggleHandler}/>
         </If>
+
+        <If condition={this.state.showGalery} >
+        <Cell/>
+        </If>
+
         <If condition={this.state.showForm}>
           <Form onSubmit={(fields) => this.onSubmit(fields)} />
         </If>
-        
       </div>
     );
   }

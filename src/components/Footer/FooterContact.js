@@ -72,7 +72,7 @@ class FooterContact extends Component {
                     <GoogleMaps/>
                     <div className={styles.ContactText}>{this.state.street}, {this.state.zipcode}</div> 
                 </If>
-                <a href=" " onClick={this.props.form}>
+                <a href=" " onClick={this.props.formToggleHandler}>
                 <div className={styles.ContactIcon}><i className="far fa-envelope fa-3x" ></i></div>
                 <div className={styles.ContactText}>Kontaktieren Sie uns</div>
                 </a>

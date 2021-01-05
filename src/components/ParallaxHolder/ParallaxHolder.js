@@ -4,7 +4,12 @@ import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons.cjs';
  import FooterHolder from '../Footer/FooterHolder'
 
 export default class ParallaxHolder extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
 
+    };
+  }
     render(){
         // const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
         // const Pink = ({ children }) => <span style={{ color: '#FF6AC1' }}>{children}</span>
@@ -64,13 +69,14 @@ export default class ParallaxHolder extends Component {
             backgroundImage: url('clients', false)
           }}
         /> */}
+ 
         <ParallaxLayer
           offset={0}
           speed={0.1}
-          onClick={() => this.parallax.scrollTo(1)}
-          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <img src={this.props.src} alt={'1'} style={{ width: 'auto', opacity: 1 }}/>
-          <div className={styles.container}> <p className={styles.centered}>{this.props.maintitle}</p></div>
+          onClick={this.props.galeryToggleHandler}
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'all' }}>
+          <img src={this.props.src} alt={'1'} style={{ width: 'auto', opacity: 1 }} onClick={this.props.galeryToggleHandler}/>
+          <div className={styles.container}> <p className={styles.centered}>GALERY</p></div>
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -85,11 +91,8 @@ export default class ParallaxHolder extends Component {
         <ParallaxLayer
           offset={2}
           speed={-0}
-          // onClick={() => this.parallax.scrollTo(0)}
           style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          {/* <img src={this.props.src3} alt={'1'} style={{ width: 'auto', opacity: 1 }}/> */}
-          <FooterHolder/>
-          {/* <div className={styles.container}> <p className={styles.centered}>{this.props.maintitle3}</p></div> */}
+          <FooterHolder formToggleHandler={this.props.formToggleHandler}/>
         </ParallaxLayer>
       </Parallax>
             </div>
