@@ -5,23 +5,12 @@ import FooterContact from "./FooterContact";
 // import { If } from "rc-if-else";
 
 class FooterHolder extends Component {
-
-
   onSubmit = (fields) => {
     console.log("Die App componente hat die Daten überbekommen: ", fields);
   };
 
-
-
   render() {
-    return (
-    
-     
-          <FooterContact />
-        
-        
- 
-    );
+    return <FooterContact />;
   }
 }
 export default FooterHolder;
