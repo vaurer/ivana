@@ -61,7 +61,8 @@ class FooterContact extends Component {
                     <div>Öffnungszeiten</div>
                     <div>{this.state.hours}</div>
                     <div>Termine unter</div>
-                    <div><a href="tel:{this.state.phonenumber}" >{this.state.phonenumber}</a></div>
+                    <div><a href={"tel:" + this.state.phonenumber} >{this.state.phonenumber}</a></div>
+                    {/* <div>{this.state.phonenumber}</div> */}
                 </div>
                 <a href=" "  onClick={this.showGoogleMap} >
                 <div className={styles.ContactIcon}><i className="fas fa-map-marked-alt fa-3x"></i>{/* <i class="fas fa-map-marker-alt fa-3x"></i> */}</div>
