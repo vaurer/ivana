@@ -3,10 +3,11 @@ import React, { Component } from "react";
 import ParallaxHolder from './components/ParallaxHolder/ParallaxHolder'
 import Navbar from "./components/Navbar/Navbar";
 import MainPhoto from "./components/MainPhoto/MainPhoto";
-import FooterHolder from "./components/Footer/FooterHolder";
+// import FooterHolder from "./components/Footer/FooterHolder";
 import Constants from "./helper/Constants";
 import Cell from './components/PhotoGrid/Cell'
 import { If } from 'rc-if-else';
+import Form from './components/Footer/Form'
 
 export default class App extends Component {
 
@@ -14,7 +15,6 @@ export default class App extends Component {
     this.setState((prevState) => {
       return { showMain: !prevState.showMain };
     });
-    console.log(this.state.showMain)
   };
 
   galeryToggleHandler = () => {
@@ -22,12 +22,25 @@ export default class App extends Component {
       return { showGalery: !prevState.showGalery };
     });
   };
+  cellToggleHandler = () => {
+    this.setState((prevState) => {
+      return { showCell: !prevState.showCell };
+    });
+  };
+  formToggleHandler = () => {
+    this.setState((prevState) => {
+      return { showForm: !prevState.showForm };
+    });
+  };
+  
 
   constructor(props) {
     super(props);
     this.state = {
       showMain: true,
       showGalery: false,
+      showCell:true,
+      showForm:false,
       picandtextArray: [],
       mainphoto: [],
       isLoaded: false,
@@ -134,17 +147,21 @@ export default class App extends Component {
           maintitle={this.state.maintitle}
           maintext={this.state.maintext}
         ></MainPhoto>
-        </If>
-        
          <Cell/>
+         </If>
         {/* <Section bgimage="./static/images/cards/1.jpg">
           <div> TEST </div>
         </Section>
         <PicAndTextHolder picandtextArray={this.state.picandtextArray} /> */}
 
-        <ParallaxHolder src={this.state.mainimage} maintitle={this.state.maintitle} src2={this.state.main2image} maintitle2={this.state.main2title} src3={this.state.main3image} maintitle3={this.state.main3title}/>
-  
-        <FooterHolder />
+
+        <If condition={this.state.showCell} >
+        <ParallaxHolder src={this.state.mainimage} maintitle={this.state.maintitle} src2={this.state.main2image} maintitle2={this.state.main2title} src3={this.state.main3image} maintitle3={this.state.main3title} form={this.formToggleHandler}/>
+        </If>
+        <If condition={this.state.showForm}>
+          <Form onSubmit={(fields) => this.onSubmit(fields)} />
+        </If>
+        
       </div>
     );
   }

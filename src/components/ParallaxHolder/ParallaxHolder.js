@@ -1,16 +1,10 @@
 import React, { Component } from "react";
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons.cjs';
  import styles from './ParallaxHolder.module.css';
+ import FooterHolder from '../Footer/FooterHolder'
 
 export default class ParallaxHolder extends Component {
-  // showAll=()=>{
-  //   console.log(this.props.src)
-  //   console.log(this.props.maintitle)
-  //   console.log(this.props.src1)
-  //   console.log(this.props.maintitle1)
-  //   console.log(this.props.src2)
-  //   console.log(this.props.maintitle2)
-  // }
+
     render(){
         // const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
         // const Pink = ({ children }) => <span style={{ color: '#FF6AC1' }}>{children}</span>
@@ -91,10 +85,11 @@ export default class ParallaxHolder extends Component {
         <ParallaxLayer
           offset={2}
           speed={-0}
-          onClick={() => this.parallax.scrollTo(0)}
+          // onClick={() => this.parallax.scrollTo(0)}
           style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <img src={this.props.src3} alt={'1'} style={{ width: 'auto', opacity: 1 }}/>
-          <div className={styles.container}> <p className={styles.centered}>{this.props.maintitle3}</p></div>
+          {/* <img src={this.props.src3} alt={'1'} style={{ width: 'auto', opacity: 1 }}/> */}
+          <FooterHolder/>
+          {/* <div className={styles.container}> <p className={styles.centered}>{this.props.maintitle3}</p></div> */}
         </ParallaxLayer>
       </Parallax>
             </div>
