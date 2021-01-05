@@ -69,7 +69,7 @@ class Cell extends Component {
                   src: element.photo.data.thumbnails[3].url,
                   description: element.name,
                   fullphoto: element.photo.data.full_url,
-                  css: 'linear-gradient(-20deg, #8d8578 0%, #afa596 100%, #afa596 100%)',
+                  css: 'linear-gradient(-20deg, #ffffff 0%, #afa596 100%, #afa596 100%)',
                   height: 340,
                 };
                 tempdata.push(line);
@@ -79,7 +79,6 @@ class Cell extends Component {
               isLoaded1: true,
               data: tempdata,
             });
-            console.log(tempdata)
           },
           (error) => {
             this.setState({

@@ -45,7 +45,6 @@ export default class App extends Component {
 
   formToggleHandler = (e) => {
     e.preventDefault();
-    console.log('formToggleHandler')
     this.setState((prevState) => {
       return { showForm: !prevState.showForm,
         showMain: !prevState.showMain
@@ -141,7 +140,6 @@ export default class App extends Component {
           main3text: result2.data[4].textarea,
           main3image: result2.data[4].image.data.thumbnails[5].url,
         });
-        console.log(this.state.main3image);
       },
       (error) => {
         this.setState({
