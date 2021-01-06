@@ -1,5 +1,4 @@
 .NavbarItems{
-    background: linear-gradient(90deg, rgb(172, 170, 170) 0%, rgb(106, 97, 97) 100%);
     background: transparent;
     height: 80px;
     display: flex;
@@ -13,7 +12,7 @@
     width: 100%;
 }
 .navbar-logo{
-    color: gold;
+    color: black;
     justify-self: start;
     margin-left: 20px;
     cursor: pointer;
@@ -33,17 +32,19 @@
     margin-right: 2rem;
 }
 .nav-links{
-    color: gold;
+    color:black;
     text-decoration: none;
     padding: 0.5rem 1rem;
 }
 .nav-links:hover{
-    background-color:lightsteelblue ;
-    border-radius: 5px;
-    transition: all 0.5s ease-in-out;
+    /* background-color:lightsteelblue ; */
+    border-bottom: 3px solid lightsteelblue;
+    color: lightsteelblue;
+    /* border-radius: 5px;
+    transition: all 0.5s ease-in-out; */
 }
 .fa-bars{
-    color: ghostwhite;
+    color:black;
 }
 .menu-icon{
     display: none;
@@ -53,8 +54,10 @@
     .NavbarItems{
         position: fixed;
         z-index: 11;
+        
     }
     .nav-menu{
+        backdrop-filter: blur(2px);
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -66,22 +69,24 @@
         transition: all 0.5s ease;
     }
     .nav-menu.active{
-        background:rgb(106, 97, 97);
+        background: transparent;
         left: 0;
         opacity: 1;
         transition: all 0.5s ease;
         z-index: 1;
     }
     .nav-links{
+        backdrop-filter: blur(2px);
         text-align: center;
         padding: 2rem;
         width: 100%;
         display: table;
     }
     .nav-links:hover{
-        background-color:lightsteelblue ;
+        border: none;
         border-radius: 0;
         transition: all 0.5s ease-in-out;
+        color: lightsteelblue;
     }
     .navbar-logo{
         position: absolute;
@@ -99,7 +104,7 @@
         cursor: pointer;
     }
     .fa-times{
-        color: ghostwhite;
+        color:black;
         font-size: 2rem;
     }
 }

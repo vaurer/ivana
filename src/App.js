@@ -155,8 +155,10 @@ export default class App extends Component {
 
     return (
       <div className="App">
+        <div>
         <Navbar mainSiteToggleHandler={this.mainSiteToggleHandler}/>
-
+        </div>
+        <div>
         <If condition={this.state.showMain} >
         <MainPhoto
           show={this.state.showMain}
@@ -165,16 +167,20 @@ export default class App extends Component {
           maintitle={this.state.maintitle}
           maintext={this.state.maintext}
         ></MainPhoto>
+        
         <ParallaxHolder src={this.state.mainimage} maintitle={this.state.maintitle} src2={this.state.main2image} maintitle2={this.state.main2title} src3={this.state.main3image} maintitle3={this.state.main3title} formToggleHandler={this.formToggleHandler} galeryToggleHandler={this.galeryToggleHandler} videosToggleHandler={this.videosToggleHandler}/>
         </If>
-
+        </div>
+        <div>
         <If condition={this.state.showGalery} >
         <Cell/>
         </If>
-
+        </div>
+        <div>
         <If condition={this.state.showForm}>
           <Form onSubmit={(fields) => this.onSubmit(fields)} />
         </If>
+        </div>
       </div>
     );
   }

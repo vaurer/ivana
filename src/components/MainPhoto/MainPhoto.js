@@ -5,8 +5,10 @@ class MainPhoto extends Component {
 
     render() { 
         return ( 
-            <div className={styles.container}>
+            <div>
+                <div className={styles.imgMain}>
                 <img alt={this.props.alt} src={this.props.src}></img>
+                </div>
                 <div className={styles.topLeft}>{this.props.maintitle}</div>
                 <div className={styles.bottomRight}>{this.props.maintext}</div>
             </div>

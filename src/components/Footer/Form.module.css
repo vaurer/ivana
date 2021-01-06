@@ -1,5 +1,5 @@
 .box {
-  height: 50vh;
+  height: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -34,7 +34,7 @@ textarea {
   background: transparent;
 }
 form {
-  height: 100vh;
+  height: 100%;
   position: relative;
   display: inline-block;
   padding: 10px 20px;
