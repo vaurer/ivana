@@ -205,7 +205,7 @@ export default class App extends Component {
           <Form onSubmit={(fields) => this.onSubmit(fields)} />
         </If>
         <If condition={this.state.showMap}>
-          <GoogleMaps/>
+          <GoogleMaps mainSiteToggleHandler={this.mainSiteToggleHandler}/>
         </If>
         </div>
       </div>
