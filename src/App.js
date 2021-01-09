@@ -1,8 +1,6 @@
 import "./App.css";
 import React, { Component } from "react";
 import ParallaxHolder from './components/ParallaxHolder/ParallaxHolder'
-// import Navbar from "./components/Navbar/Navbar";
-// import MainPhoto from "./components/MainPhoto/MainPhoto";
 import Constants from "./helper/Constants";
 import Cell from './components/PhotoGrid/Cell'
 import { If } from 'rc-if-else';
@@ -167,19 +165,9 @@ export default class App extends Component {
 
     return (
       <div className="App">
-        
-        {/* <Navbar mainSiteToggleHandler={this.mainSiteToggleHandler}/> */}
-        
         <div>
         <If condition={this.state.showMain} >
-        {/* <MainPhoto
-          show={this.state.showMain}
-          alt={this.state.mainalt}
-          src={this.state.mainimage}
-          maintitle={this.state.maintitle}
-          maintext={this.state.maintext}
-        ></MainPhoto> */}
-        
+
         <ParallaxHolder show={this.state.showMain}
           alt={this.state.mainalt}
           src={this.state.mainimage}
