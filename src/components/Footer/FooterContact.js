@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import styles from "./Footer.module.css";
 /* import Constants from "../../helper/Constants"; */
-import GoogleMaps from "./GoogleMaps";
-import { If } from "rc-if-else";
+// import GoogleMaps from "./GoogleMaps";
+// import { If } from "rc-if-else";
 
 class FooterContact extends Component {
   constructor() {

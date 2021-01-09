@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons.cjs';
  import styles from './ParallaxHolder.module.css';
  import FooterHolder from '../Footer/FooterHolder'
+import MainPhoto from "../MainPhoto/MainPhoto";
+import Navbar from "../Navbar/Navbar";
 
 export default class ParallaxHolder extends Component {
   constructor(props) {
@@ -20,9 +22,9 @@ export default class ParallaxHolder extends Component {
         //  const Gray = ({ children }) => <span style={{ color: '#909090' }}>{children}</span>
         return(
             <div>
-                <Parallax ref={(ref) => (this.parallax = ref)} pages={3} style={{ backgroundColor: '#a69c8f' }}>
-                <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#8d8578' }} />
-                <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#afa596' }} />
+                <Parallax ref={(ref) => (this.parallax = ref)} pages={4} style={{ backgroundColor: '#a69c8f'}}>
+                <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#8d8578' , zIndex: '-2'}} />
+                <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#afa596', zIndex: '-2' }} />
 
         {/* <ParallaxLayer offset={0} speed={0} factor={3} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} /> */}
 
@@ -70,18 +72,38 @@ export default class ParallaxHolder extends Component {
           }}
         /> */}
  
+        <ParallaxLayer 
+        offset={0}
+        speed={-1}
+        >
+        <Navbar mainSiteToggleHandler={this.mainSiteToggleHandler}/>
+        </ParallaxLayer>
+
         <ParallaxLayer
-          offset={0}
-          speed={0.1}
-          onClick={this.props.galeryToggleHandler}
-          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'all' }}>
-          <img src={this.props.src} alt={'1'} style={{ width: 'auto', opacity: 1 }} onClick={this.props.galeryToggleHandler}/>
-          <div className={styles.container}> <p className={styles.centered}>GALERY</p></div>
+        offset={0}
+        speed={0.1}>
+        
+          <MainPhoto
+          show={this.props.show}
+          alt={this.props.alt}
+          src={this.props.src}
+          maintitle={this.props.maintitle}
+          maintext={this.props.maintext}></MainPhoto>
         </ParallaxLayer>
 
         <ParallaxLayer
           offset={1}
           speed={0.1}
+          onClick={this.props.galeryToggleHandler}
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'all' , zIndex: '-1'}}>
+          <img src={this.props.src} alt={'1'} style={{ width: 'auto', opacity: 1 }} onClick={this.props.galeryToggleHandler}/>
+          <div className={styles.container}> <p className={styles.centered}>GALERY</p></div>
+        </ParallaxLayer>
+
+        <ParallaxLayer
+          offset={2}
+          speed={0.1}
+          
           onClick={this.props.videosToggleHandler}
           style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <img src={this.props.src2} alt={'1'} style={{ width: 'auto', opacity: 1 }}/>
@@ -89,7 +111,7 @@ export default class ParallaxHolder extends Component {
         </ParallaxLayer>
 
         <ParallaxLayer
-          offset={2}
+          offset={3}
           speed={-0}
           style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <FooterHolder formToggleHandler={this.props.formToggleHandler} mapToggleHandler={this.props.mapToggleHandler}/>

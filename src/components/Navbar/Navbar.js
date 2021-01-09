@@ -5,8 +5,6 @@ import "./Navbar.css";
 class Navbar extends Component {
   state = {
     clicked: false,
-    show: true,
-    scrollPos: 0,
   };
 
   componentDidMount() {
@@ -19,6 +17,7 @@ class Navbar extends Component {
 
   handleScroll = () => {
     if (window.pageYOffset > 340) {
+      console.log('if (window.pageYOffset > 340)')
       if (!this.state.nav) {
         this.setState({ nav: true });
       }

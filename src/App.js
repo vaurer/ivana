@@ -2,7 +2,7 @@ import "./App.css";
 import React, { Component } from "react";
 import ParallaxHolder from './components/ParallaxHolder/ParallaxHolder'
 import Navbar from "./components/Navbar/Navbar";
-import MainPhoto from "./components/MainPhoto/MainPhoto";
+// import MainPhoto from "./components/MainPhoto/MainPhoto";
 import Constants from "./helper/Constants";
 import Cell from './components/PhotoGrid/Cell'
 import { If } from 'rc-if-else';
@@ -15,6 +15,7 @@ export default class App extends Component {
     this.setState({ showGalery: false });
     this.setState({ showMain: true });
     this.setState({ showForm: false });
+    this.setState({ showMap: false });
   };
 
   galeryToggleHandler = () => {
@@ -166,20 +167,32 @@ export default class App extends Component {
 
     return (
       <div className="App">
-        <div>
-        <Navbar mainSiteToggleHandler={this.mainSiteToggleHandler}/>
-        </div>
+        
+        {/* <Navbar mainSiteToggleHandler={this.mainSiteToggleHandler}/> */}
+        
         <div>
         <If condition={this.state.showMain} >
-        <MainPhoto
+        {/* <MainPhoto
           show={this.state.showMain}
           alt={this.state.mainalt}
           src={this.state.mainimage}
           maintitle={this.state.maintitle}
           maintext={this.state.maintext}
-        ></MainPhoto>
+        ></MainPhoto> */}
         
-        <ParallaxHolder src={this.state.mainimage} maintitle={this.state.maintitle} src2={this.state.main2image} maintitle2={this.state.main2title} src3={this.state.main3image} maintitle3={this.state.main3title} formToggleHandler={this.formToggleHandler} galeryToggleHandler={this.galeryToggleHandler} videosToggleHandler={this.videosToggleHandler} mapToggleHandler={this.mapToggleHandler}/>
+        <ParallaxHolder show={this.state.showMain}
+          alt={this.state.mainalt}
+          src={this.state.mainimage}
+          maintext={this.state.maintext} 
+          maintitle={this.state.maintitle} 
+          src2={this.state.main2image} 
+          maintitle2={this.state.main2title} 
+          src3={this.state.main3image} 
+          maintitle3={this.state.main3title} 
+          formToggleHandler={this.formToggleHandler} 
+          galeryToggleHandler={this.galeryToggleHandler} 
+          videosToggleHandler={this.videosToggleHandler} 
+          mapToggleHandler={this.mapToggleHandler}/>
         </If>
         </div>
         <div>
