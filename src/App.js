@@ -160,13 +160,13 @@ export default class App extends Component {
         </div>
         <div>
         <If condition={this.state.showMain} >
-        <MainPhoto
+        {/* <MainPhoto
           show={this.state.showMain}
           alt={this.state.mainalt}
           src={this.state.mainimage}
           maintitle={this.state.maintitle}
           maintext={this.state.maintext}
-        ></MainPhoto>
+        ></MainPhoto> */}
         
         <ParallaxHolder src={this.state.mainimage} maintitle={this.state.maintitle} src2={this.state.main2image} maintitle2={this.state.main2title} src3={this.state.main3image} maintitle3={this.state.main3title} formToggleHandler={this.formToggleHandler} galeryToggleHandler={this.galeryToggleHandler} videosToggleHandler={this.videosToggleHandler}/>
         </If>

@@ -8,11 +8,27 @@
     margin-bottom: 1rem;
     position: fixed;
     top: 0;
-    z-index: 3;
+    z-index: -3;
     width: 100%;
 }
+
+.Nav__black{
+    background: black;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    width: 100%;
+    transition: all 2s ease-in-out;
+}
+
 .navbar-logo{
-    color: black;
+    color: white;
     justify-self: start;
     margin-left: 20px;
     cursor: pointer;
@@ -32,7 +48,7 @@
     margin-right: 2rem;
 }
 .nav-links{
-    color:black;
+    color:white;
     text-decoration: none;
     padding: 0.5rem 1rem;
 }
@@ -44,7 +60,7 @@
     transition: all 0.5s ease-in-out; */
 }
 .fa-bars{
-    color:black;
+    color:white;
 }
 .menu-icon{
     display: none;
@@ -53,11 +69,11 @@
 @media screen and (max-width: 960px){
     .NavbarItems{
         position: fixed;
-        z-index: 11;
+        z-index: -1;
         
     }
     .nav-menu{
-        backdrop-filter: blur(2px);
+        backdrop-filter: blur(5px);
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -66,21 +82,22 @@
         top: 80px;
         left: -100%;
         opacity: 1;
-        transition: all 0.5s ease;
+        transition: all 1s ease;
     }
     .nav-menu.active{
         background: transparent;
         left: 0;
         opacity: 1;
-        transition: all 0.5s ease;
+        transition: all 1s ease;
         z-index: 1;
     }
     .nav-links{
-        backdrop-filter: blur(2px);
+        backdrop-filter: blur(5px);
         text-align: center;
         padding: 2rem;
         width: 100%;
         display: table;
+        transition: all 3s ease-in-out;
     }
     .nav-links:hover{
         border: none;
