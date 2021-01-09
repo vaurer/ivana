@@ -7,6 +7,7 @@ import Constants from "./helper/Constants";
 import Cell from './components/PhotoGrid/Cell'
 import { If } from 'rc-if-else';
 import Form from './components/Footer/Form'
+import GoogleMaps from "./components/Footer/GoogleMaps";
 
 export default class App extends Component {
 
@@ -51,6 +52,15 @@ export default class App extends Component {
       };
     });
   };
+
+  mapToggleHandler = (e) => {
+    e.preventDefault();
+    this.setState((prevState) => {
+      return { showMap: !prevState.showMap,
+        showMain: !prevState.showMain
+      };
+    });
+  };
   
 
   constructor(props) {
@@ -61,6 +71,7 @@ export default class App extends Component {
       showCell:true,
       showForm:false,
       showVideos:false,
+      showMap:false,
       picandtextArray: [],
       mainphoto: [],
       isLoaded: false,
@@ -160,15 +171,15 @@ export default class App extends Component {
         </div>
         <div>
         <If condition={this.state.showMain} >
-        {/* <MainPhoto
+        <MainPhoto
           show={this.state.showMain}
           alt={this.state.mainalt}
           src={this.state.mainimage}
           maintitle={this.state.maintitle}
           maintext={this.state.maintext}
-        ></MainPhoto> */}
+        ></MainPhoto>
         
-        <ParallaxHolder src={this.state.mainimage} maintitle={this.state.maintitle} src2={this.state.main2image} maintitle2={this.state.main2title} src3={this.state.main3image} maintitle3={this.state.main3title} formToggleHandler={this.formToggleHandler} galeryToggleHandler={this.galeryToggleHandler} videosToggleHandler={this.videosToggleHandler}/>
+        <ParallaxHolder src={this.state.mainimage} maintitle={this.state.maintitle} src2={this.state.main2image} maintitle2={this.state.main2title} src3={this.state.main3image} maintitle3={this.state.main3title} formToggleHandler={this.formToggleHandler} galeryToggleHandler={this.galeryToggleHandler} videosToggleHandler={this.videosToggleHandler} mapToggleHandler={this.mapToggleHandler}/>
         </If>
         </div>
         <div>
@@ -179,6 +190,9 @@ export default class App extends Component {
         <div>
         <If condition={this.state.showForm}>
           <Form onSubmit={(fields) => this.onSubmit(fields)} />
+        </If>
+        <If condition={this.state.showMap}>
+          <GoogleMaps/>
         </If>
         </div>
       </div>

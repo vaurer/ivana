@@ -92,7 +92,7 @@ export default class ParallaxHolder extends Component {
           offset={2}
           speed={-0}
           style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <FooterHolder formToggleHandler={this.props.formToggleHandler}/>
+          <FooterHolder formToggleHandler={this.props.formToggleHandler} mapToggleHandler={this.props.mapToggleHandler}/>
         </ParallaxLayer>
       </Parallax>
             </div>

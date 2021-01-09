@@ -73,19 +73,20 @@ class FooterContact extends Component {
             <p>{this.state.phonenumber}</p>
           </a>
         </div>
-        <div className={styles.googleMap}>
-        <a href=" " onClick={this.showGoogleMap}>
+        <div className={styles.googleMap} onClick={this.props.mapToggleHandler}>
+        
+        <a href=" " >
         <i className="fas fa-map-marked-alt fa-3x"></i>
         <p>{this.state.name} in Google Maps anzeigen</p>
         </a>
-        <If condition={this.state.showMap}>
+        {/* <If condition={this.state.showMap}>
             <div className={styles.googleMapShows}>
             <GoogleMaps />
             </div>
             <p>
               {this.state.street}, {this.state.zipcode}
             </p>
-          </If>
+          </If> */}
         </div>
         <div className={styles.contactForm}>
         <a href=" " onClick={this.props.formToggleHandler}>
