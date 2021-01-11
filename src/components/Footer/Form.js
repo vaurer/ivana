@@ -18,9 +18,7 @@ class Form extends Component {
         })
     }
     onSubmit = (e) =>{
-        return;
-        /*
-        e.preventDefault();
+     
         this.props.onSubmit(this.state);
         this.setState({
             firstName: '',
@@ -29,7 +27,7 @@ class Form extends Component {
             message: '',
             userTelefonNummber: ''
         })
-        */
+       
     }
     render() { 
         return ( 
@@ -50,7 +48,7 @@ class Form extends Component {
               <br/>
               <input name="userTelefonNummber" value={this.state.userTelefonNummber} onChange={e => this.changeHandler(e)}></input>
               <label>Telefonnummer: </label>
-              <br/><input type="submit">absenden</input>
+              <br/><input type="submit" value="absenden"></input>
               <button onClick={e => this.onSubmit(e)}>Absenden</button>  
             </form>
             </div>
