@@ -1,59 +1,135 @@
 a {
-    /* background-color: rgb(184, 137, 228); */
-    color: black;
-    text-decoration: none;
+  /* background-color: rgb(184, 137, 228); */
+  color: black;
+  text-decoration: none;
 }
 
-i{
-    color: black;
-    text-decoration: none;
+i {
+  color: black;
+  text-decoration: none;
 }
 
-p{
-    color: black;
-    text-decoration: none;
+p {
+  color: black;
+  text-decoration: none;
 }
 .ContactTitle {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 .Center a {
-    /* background-color: rgb(184, 137, 228); */
-    color: black;
-    text-decoration: none;
+  /* background-color: rgb(184, 137, 228); */
+  color: black;
+  text-decoration: none;
 }
 
-.wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding-top: 1rem;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 1rem;
 }
 
-.header h1{
-    color: black;
-    
-
+.header h1 {
+  color: black;
 }
-.header{
-    text-align: center;
+.header {
+  text-align: center;
 }
 
 .ContactText {
-    padding: 2rem;
-    text-align: center;
+  padding: 1rem;
+  text-align: center;
 }
 .ContactText h2 {
+  text-align: center;
+  text-transform: uppercase;
+}
+.googleMap {
+  padding: 1rem;
+  text-align: center;
+}
+/* .googleMapShows{
+    padding-bottom: 20rem;
+} */
+.contactForm {
+  padding: 1rem;
+  text-align: center;
+}
+
+.contactImpressum {
+  padding: 1rem;
+  text-align: center;
+}
+
+.contactImpressum h2 {
+  text-align: center;
+}
+
+@media screen and (max-width: 960px) {
+  a {
+    /* background-color: rgb(184, 137, 228); */
+    color: black;
+    text-decoration: none;
+  }
+
+  i {
+    color: black;
+    text-decoration: none;
+  }
+
+  p {
+    color: black;
+    text-decoration: none;
+  }
+  .ContactTitle {
+    font-size: 0.2rem;
+  }
+  .Center a {
+    /* background-color: rgb(184, 137, 228); */
+    color: black;
+    text-decoration: none;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 6rem;
+  }
+
+  .header h1 {
+    color: black;
+  }
+  .header {
+    text-align: center;
+  }
+
+  .ContactText {
+    padding: 0.2rem;
+    text-align: center;
+  }
+  .ContactText h2 {
     text-align: center;
     text-transform: uppercase;
-}
-.googleMap{
-    padding: 2rem;
+  }
+  .googleMap {
+    padding: 0.2rem;
     text-align: center;
-}
-.googleMapShows{
-    padding-bottom: 20rem;
-}
-.contactForm{
-    padding: 2rem;
+  }
+  /* .googleMapShows{
+        padding-bottom: 20rem;
+    } */
+  .contactForm {
+    padding: 0.2rem;
     text-align: center;
+  }
+
+  .contactImpressum {
+    padding: 0.2rem;
+    text-align: center;
+  }
+
+  .contactImpressum h2 {
+    text-align: center;
+  }
 }
