@@ -17,6 +17,7 @@ export default class App extends Component {
   };
 
   galeryToggleHandler = () => {
+    console.log('galeryToggleHandler')
     this.setState((prevState) => {
       return { 
         showGalery: !prevState.showGalery,
@@ -71,8 +72,6 @@ export default class App extends Component {
       showForm:false,
       showVideos:false,
       showMap:false,
-      // picandtextArray: [],
-      // mainphoto: [],
       isLoaded: false,
       isLoaded1: false,
       mainid: "",
@@ -94,40 +93,6 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    // let temppicandtextArray = [];
-    // fetch(Constants.aboutURL)
-    //   .then((res) => res.json())
-    //   .then(
-    //     (result) => {
-    //       this.setState({
-    //         isLoaded1: true,
-    //         items: result.data,
-    //       });
-    //       this.state.items.forEach((element) => {
-    //         if (element.isactive === true) {
-    //           let line = {
-    //             id: element.id,
-    //             alt: element.alt,
-    //             title: element.title,
-    //             text: element.text,
-    //             image: element.image.data.thumbnails[5].url,
-    //           };
-    //           temppicandtextArray.push(line);
-    //         }
-    //       });
-    //       this.setState({
-    //         isLoaded1: true,
-    //         picandtextArray: temppicandtextArray,
-    //       });
-    //     },
-    //     (error) => {
-    //       this.setState({
-    //         isLoaded1: true,
-    //         error,
-    //       });
-    //     }
-    //   );
-
     fetch(Constants.restMainPicture)
     .then((res2) => res2.json())
     .then(
@@ -167,7 +132,6 @@ export default class App extends Component {
       <div className="App">
         <div>
         <If condition={this.state.showMain} >
-
         <ParallaxHolder show={this.state.showMain}
           alt={this.state.mainalt}
           src={this.state.mainimage}
