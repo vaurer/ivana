@@ -105,7 +105,7 @@ export default class ParallaxHolder extends Component {
           speed={0.1}
           
           onClick={this.props.videosToggleHandler}
-          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' , zIndex: '-1'}}>
           <img src={this.props.src2} alt={'1'} style={{ width: 'auto', opacity: 1 }}/>
           <div className={styles.container}> <p className={styles.centered}>{this.props.maintitle3}</p></div>
         </ParallaxLayer>
@@ -113,7 +113,7 @@ export default class ParallaxHolder extends Component {
         <ParallaxLayer
           offset={3}
           speed={-0}
-          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' , zIndex: '-1'}}>
           <FooterHolder formToggleHandler={this.props.formToggleHandler} mapToggleHandler={this.props.mapToggleHandler}/>
         </ParallaxLayer>
       </Parallax>

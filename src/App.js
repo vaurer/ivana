@@ -71,8 +71,8 @@ export default class App extends Component {
       showForm:false,
       showVideos:false,
       showMap:false,
-      picandtextArray: [],
-      mainphoto: [],
+      // picandtextArray: [],
+      // mainphoto: [],
       isLoaded: false,
       isLoaded1: false,
       mainid: "",
@@ -94,61 +94,61 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    let temppicandtextArray = [];
-    fetch(Constants.aboutURL)
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          this.setState({
-            isLoaded1: true,
-            items: result.data,
-          });
-          this.state.items.forEach((element) => {
-            if (element.isactive === true) {
-              let line = {
-                id: element.id,
-                alt: element.alt,
-                title: element.title,
-                text: element.text,
-                image: element.image.data.thumbnails[5].url,
-              };
-              temppicandtextArray.push(line);
-            }
-          });
-          this.setState({
-            isLoaded1: true,
-            picandtextArray: temppicandtextArray,
-          });
-        },
-        (error) => {
-          this.setState({
-            isLoaded1: true,
-            error,
-          });
-        }
-      );
+    // let temppicandtextArray = [];
+    // fetch(Constants.aboutURL)
+    //   .then((res) => res.json())
+    //   .then(
+    //     (result) => {
+    //       this.setState({
+    //         isLoaded1: true,
+    //         items: result.data,
+    //       });
+    //       this.state.items.forEach((element) => {
+    //         if (element.isactive === true) {
+    //           let line = {
+    //             id: element.id,
+    //             alt: element.alt,
+    //             title: element.title,
+    //             text: element.text,
+    //             image: element.image.data.thumbnails[5].url,
+    //           };
+    //           temppicandtextArray.push(line);
+    //         }
+    //       });
+    //       this.setState({
+    //         isLoaded1: true,
+    //         picandtextArray: temppicandtextArray,
+    //       });
+    //     },
+    //     (error) => {
+    //       this.setState({
+    //         isLoaded1: true,
+    //         error,
+    //       });
+    //     }
+    //   );
 
-    fetch(Constants.aboutURL)
+    fetch(Constants.restMainPicture)
     .then((res2) => res2.json())
     .then(
       (result2) => {
         this.setState({
           isLoaded: true,
-          mainid: result2.data[2].id,
-          mainalt: result2.data[2].alt,
-          maintitle: result2.data[2].title,
-          maintext: result2.data[2].textarea,
-          mainimage: result2.data[2].image.data.thumbnails[5].url,
-          main2id: result2.data[3].id,
-          main2alt: result2.data[3].alt,
-          main2title: result2.data[3].title,
-          main2text: result2.data[3].textarea,
-          main2image: result2.data[3].image.data.thumbnails[5].url,
-          main3id: result2.data[4].id,
-          main3alt: result2.data[4].alt,
-          main3title: result2.data[4].title,
-          main3text: result2.data[4].textarea,
-          main3image: result2.data[4].image.data.thumbnails[5].url,
+          mainid: result2.data[0].id,
+          mainalt: result2.data[0].alt,
+          maintitle: result2.data[0].title,
+          maintext: result2.data[0].textarea,
+          mainimage: result2.data[0].picture.data.full_url,
+          main2id: result2.data[1].id,
+          main2alt: result2.data[1].alt,
+          main2title: result2.data[1].title,
+          main2text: result2.data[1].textarea,
+          main2image: result2.data[1].picture.data.full_url,
+          main3id: result2.data[2].id,
+          main3alt: result2.data[2].alt,
+          main3title: result2.data[2].title,
+          main3text: result2.data[2].textarea,
+          main3image: result2.data[2].picture.data.full_url,
         });
       },
       (error) => {
