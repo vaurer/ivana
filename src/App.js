@@ -6,6 +6,7 @@ import Cell from './components/PhotoGrid/Cell'
 import { If } from 'rc-if-else';
 import Form from './components/Footer/Form'
 import GoogleMaps from "./components/Footer/GoogleMaps";
+import { Link, Route } from "react-router-dom";
 
 export default class App extends Component {
 
@@ -18,6 +19,7 @@ export default class App extends Component {
 
   galeryToggleHandler = () => {
     console.log('galeryToggleHandler')
+    this.props.history.push("/gallery")
     this.setState((prevState) => {
       return { 
         showGalery: !prevState.showGalery,
@@ -160,6 +162,7 @@ export default class App extends Component {
           <GoogleMaps mainSiteToggleHandler={this.mainSiteToggleHandler}/>
         </If>
         </div>
+        
       </div>
     );
   }
