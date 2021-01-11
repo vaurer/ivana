@@ -6,7 +6,7 @@ import Cell from './components/PhotoGrid/Cell'
 import { If } from 'rc-if-else';
 import Form from './components/Footer/Form'
 import GoogleMaps from "./components/Footer/GoogleMaps";
-import { Link, Route } from "react-router-dom";
+
 
 export default class App extends Component {
 
