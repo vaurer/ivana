@@ -32,11 +32,11 @@ class Form extends Component {
         return ( 
             <div className={styles.box}>
                 <h1>Wir sind für dich da</h1>
-            <form>
+            <form actíon="POST" data-netlify="true">
               <input name="firstName" value={this.state.firstName} onChange={e => this.changeHandler(e)}></input>
               <label>Vorname: </label>
               <br/>
-              <input name="lastName" value={this.state.lastName} onChange={e => this.changeHandler(e)}></input>
+              <input name="lastName"  value={this.state.lastName} onChange={e => this.changeHandler(e)}></input>
               <label>Nachname: </label>
               <br/>
               <input name="userEmail" value={this.state.userEmail} onChange={e => this.changeHandler(e)}></input>
