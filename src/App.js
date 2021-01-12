@@ -10,6 +10,8 @@ import GoogleMaps from "./components/Footer/GoogleMaps";
 
 export default class App extends Component {
 
+
+
   mainSiteToggleHandler = () => {
     this.setState({ showGalery: false });
     this.setState({ showMain: true });
