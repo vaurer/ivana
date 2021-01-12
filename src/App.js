@@ -6,6 +6,7 @@ import Cell from './components/PhotoGrid/Cell'
 import { If } from 'rc-if-else';
 import Form from './components/Footer/Form'
 import GoogleMaps from "./components/Footer/GoogleMaps";
+import Navbar from './components/Navbar/Navbar'
 
 export default class App extends Component {
 
@@ -135,6 +136,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <div>
+        <Navbar mainSiteToggleHandler={this.mainSiteToggleHandler} />
         <If condition={this.state.showMain} >
         <ParallaxHolder show={this.state.showMain}
           alt={this.state.mainalt}

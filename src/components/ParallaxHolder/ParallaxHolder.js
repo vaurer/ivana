@@ -3,7 +3,7 @@ import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons.cjs';
  import styles from './ParallaxHolder.module.css';
  import FooterHolder from '../Footer/FooterHolder'
 import MainPhoto from "../MainPhoto/MainPhoto";
-import Navbar from "../Navbar/Navbar";
+// import Navbar from "../Navbar/Navbar";
 
 export default class ParallaxHolder extends Component {
   constructor(props) {
@@ -34,11 +34,11 @@ export default class ParallaxHolder extends Component {
                   <img src={this.props.src2} alt={'1'} style={{ width: 'auto' , height: '60%', opacity: 0.7  }}/>
                 </ParallaxLayer>
 
-                <ParallaxLayer 
+                {/* <ParallaxLayer 
                   offset={-1}
                   speed={-1}>
                   <Navbar mainSiteToggleHandler={this.mainSiteToggleHandler} />
-                </ParallaxLayer>
+                </ParallaxLayer> */}
                 
                 <ParallaxLayer
                   offset={3}
@@ -63,7 +63,8 @@ export default class ParallaxHolder extends Component {
 
                 <ParallaxLayer
                   offset={0}
-                  speed={0.1}>
+                  speed={0.1}
+                  style={{zIndex:'4000'}}>
                   <MainPhoto
                   show={this.props.show}
                   alt={this.props.alt}
