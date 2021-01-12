@@ -7,12 +7,11 @@ import { If } from 'rc-if-else';
 import Form from './components/Footer/Form'
 import GoogleMaps from "./components/Footer/GoogleMaps";
 
-
 export default class App extends Component {
 
-
-
   mainSiteToggleHandler = () => {
+    console.log('mainSiteToggleHandler')
+    this.props.history.push("/")
     this.setState({ showGalery: false });
     this.setState({ showMain: true });
     this.setState({ showForm: false });
@@ -20,7 +19,6 @@ export default class App extends Component {
   };
 
   galeryToggleHandler = () => {
-    console.log('galeryToggleHandler')
     this.props.history.push("/gallery")
     this.setState((prevState) => {
       return { 
@@ -50,6 +48,7 @@ export default class App extends Component {
 
   formToggleHandler = (e) => {
     e.preventDefault();
+    this.props.history.push("/form")
     this.setState((prevState) => {
       return { showForm: !prevState.showForm,
         showMain: !prevState.showMain
@@ -59,6 +58,7 @@ export default class App extends Component {
 
   mapToggleHandler = (e) => {
     e.preventDefault();
+    this.props.history.push("/googlemaps")
     this.setState((prevState) => {
       return { showMap: !prevState.showMap,
         showMain: !prevState.showMain
@@ -164,7 +164,6 @@ export default class App extends Component {
           <GoogleMaps mainSiteToggleHandler={this.mainSiteToggleHandler}/>
         </If>
         </div>
-        
       </div>
     );
   }
