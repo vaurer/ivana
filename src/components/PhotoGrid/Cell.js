@@ -71,6 +71,7 @@ class Cell extends Component {
                   fullphoto: element.photo.data.full_url,
                   css: 'linear-gradient(-20deg, #ffffff 0%, #afa596 100%, #afa596 100%)',
                   height: 340,
+                  element: element,
                 };
                 tempdata.push(line);
               }
