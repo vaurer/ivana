@@ -58,7 +58,7 @@ export default class ParallaxHolder extends Component {
                   speed={0.1}
                   onClick={this.props.videosToggleHandler}
                   style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <img src={this.props.src} alt={this.props.alt} style={{ width: 'auto' , height: '90%', opacity: 0.7  }}/>
+                  <img src={this.props.src} alt={this.props.alt} style={{ width: 'auto' , height: '100vh', opacity: 0.7  }}/>
                 </ParallaxLayer>
 
               </Parallax>
