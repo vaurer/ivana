@@ -182,7 +182,7 @@ textarea:hover {
   }
 }
 
-/* @media screen and (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .box {
     height: 95%;
     position: absolute;
@@ -348,4 +348,4 @@ textarea:hover {
     padding: 1rem;
   }
 }
- */
+
