@@ -7,6 +7,7 @@ import { If } from 'rc-if-else';
 import Form from './components/Footer/Form'
 import GoogleMaps from "./components/Footer/GoogleMaps";
 import Navbar from './components/Navbar/Navbar'
+import ProductsHolder from "./components/ProductsHolder/ProductsHolder";
 
 export default class App extends Component {
 
@@ -17,6 +18,7 @@ export default class App extends Component {
     this.setState({ showMain: true });
     this.setState({ showForm: false });
     this.setState({ showMap: false });
+     this.setState({ showProducts: false });
   };
 
   galeryToggleHandler = () => {
@@ -26,7 +28,18 @@ export default class App extends Component {
         showGalery: !prevState.showGalery,
         showVideos: !prevState.showVideos,
         showMain: !prevState.showMain,
-        showCell: !prevState.showCell
+        showCell: !prevState.showCell,
+        showProducts: !prevState.showProducts
+      };
+    });
+  };
+
+  productsToggleHandler = () => {
+    this.setState((prevState) => {
+      return { 
+        showMain: !prevState.showMain,
+        showCell: !prevState.showCell,
+        showProducts: !prevState.showProducts
       };
     });
   };
@@ -77,6 +90,7 @@ export default class App extends Component {
       showForm:false,
       showVideos:false,
       showMap:false,
+      showProducts:false,
       isLoaded: false,
       isLoaded1: false,
       mainid: "",
@@ -150,7 +164,8 @@ export default class App extends Component {
           formToggleHandler={this.formToggleHandler} 
           galeryToggleHandler={this.galeryToggleHandler} 
           videosToggleHandler={this.videosToggleHandler} 
-          mapToggleHandler={this.mapToggleHandler}/>
+          mapToggleHandler={this.mapToggleHandler}
+          productsToggleHandler={this.productsToggleHandler}/>
         </If>
         </div>
         <div>
@@ -164,6 +179,9 @@ export default class App extends Component {
         </If>
         <If condition={this.state.showMap}>
           <GoogleMaps mainSiteToggleHandler={this.mainSiteToggleHandler}/>
+        </If>
+        <If condition={this.state.showProducts}>
+        <ProductsHolder mainSiteToggleHandler={this.mainSiteToggleHandler}/>
         </If>
         </div>
       </div>

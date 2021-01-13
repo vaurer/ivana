@@ -58,9 +58,9 @@ export default class ParallaxHolder extends Component {
                   offset={2}
                   speed={0.1}
                   style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'all'}}>
-                  <div className={styles.container}> <p className={styles.centered}>PRODUKTE</p></div>
+                  <div className={styles.container} onClick={this.props.productsToggleHandler}> <p className={styles.centered}>PRODUKTE</p></div>
                 </ParallaxLayer>
-
+                
                 <ParallaxLayer
                   offset={0}
                   speed={0.1}
