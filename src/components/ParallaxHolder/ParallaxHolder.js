@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons.cjs';
- import styles from './ParallaxHolder.module.css';
- import FooterHolder from '../Footer/FooterHolder'
-import MainPhoto from "../MainPhoto/MainPhoto";
-// import Navbar from "../Navbar/Navbar";
+import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons.cjs";
+import styles from "./ParallaxHolder.module.css";
+import FooterHolder from "../Footer/FooterHolder";
 
 export default class ParallaxHolder extends Component {
   constructor(props) {
@@ -33,12 +31,6 @@ export default class ParallaxHolder extends Component {
                   style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <img src={this.props.src2} alt={'1'} style={{ width: 'auto' , height: '60%', opacity: 0.7  }}/>
                 </ParallaxLayer>
-
-                {/* <ParallaxLayer 
-                  offset={-1}
-                  speed={-1}>
-                  <Navbar mainSiteToggleHandler={this.mainSiteToggleHandler} />
-                </ParallaxLayer> */}
                 
                 <ParallaxLayer
                   offset={3}
@@ -64,13 +56,9 @@ export default class ParallaxHolder extends Component {
                 <ParallaxLayer
                   offset={0}
                   speed={0.1}
-                  style={{zIndex:'4000'}}>
-                  <MainPhoto
-                  show={this.props.show}
-                  alt={this.props.alt}
-                  src={this.props.src}
-                  maintitle={this.props.maintitle}
-                  maintext={this.props.maintext}></MainPhoto>
+                  onClick={this.props.videosToggleHandler}
+                  style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <img src={this.props.src} alt={this.props.alt} style={{ width: 'auto' , height: '90%', opacity: 0.7  }}/>
                 </ParallaxLayer>
 
               </Parallax>

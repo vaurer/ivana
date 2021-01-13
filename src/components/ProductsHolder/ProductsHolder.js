@@ -32,7 +32,6 @@ class ProductsHolder extends Component {
     let widgets = [];
     this.state.productsArray.forEach((element) => {
       widgets.push(<Products key={element.id} element={element} />);
-      console.log(element)
     });
     return widgets;
   };
