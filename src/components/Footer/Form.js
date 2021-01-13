@@ -29,8 +29,13 @@ class Form extends Component {
   };
   render() {
     return (
+      <div>
+        <div className={styles.close}>
+        <i className="fas fa-times"></i>
+        </div>
       <div className={styles.box}>
-        <h1>Wir sind für dich da</h1>
+        <h1>Wir sind für dich da</h1>     
+        <div className={styles.boxForm}>
         <form name="contact" method="post">
           <input type="hidden" name="form-name" value="contact" />
           <input
@@ -38,39 +43,43 @@ class Form extends Component {
             value={this.state.firstName}
             onChange={(e) => this.changeHandler(e)}
           ></input>
-          <label>Vorname: </label>
+          <label>Vorname </label>
           <br />
           <input
             name="lastName"
             value={this.state.lastName}
             onChange={(e) => this.changeHandler(e)}
           ></input>
-          <label>Nachname: </label>
+          <label>Nachname </label>
           <br />
           <input
             name="userEmail"
             value={this.state.userEmail}
             onChange={(e) => this.changeHandler(e)}
           ></input>
-          <label>E-mail: </label>
+          <label>E-mail </label>
           <br />
           <textarea
             name="message"
             value={this.state.message}
             onChange={(e) => this.changeHandler(e)}
           ></textarea>
-          <label>Nachricht: </label>
+          <label>Nachricht </label>
           <br />
           <input
             name="userTelefonNummber"
             value={this.state.userTelefonNummber}
             onChange={(e) => this.changeHandler(e)}
           ></input>
-          <label>Telefonnummer: </label>
+          <label>Telefonnummer </label>
           <br />
-          <input type="submit" value="absenden"></input>
+          <br />
+          <br />
+          <input type="submit" value="Absenden"></input>
          
         </form>
+        </div>
+      </div>
       </div>
     );
   }
