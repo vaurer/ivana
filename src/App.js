@@ -65,7 +65,8 @@ export default class App extends Component {
     // this.props.history.push("/form")
     this.setState((prevState) => {
       return { showForm: !prevState.showForm,
-        showMain: !prevState.showMain
+        showMain: !prevState.showMain,
+        showNav: !prevState.showNav
       };
     });
   };
@@ -91,6 +92,7 @@ export default class App extends Component {
       showVideos:false,
       showMap:false,
       showProducts:false,
+      showNav:true,
       isLoaded: false,
       isLoaded1: false,
       mainid: "",
@@ -150,7 +152,9 @@ export default class App extends Component {
     return (
       <div className="App">
         <div>
+        <If condition={this.state.showNav} >
         <Navbar mainSiteToggleHandler={this.mainSiteToggleHandler} />
+        </If>
         <If condition={this.state.showMain} >
         <ParallaxHolder show={this.state.showMain}
           alt={this.state.mainalt}

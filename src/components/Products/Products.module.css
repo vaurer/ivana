@@ -1,8 +1,10 @@
-.container {
+/* .container {
   position: relative;
   font-family: Arial;
   width: auto;
   margin-bottom: 1vh;
+  display: flex;
+  justify-content: space-between;
 }
 
 .textBlock {
@@ -13,9 +15,26 @@
   color: white;
   padding-left: 20px;
   padding-right: 20px;
-}
+} */
 
 .textInBox {
     color: white;
-  }
+  } 
 
+  .containerProducts {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto; 
+    margin-bottom: 2vh;
+    display: flex;
+  }
+  
+  .contentProducts {
+    position: absolute;
+    bottom: 0; 
+    background: rgb(0, 0, 0); 
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1; 
+    width: 100%; 
+    padding: 20px; 
+  }
