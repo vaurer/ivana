@@ -6,26 +6,40 @@ import Cell from './components/PhotoGrid/Cell'
 import { If } from 'rc-if-else';
 import Form from './components/Footer/Form'
 import GoogleMaps from "./components/Footer/GoogleMaps";
-
+import Navbar from './components/Navbar/Navbar'
+import ProductsHolder from "./components/ProductsHolder/ProductsHolder";
 
 export default class App extends Component {
 
   mainSiteToggleHandler = () => {
+    console.log('mainSiteToggleHandler')
+    // this.props.history.push("/")
     this.setState({ showGalery: false });
     this.setState({ showMain: true });
     this.setState({ showForm: false });
     this.setState({ showMap: false });
+     this.setState({ showProducts: false });
   };
 
   galeryToggleHandler = () => {
-    console.log('galeryToggleHandler')
-    this.props.history.push("/gallery")
+    // this.props.history.push("/gallery")
     this.setState((prevState) => {
       return { 
         showGalery: !prevState.showGalery,
         showVideos: !prevState.showVideos,
         showMain: !prevState.showMain,
-        showCell: !prevState.showCell
+        showCell: !prevState.showCell,
+        showProducts: !prevState.showProducts
+      };
+    });
+  };
+
+  productsToggleHandler = () => {
+    this.setState((prevState) => {
+      return { 
+        showMain: !prevState.showMain,
+        showCell: !prevState.showCell,
+        showProducts: !prevState.showProducts
       };
     });
   };
@@ -48,6 +62,7 @@ export default class App extends Component {
 
   formToggleHandler = (e) => {
     e.preventDefault();
+    // this.props.history.push("/form")
     this.setState((prevState) => {
       return { showForm: !prevState.showForm,
         showMain: !prevState.showMain
@@ -57,6 +72,7 @@ export default class App extends Component {
 
   mapToggleHandler = (e) => {
     e.preventDefault();
+    // this.props.history.push("/googlemaps")
     this.setState((prevState) => {
       return { showMap: !prevState.showMap,
         showMain: !prevState.showMain
@@ -74,6 +90,7 @@ export default class App extends Component {
       showForm:false,
       showVideos:false,
       showMap:false,
+      showProducts:false,
       isLoaded: false,
       isLoaded1: false,
       mainid: "",
@@ -133,6 +150,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <div>
+        <Navbar mainSiteToggleHandler={this.mainSiteToggleHandler} />
         <If condition={this.state.showMain} >
         <ParallaxHolder show={this.state.showMain}
           alt={this.state.mainalt}
@@ -146,7 +164,8 @@ export default class App extends Component {
           formToggleHandler={this.formToggleHandler} 
           galeryToggleHandler={this.galeryToggleHandler} 
           videosToggleHandler={this.videosToggleHandler} 
-          mapToggleHandler={this.mapToggleHandler}/>
+          mapToggleHandler={this.mapToggleHandler}
+          productsToggleHandler={this.productsToggleHandler}/>
         </If>
         </div>
         <div>
@@ -161,8 +180,10 @@ export default class App extends Component {
         <If condition={this.state.showMap}>
           <GoogleMaps mainSiteToggleHandler={this.mainSiteToggleHandler}/>
         </If>
+        <If condition={this.state.showProducts}>
+        <ProductsHolder mainSiteToggleHandler={this.mainSiteToggleHandler}/>
+        </If>
         </div>
-        
       </div>
     );
   }
