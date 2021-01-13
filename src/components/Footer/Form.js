@@ -74,7 +74,6 @@ class Form extends Component {
           <label>Telefonnummer </label>
           <br />
           <br />
-          <br />
           <input type="submit" value="Absenden"></input>
          
         </form>
