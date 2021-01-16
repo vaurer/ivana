@@ -40,6 +40,7 @@ class AboutUsHolder extends Component{
           <div style={{ margin: "150px" }}>
               <h1>Über uns</h1>
             <div>{this.getInfo()}</div>
+            
           </div>
         );
       }
