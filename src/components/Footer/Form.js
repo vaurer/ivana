@@ -30,52 +30,72 @@ class Form extends Component {
   render() {
     return (
       <div>
-        <div className={styles.close}>
-        <i className="fas fa-times"></i>
-        </div>
-      <div className={styles.box}>
-        <h1>Wir sind für dich da</h1>     
+        <div className={styles.box}>          
         <div className={styles.boxForm}>
         <form name="contact" method="post">
           <input type="hidden" name="form-name" value="contact" />
+          <div className={styles.row}>
+            <div className={styles.closeIframe}>
+          <i className="fas fa-times"></i>
+          </div>
+          </div>
+          <div className={styles.row}>
+              <h1>Wir sind für dich da</h1>
+          </div>
+          <div className={styles.row}>
           <input
             name="firstName"
             value={this.state.firstName}
             onChange={(e) => this.changeHandler(e)}
           ></input>
+          </div>
+          <div className={styles.row}>
           <label>Vorname </label>
-          <br />
+          </div>
+          <div className={styles.row}>
           <input
             name="lastName"
             value={this.state.lastName}
             onChange={(e) => this.changeHandler(e)}
           ></input>
+          </div>
+          <div className={styles.row}>
           <label>Nachname </label>
-          <br />
+          </div>
+          <div className={styles.row}>
           <input
             name="userEmail"
             value={this.state.userEmail}
             onChange={(e) => this.changeHandler(e)}
           ></input>
+          </div>
+          <div className={styles.row}>
           <label>E-mail </label>
-          <br />
+          </div>
+          <div className={styles.row}>
           <textarea
             name="message"
             value={this.state.message}
             onChange={(e) => this.changeHandler(e)}
           ></textarea>
+          </div>
+          <div className={styles.row}>
           <label>Nachricht </label>
-          <br />
+          </div>
+          <div className={styles.row}>
           <input
             name="userTelefonNummber"
             value={this.state.userTelefonNummber}
             onChange={(e) => this.changeHandler(e)}
           ></input>
+          </div>
+          <div className={styles.row}>
           <label>Telefonnummer </label>
-          <br />
-          <br />
+          </div>
+          <br></br>
+          <div className={styles.row}>
           <input type="submit" value="Absenden"></input>
-         
+          </div>
         </form>
         </div>
       </div>
