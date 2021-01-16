@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Constants from "../../helper/Constants";
+import AboutUs from "./AboutUs";
 
 class AboutUsHolder extends Component{
     constructor(props) {
@@ -7,6 +8,8 @@ class AboutUsHolder extends Component{
         this.state = {
           isLoaded: false,
           aboutUsArray: [],
+          title:'',
+          text:'',
         };
       }
       componentDidMount() {
@@ -17,6 +20,8 @@ class AboutUsHolder extends Component{
               this.setState({
                 isLoaded: true,
                 aboutUsArray: result.data,
+                title:result.data[0].title,
+                text:result.data[0].text,
               });
             },
             (error) => {
@@ -24,23 +29,18 @@ class AboutUsHolder extends Component{
                 isLoaded: true,
                 error,
               });
+              
             }
           );
       }
-      getInfo = () => {
-        let widgets = [];
-        this.state.aboutUsArray.forEach((element) => {
-          widgets.push(<Products key={element.id} element={element} />); //used for AboutUS
-        });
-        return widgets;
-      };
     
       render() {
         return (
-          <div style={{ margin: "150px" }}>
-              <h1>Über uns</h1>
-            <div>{this.getInfo()}</div>
-            
+          <div>
+            <h1>{this.state.title}</h1>
+              <h3>{this.state.text}</h3>
+            <AboutUs aboutUsArray={this.state.aboutUsArray}/>
+
           </div>
         );
       }

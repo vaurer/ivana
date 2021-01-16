@@ -8,6 +8,7 @@ import Form from './components/Footer/Form'
 import GoogleMaps from "./components/Footer/GoogleMaps";
 import Navbar from './components/Navbar/Navbar'
 import ProductsHolder from "./components/ProductsHolder/ProductsHolder";
+import AboutUsHolder from "./components/AboutUs/AboutUsHolder";
 
 export default class App extends Component {
 
@@ -40,6 +41,15 @@ export default class App extends Component {
         showMain: !prevState.showMain,
         showCell: !prevState.showCell,
         showProducts: !prevState.showProducts
+      };
+    });
+  };
+
+  aboutUsToggleHandler = () => {
+    this.setState((prevState) => {
+      return { 
+        showMain: !prevState.showMain,
+        showAboutUs: !prevState.showAboutUs
       };
     });
   };
@@ -93,8 +103,10 @@ export default class App extends Component {
       showMap:false,
       showProducts:false,
       showNav:true,
+      showAboutUs:false,
       isLoaded: false,
       isLoaded1: false,
+      aboutUs: false,
       mainid: "",
       mainalt: "null",
       maintitle: "null",
@@ -110,6 +122,7 @@ export default class App extends Component {
       main3title: "null",
       main3text: "null",
       main3image: "null",
+      aboutUsTitle:'null',
     };
   }
 
@@ -144,16 +157,39 @@ export default class App extends Component {
         });
       }
     );
+
+    fetch(Constants.aboutURL)
+          .then((res) => res.json())
+          .then(
+            (result) => {
+              this.setState({
+                isLoaded: true,
+                aboutUsArray: result.data,
+                title:result.data[0].title,
+                text:result.data[0].text,
+                aboutUs:result.public,
+                aboutUsTitle:result.data[0].title,
+              });
+            },
+            (error) => {
+              this.setState({
+                isLoaded: true,
+                error,
+              });
+              
+            }
+          );
   }
 
   render() {
-    
-
     return (
       <div className="App">
         <div>
         <If condition={this.state.showNav} >
-        <Navbar mainSiteToggleHandler={this.mainSiteToggleHandler} />
+        <Navbar 
+        aboutUs={this.state.aboutUsTitle}
+        mainSiteToggleHandler={this.mainSiteToggleHandler} 
+        aboutUsToggleHandler={this.aboutUsToggleHandler}/>
         </If>
         <If condition={this.state.showMain} >
         <ParallaxHolder show={this.state.showMain}
@@ -186,6 +222,9 @@ export default class App extends Component {
         </If>
         <If condition={this.state.showProducts}>
         <ProductsHolder mainSiteToggleHandler={this.mainSiteToggleHandler}/>
+        </If>
+        <If condition={this.state.showAboutUs}>
+        <AboutUsHolder/>
         </If>
         </div>
       </div>

@@ -125,4 +125,9 @@
         color: white;
         font-size: 1.5rem;
     }
+
+    .navButton{
+        background: black;
+        font-size: 5rem;
+    }
 }
