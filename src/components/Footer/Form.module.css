@@ -1,9 +1,26 @@
-.box {
+/* Google Map Css */
+
+.MapSize {
+  width: 100%;
   height: 100%;
+  border: 0;
+}
+
+/* Form Css */
+
+.box {
+  box-sizing: border-box;
+}
+
+.row h1{
+  text-align: center;
+}
+
+.boxForm {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 400px;
+  width: 500px;
   padding: 1.5rem;
   transform: translate(-50%, -50%);
   background: rgba(0, 0, 0, 0.5);
@@ -11,10 +28,23 @@
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
 }
+
+textarea:hover {
+  background: silver;
+  color: #fff;
+  box-shadow: 0 0 5px silver;
+}
+
+input:hover {
+  background: silver;
+  color: #fff;
+  box-shadow: 0 0 5px silver;
+}
+
 input {
   width: 100%;
   padding: 10px 0;
-  font-size: 16px;
+  font-size: 20px;
   color: #fff;
   border: none;
   border-bottom: 1px solid #fff;
@@ -22,6 +52,7 @@ input {
   background: transparent;
   margin-bottom: 5px;
 }
+
 textarea {
   width: 100%;
   padding: 10px 0;
@@ -32,72 +63,45 @@ textarea {
   outline: none;
   background: transparent;
 }
-form {
-  height: 100%;
+.row label {
+  display: flex;
+  color: black;
+  font-size: 14px;
+}
+
+.closeIframe{
   position: relative;
-  display: inline-block;
+  top: -10px;
+  left: 400px;
+  
+}
+
+.row i{
+  color: black;
+  font-size: larger;
+}
+
+form {
   padding: 10px 20px;
-  color: silver;
+  color: black;
   font-size: 16px;
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
   transition: 0.5s;
   margin-top: 40px;
-  letter-spacing: 4px;
-}
-h1 {
-  color: #fff;
-  text-align: center;
-}
-input:focus + label,
-input:valid + label {
-  top: -20px;
-  left: 0;
-  color: black;
-  font-size: 12px;
+  letter-spacing: 2px;
 }
 
-textarea:valid + label,
-textarea:focus + label {
-  top: -10px;
-  left: 0;
-  color: black;
-  font-size: 12px;
-}
-input:hover {
-  background: silver;
-  color: #fff;
-  /* border-radius: 5px; */
-  box-shadow: 0 0 5px silver;
-}
-textarea:hover {
-  background: silver;
-  color: #fff;
-  /* border-radius: 5px; */
-  box-shadow: 0 0 5px silver;
-}
-.MapSize {
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-.close i {
-  font-size: 2.5rem;
-  position: absolute;
-  right: 0;
-  padding-right: 1rem;
-  padding-top: 1rem;
-}
+
 
 @media screen and (max-width: 325px) {
-  .box {
-    height: 95%;
+  .boxForm {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 275px;
-    padding: 0.1rem;
+    width: 250px;
+    padding: 1.5rem;
     transform: translate(-50%, -50%);
     background: rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
@@ -105,16 +109,168 @@ textarea:hover {
     border-radius: 10px;
   }
 
+  .row h1{
+    font-size: small;
+    text-align: center;
+  }
+
   input {
     width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
+    padding: 5px 0;
+    font-size: 14px;
     color: #fff;
     border: none;
     border-bottom: 1px solid #fff;
     outline: none;
     background: transparent;
     margin-bottom: 5px;
+  }
+
+  textarea {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #fff;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+
+  .row label {
+    display: flex;
+    color: black;
+    font-size: 9px;
+  }
+
+  .closeIframe{
+    position: absolute;
+    top: 10px;
+    left: 230px;   
+  }
+
+  .row i{
+    color: black;
+    font-size: small;
+  }
+
+  form {
+    padding: 10px 10px;
+    color: black;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.5s;
+    margin-top: 10px;
+    letter-spacing: 2px;
+  }
+}
+
+
+
+
+@media screen and (min-width: 326px) and (max-width: 480px) {
+  .boxForm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    padding: 1.5rem;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+  }
+
+  .row h1{
+    font-size: 16px;
+    text-align: center;
+  }
+
+  input {
+    width: 100%;
+    padding: 5px 0;
+    font-size: 14px;
+    color: #fff;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+    margin-bottom: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #fff;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+
+  .row label {
+    display: flex;
+    color: black;
+    font-size: 12px;
+  }
+
+  .closeIframe{
+    position: absolute;
+    top: 10px;
+    left: 270px;   
+  }
+
+  .row i{
+    color: black;
+    font-size: small;
+  }
+
+  form {
+    padding: 10px 10px;
+    color: black;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.5s;
+    margin-top: 10px;
+    letter-spacing: 2px;
+  }
+}
+
+ @media screen and (min-width: 481px) and (max-width: 680px) {
+  .boxForm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 1.5rem;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+  }
+
+  .row h1{
+    font-size: 20px;
+    text-align: center;
+  }
+
+  input {
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+    margin-bottom: 10px;
   }
 
   textarea {
@@ -128,336 +284,62 @@ textarea:hover {
     background: transparent;
   }
 
-  .close i {
-    font-size: 1.3rem;
-    position: absolute;
-    right: 0px;
+  .row label {
+    display: flex;
     color: black;
-    padding-right: 0.5rem;
-    padding-top: 0.5rem;
+    font-size: 12px;
+  }
+
+  .closeIframe{
+    position: absolute;
+    top: 10px;
+    left: 370px;   
+  }
+
+  .row i{
+    color: black;
+    font-size: small;
   }
 
   form {
-    height: 80%;
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    color: silver;
+    padding: 10px 10px;
+    color: black;
     font-size: 16px;
     text-decoration: none;
     text-transform: uppercase;
     overflow: hidden;
     transition: 0.5s;
-    margin-top: -20px;
-    letter-spacing: 4px;
+    margin-top: 10px;
+    letter-spacing: 2px;
   }
 }
 
-
-
-
-@media screen and (min-width: 326px) and (max-width: 480px) {
-  .box {
-    height: 95%;
+@media screen and (min-height: 732px) and (max-height: 800px){
+  .boxForm {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 300px;
-    padding: 0.1rem;
+    padding: 1.5rem;
     transform: translate(-50%, -50%);
     background: rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
-  }
-
-  .close i {
-    font-size: 1rem;
-    position: absolute;
-    right: 0px;
-    color: black;
-  }
-
-  form {
-    height: 100%;
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    color: silver;
-    font-size: 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: 0.5s;
-    margin-top: 20px;
-    letter-spacing: 4px;
   }
 }
 
- @media screen and (min-width: 481px) and (max-width: 680px) {
-  .box {
-    height: 95%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 400px;
-    padding: 0.1rem;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.5);
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
-  }
-
-  .close i {
-    font-size: 1rem;
-    position: absolute;
-    right: 0px;
-    color: black;
-  }
-
-  form {
-    height: 100%;
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    color: silver;
-    font-size: 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: 0.5s;
-    margin-top: 40px;
-    letter-spacing: 4px;
-  }
-}
-
-@media screen and (min-width: 681px) and (max-width: 900px){
-  .box {
-    height: 80%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 400px;
-    padding: 0.1rem;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.5);
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
-  }
-
-  .close i {
-    font-size: 1rem;
-    position: absolute;
-    right: 0px;
-    color: black;
-  }
-
-  form {
-    height: 100%;
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    color: silver;
-    font-size: 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: 0.5s;
-    margin-top: 50px;
-    letter-spacing: 4px;
-  }
-}
-
-@media screen and (min-width: 901px) and (max-width: 1200px) {
-  .box {
-    height: 95%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 400px;
-    padding: 0.1rem;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.5);
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
-  }
-
-  .close i {
-    font-size: 1rem;
-    position: absolute;
-    right: 0px;
-    color: black;
-  }
-
-  form {
-    height: 100%;
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    color: silver;
-    font-size: 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: 0.5s;
-    margin-top: 40px;
-    letter-spacing: 4px;
-  }
-}
-
-@media screen and (min-width: 1201px) {
-  .box {
-    height: 95%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 500px;
-    padding: 0.1rem;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.5);
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
-  }
-
-  .close i {
-    font-size: 1rem;
-    position: absolute;
-    right: 0px;
-    color: black;
-  }
-
-  form {
-    height: 100%;
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    color: silver;
-    font-size: 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: 0.5s;
-    margin-top: 40px;
-    letter-spacing: 4px;
-  }
-
-} 
-
-@media screen and (min-height: 732px) and (max-height: 960px){
-  .box {
-    height: 80%;
+@media screen and (min-height: 801px) and (max-height: 961px){
+  .boxForm {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 300px;
-    padding: 0.1rem;
+    padding: 1.5rem;
     transform: translate(-50%, -50%);
     background: rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
   }
-
-  .close i {
-    font-size: 1rem;
-    position: absolute;
-    right: 0px;
-    color: black;
-  }
-
-  form {
-    height: 100%;
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    color: silver;
-    font-size: 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: 0.5s;
-    margin-top: 20px;
-    letter-spacing: 4px;
-  }
 }
-
-@media screen and (min-height: 961px) and (max-height: 1030){
-  .box {
-    height: 70%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300px;
-    padding: 0.1rem;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.5);
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
-  }
-
-  .close i {
-    font-size: 1rem;
-    position: absolute;
-    right: 0px;
-    color: black;
-  }
-
-  form {
-    height: 100%;
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    color: silver;
-    font-size: 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: 0.5s;
-    margin-top: 20px;
-    letter-spacing: 4px;
-  }
-}
-
-@media screen and (min-height: 1031px){
-  .box {
-    height: 60%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300px;
-    padding: 0.1rem;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.5);
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
-  }
-
-  .close i {
-    font-size: 1rem;
-    position: absolute;
-    right: 0px;
-    color: black;
-  }
-
-  form {
-    height: 100%;
-    position: relative;
-    display: inline-block;
-    padding: 20px 20px;
-    color: silver;
-    font-size: 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: 0.5s;
-    margin-top: 40px;
-    letter-spacing: 4px;
-  }
-}
-
