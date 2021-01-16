@@ -40,7 +40,7 @@ class Navbar extends Component {
             className="navbar-logo"
             onClick={this.props.mainSiteToggleHandler}
           >
-            Ivana{" "}
+            Ivanahairart{" "}
           </h1>
           <div className="menu-icon" onClick={this.handleClick}>
             <i
