@@ -42,6 +42,7 @@ class Form extends Component {
           <div className={styles.row}>
               <h1>Wir sind für dich da</h1>
           </div>
+          <br></br>
           <div className={styles.row}>
           <input
             name="firstName"
