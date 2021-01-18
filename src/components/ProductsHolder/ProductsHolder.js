@@ -38,8 +38,8 @@ class ProductsHolder extends Component {
 
   render() {
     return (
-      <div style={{ margin: "150px" }}>
-        <div>{this.getProducts()}</div>
+      <div style={{backgroundColor:  '#a69c8f' }}>
+        <div >{this.getProducts()}</div>
       </div>
     );
   }

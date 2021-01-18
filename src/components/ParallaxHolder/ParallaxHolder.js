@@ -8,7 +8,14 @@ export default class ParallaxHolder extends Component {
     super(props);
     this.state = {
     };
+    // this.goto3ToggleHandler = this.goto3ToggleHandler.bind(this);
   }
+
+//   goto3ToggleHandler() {
+//    //this.parallax.scrollTo(3)
+//    alert('HELLO WORLD')
+// }
+
     render(){
         return(
             <div>
@@ -56,7 +63,6 @@ export default class ParallaxHolder extends Component {
                 <ParallaxLayer
                   offset={0}
                   speed={0.1}
-                  // onClick={this.props.videosToggleHandler}
                   onClick={() => this.parallax.scrollTo(1)}
                   style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <img src={this.props.src} alt={this.props.alt} style={{ width: 'auto' , height: '100vh', opacity: 0.7  }}/>

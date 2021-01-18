@@ -31,6 +31,7 @@ class Navbar extends Component {
   handleClick = () => {
     this.setState({ clicked: !this.state.clicked });
   };
+
   
 
   render() {
@@ -46,7 +47,16 @@ class Navbar extends Component {
           </div>
           {<ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
               <li key="1">
-                <button className="navButton" onClick={this.props.aboutUsToggleHandler}>{this.props.aboutUs}</button>
+                <div className="navButton" onClick={this.props.aboutUsToggleHandler}>{this.props.aboutUs}</div>
+              </li>
+              <li key="2">
+                <div className="navButton" onClick={this.props.galeryToggleHandler}>Galery</div>
+              </li>
+              <li key="3">
+                <div className="navButton" onClick={this.props.productsToggleHandler}>Produkte</div>
+              </li>
+              <li key="4">
+                <div className="navButton" onClick={this.props.mainSite3ParToggleHandler}>Contact</div>
               </li>
             </ul>
           }
@@ -57,3 +67,4 @@ class Navbar extends Component {
 }
 
 export default Navbar;
+

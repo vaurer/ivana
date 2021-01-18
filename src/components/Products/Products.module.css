@@ -17,11 +17,13 @@
   padding-right: 20px;
 } */
 
+
 .textInBox {
     color: white;
   } 
 
   .containerProducts {
+    padding-top: 80px;
     position: relative;
     max-width: 800px;
     margin: 0 auto; 
@@ -30,6 +32,7 @@
   }
   
   .contentProducts {
+    margin-top: 150px;
     position: absolute;
     bottom: 0; 
     background: rgb(0, 0, 0); 

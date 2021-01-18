@@ -13,7 +13,15 @@ import AboutUsHolder from "./components/AboutUs/AboutUsHolder";
 export default class App extends Component {
 
   mainSiteToggleHandler = () => {
-    console.log('mainSiteToggleHandler')
+    // this.props.history.push("/")
+    this.setState({ showGalery: false });
+    this.setState({ showMain: true });
+    this.setState({ showForm: false });
+    this.setState({ showMap: false });
+     this.setState({ showProducts: false });
+  };
+
+  mainSite3ParToggleHandler = () => {
     // this.props.history.push("/")
     this.setState({ showGalery: false });
     this.setState({ showMain: true });
@@ -91,7 +99,6 @@ export default class App extends Component {
     });
   };
   
-
   constructor(props) {
     super(props);
     this.state = {
@@ -124,6 +131,7 @@ export default class App extends Component {
       main3image: "null",
       aboutUsTitle:'null',
     };
+    // this.goto3ToggleHandler= this.goto3ToggleHandler.bind(this);
   }
 
   componentDidMount() {
@@ -189,10 +197,16 @@ export default class App extends Component {
         <Navbar 
         aboutUs={this.state.aboutUsTitle}
         mainSiteToggleHandler={this.mainSiteToggleHandler} 
-        aboutUsToggleHandler={this.aboutUsToggleHandler}/>
+        aboutUsToggleHandler={this.aboutUsToggleHandler}
+        galeryToggleHandler={this.galeryToggleHandler}
+        productsToggleHandler={this.productsToggleHandler}
+        mainSite3ParToggleHandler={this.mainSite3ParToggleHandler} />
+        
         </If>
         <If condition={this.state.showMain} >
-        <ParallaxHolder show={this.state.showMain}
+        <ParallaxHolder 
+          goto3ToggleHandler={this.goto3ToggleHandler}
+          show={this.state.showMain}
           alt={this.state.mainalt}
           src={this.state.mainimage}
           maintext={this.state.maintext} 
