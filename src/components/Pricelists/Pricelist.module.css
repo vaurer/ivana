@@ -2,10 +2,6 @@
     display: flex;
     justify-content: center;
 }
-h2 {
-    display: flex;
-    justify-content: left;
-}
 .listitems{
     display: flex;
     justify-content:left; 
@@ -22,6 +18,4 @@ table {
   }
   tr:nth-child(even){
     background-color: white /* #F4F3F0 */;
-;
-    ;
   }

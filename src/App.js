@@ -101,7 +101,7 @@ export default class App extends Component {
     this.setState({ showVideos: false });
     this.setState({ showProducts: false });
     this.setState({ showAboutUs: false });
-    this.setState({ showNav: false });
+    this.setState({ showNav: true });
     this.setState({ showPrices: true });
   };
 

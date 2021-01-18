@@ -50,13 +50,13 @@ class Navbar extends Component {
                 <div className="navButton" onClick={this.props.aboutUsToggleHandler}>{this.props.aboutUs}</div>
               </li>
               <li key="2">
-                <div className="navButton" onClick={this.props.galeryToggleHandler}>Galery</div>
+                <div className="navButton" onClick={this.props.galeryToggleHandler}>Galerie</div>
               </li>
               <li key="3">
                 <div className="navButton" onClick={this.props.productsToggleHandler}>Produkte</div>
               </li>
               <li key="4">
-                <div className="navButton" onClick={this.props.mainSite3ParToggleHandler}>Contact</div>
+                <div className="navButton" onClick={this.props.mainSite3ParToggleHandler}>Kontakt</div>
               </li>
               <li key="5">
                 <div className="navButton" onClick={this.props.pricesToggleHandler}>Preise</div>
