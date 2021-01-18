@@ -21,6 +21,16 @@ export default class App extends Component {
      this.setState({ showProducts: false });
   };
 
+  mainSiteToggleHandler2 = () => {
+    // this.props.history.push("/")
+    this.setState({ showGalery: false });
+    this.setState({ showMain: true });
+    this.setState({ showForm: false });
+    this.setState({ showMap: false });
+     this.setState({ showProducts: false });
+     this.setState({ showNav: true });
+  };
+
   mainSite3ParToggleHandler = () => {
     // this.props.history.push("/")
     this.setState({ showGalery: false });
@@ -233,7 +243,7 @@ export default class App extends Component {
           <Form onSubmit={(fields) => this.onSubmit(fields)} />
         </If>
         <If condition={this.state.showMap}>
-          <GoogleMaps mainSiteToggleHandler={this.mainSiteToggleHandler}/>
+          <GoogleMaps mainSiteToggleHandler2={this.mainSiteToggleHandler2}/>
         </If>
         <If condition={this.state.showProducts}>
         <ProductsHolder mainSiteToggleHandler={this.mainSiteToggleHandler}/>

@@ -25,7 +25,8 @@ class Cell extends Component {
                   <CloseOutlined
                     type="close"
                     style={{ cursor: 'pointer' }}
-                    onClick={toggle}
+                    // onClick={toggle}
+                    onClick={this.props.mainSiteToggleHandler}
                   />
                 </div>
                 <img src={this.props.fullphoto} alt={this.props.alt}></img>
