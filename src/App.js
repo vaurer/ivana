@@ -94,7 +94,8 @@ export default class App extends Component {
     // this.props.history.push("/googlemaps")
     this.setState((prevState) => {
       return { showMap: !prevState.showMap,
-        showMain: !prevState.showMain
+        showMain: !prevState.showMain,
+        showNav: !prevState.showNav
       };
     });
   };
