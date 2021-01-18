@@ -10,7 +10,7 @@ class Category extends Component {
             if (((element.category === 'Damen'))) {
                 tempName = element.category;
                 widgets.push(
-                    <tr style={{backgroundColor: " #DEDBD3"}}>
+                    <tr style={{backgroundColor: "#AFA596"}}>
                         <th> <h2>{element.category}</h2></th>
                         <th> <h3>kurz</h3></th>
                         <th> <h3>mittel</h3></th>
@@ -35,7 +35,7 @@ class Category extends Component {
             if ((tempName == null) || (tempName !== element.category)) {
                 tempName = element.category;
                 widgets.push(
-                    <tr style={{backgroundColor: "#DEDBD3"}} >
+                    <tr style={{backgroundColor: "#AFA596"}} >
                         <th> <h2>{element.category}</h2></th>
                         <th> <h2> </h2></th>
                         <th> <h2> </h2></th>
