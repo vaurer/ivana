@@ -18,7 +18,11 @@ export default class App extends Component {
     this.setState({ showMain: true });
     this.setState({ showForm: false });
     this.setState({ showMap: false });
-     this.setState({ showProducts: false });
+    this.setState({ showCell: false });
+    this.setState({ showVideos: false });
+    this.setState({ showProducts: false });
+    this.setState({ showAboutUs: false });
+    this.setState({ showNav: true });
   };
 
   mainSiteToggleHandler2 = () => {
@@ -27,7 +31,10 @@ export default class App extends Component {
     this.setState({ showMain: true });
     this.setState({ showForm: false });
     this.setState({ showMap: false });
-     this.setState({ showProducts: false });
+    this.setState({ showCell: false });
+    this.setState({ showVideos: false });
+    this.setState({ showProducts: false });
+    this.setState({ showAboutUs: false });
      this.setState({ showNav: true });
   };
 
@@ -37,39 +44,45 @@ export default class App extends Component {
     this.setState({ showMain: true });
     this.setState({ showForm: false });
     this.setState({ showMap: false });
-     this.setState({ showProducts: false });
+    this.setState({ showCell: false });
+    this.setState({ showVideos: false });
+    this.setState({ showProducts: false });
+    this.setState({ showAboutUs: false });
   };
 
   galeryToggleHandler = () => {
     // this.props.history.push("/gallery")
-    this.setState((prevState) => {
-      return { 
-        showGalery: !prevState.showGalery,
-        showVideos: !prevState.showVideos,
-        showMain: !prevState.showMain,
-        showCell: !prevState.showCell,
-        showProducts: !prevState.showProducts
-      };
-    });
+    this.setState({ showGalery: true });
+    this.setState({ showMain: false });
+    this.setState({ showForm: false });
+    this.setState({ showMap: false });
+    this.setState({ showCell: false });
+    this.setState({ showVideos: false });
+    this.setState({ showProducts: false });
+    this.setState({ showAboutUs: false });
   };
 
   productsToggleHandler = () => {
-    this.setState((prevState) => {
-      return { 
-        showMain: !prevState.showMain,
-        showCell: !prevState.showCell,
-        showProducts: !prevState.showProducts
-      };
-    });
+    this.setState({ showGalery: false });
+    this.setState({ showMain: false });
+    this.setState({ showForm: false });
+    this.setState({ showMap: false });
+    this.setState({ showCell: false });
+    this.setState({ showVideos: false });
+    this.setState({ showProducts: true });
+    this.setState({ showAboutUs: false });
   };
 
   aboutUsToggleHandler = () => {
-    this.setState((prevState) => {
-      return { 
-        showMain: !prevState.showMain,
-        showAboutUs: !prevState.showAboutUs
-      };
-    });
+    this.setState({ showGalery: false });
+    this.setState({ showMain: false });
+    this.setState({ showForm: false });
+    this.setState({ showMap: false });
+    this.setState({ showCell: false });
+    this.setState({ showVideos: false });
+    this.setState({ showProducts: false });
+    this.setState({ showAboutUs: true });
+    this.setState({ showNav: true });
   };
 
   videosToggleHandler = () => {
@@ -91,24 +104,40 @@ export default class App extends Component {
   formToggleHandler = (e) => {
     e.preventDefault();
     // this.props.history.push("/form")
-    this.setState((prevState) => {
-      return { showForm: !prevState.showForm,
-        showMain: !prevState.showMain,
-        showNav: !prevState.showNav
-      };
-    });
+    this.setState({ showGalery: false });
+    this.setState({ showMain: false });
+    this.setState({ showForm: true });
+    this.setState({ showMap: false });
+    this.setState({ showCell: false });
+    this.setState({ showVideos: false });
+    this.setState({ showProducts: false });
+    this.setState({ showAboutUs: false });
+    this.setState({ showNav: false });
   };
 
-  mapToggleHandler = (e) => {
-    e.preventDefault();
-    // this.props.history.push("/googlemaps")
-    this.setState((prevState) => {
-      return { showMap: !prevState.showMap,
-        showMain: !prevState.showMain,
-        showNav: !prevState.showNav
-      };
-    });
+    mapToggleHandler = (e) => {
+      e.preventDefault();
+      this.setState({ showGalery: false });
+      this.setState({ showMain: false });
+      this.setState({ showForm: false });
+      this.setState({ showMap: true });
+      this.setState({ showCell: false });
+      this.setState({ showVideos: false });
+      this.setState({ showProducts: false });
+      this.setState({ showAboutUs: false });
+      this.setState({ showNav: false });
   };
+
+  // mapToggleHandler = (e) => {
+  //   e.preventDefault();
+  //   // this.props.history.push("/googlemaps")
+  //   this.setState((prevState) => {
+  //     return { showMap: !prevState.showMap,
+  //       showMain: !prevState.showMain,
+  //       showNav: !prevState.showNav
+  //     };
+  //   });
+  // };
   
   constructor(props) {
     super(props);
@@ -240,7 +269,7 @@ export default class App extends Component {
         </div>
         <div>
         <If condition={this.state.showForm}>
-          <Form onSubmit={(fields) => this.onSubmit(fields)} />
+          <Form onSubmit={(fields) => this.onSubmit(fields)} mainSiteToggleHandler={this.mainSiteToggleHandler}/>
         </If>
         <If condition={this.state.showMap}>
           <GoogleMaps mainSiteToggleHandler2={this.mainSiteToggleHandler2}/>

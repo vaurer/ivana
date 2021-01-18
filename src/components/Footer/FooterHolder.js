@@ -3,7 +3,7 @@ import FooterContact from "./FooterContact";
 
 class FooterHolder extends Component {
   render() {
-    return <FooterContact formToggleHandler={this.props.formToggleHandler} mapToggleHandler={this.props.mapToggleHandler}/>;
+    return <FooterContact formToggleHandler={this.props.formToggleHandler} mapToggleHandler={this.props.mapToggleHandler} mainSiteToggleHandler={this.props.mainSiteToggleHandler}/>;
   }
 }
 export default FooterHolder;

@@ -35,7 +35,7 @@ class Form extends Component {
             <form name="contact" method="post">
               <input type="hidden" name="form-name" value="contact" />
               <div className={styles.row}>
-                <div className={styles.closeIframe}>
+                <div className={styles.closeIframe} onClick={this.props.mainSiteToggleHandler}>
                   <i className="fas fa-times"></i>
                 </div>
               </div>
