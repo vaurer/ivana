@@ -1,9 +1,18 @@
 /* Google Map Css */
 
-.MapSize {
+/* .MapSize {
   width: 100%;
   height: 100%;
   border: 0;
+} */
+
+.googleMapClose{
+  margin-bottom: 2rem;
+}
+
+.googleMapClose i{
+  color: black;
+  font-size: larger;
 }
 
 /* Form Css */
