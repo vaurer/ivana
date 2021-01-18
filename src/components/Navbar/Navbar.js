@@ -58,6 +58,9 @@ class Navbar extends Component {
               <li key="4">
                 <div className="navButton" onClick={this.props.mainSite3ParToggleHandler}>Contact</div>
               </li>
+              <li key="5">
+                <div className="navButton" onClick={this.props.pricesToggleHandler}>Preise</div>
+              </li>
             </ul>
           }
         </nav>

@@ -9,6 +9,7 @@ import GoogleMaps from "./components/Footer/GoogleMaps";
 import Navbar from './components/Navbar/Navbar'
 import ProductsHolder from "./components/ProductsHolder/ProductsHolder";
 import AboutUsHolder from "./components/AboutUs/AboutUsHolder";
+import Pricelist from "./components/Pricelists/Pricelist";
 
 export default class App extends Component {
 
@@ -23,6 +24,7 @@ export default class App extends Component {
     this.setState({ showProducts: false });
     this.setState({ showAboutUs: false });
     this.setState({ showNav: true });
+    this.setState({ showPrices: false });
   };
 
   mainSiteToggleHandler2 = () => {
@@ -36,6 +38,7 @@ export default class App extends Component {
     this.setState({ showProducts: false });
     this.setState({ showAboutUs: false });
      this.setState({ showNav: true });
+     this.setState({ showPrices: false });
   };
 
   mainSite3ParToggleHandler = () => {
@@ -48,6 +51,7 @@ export default class App extends Component {
     this.setState({ showVideos: false });
     this.setState({ showProducts: false });
     this.setState({ showAboutUs: false });
+    this.setState({ showPrices: false });
   };
 
   galeryToggleHandler = () => {
@@ -60,6 +64,7 @@ export default class App extends Component {
     this.setState({ showVideos: false });
     this.setState({ showProducts: false });
     this.setState({ showAboutUs: false });
+    this.setState({ showPrices: false });
   };
 
   productsToggleHandler = () => {
@@ -71,6 +76,7 @@ export default class App extends Component {
     this.setState({ showVideos: false });
     this.setState({ showProducts: true });
     this.setState({ showAboutUs: false });
+    this.setState({ showPrices: false });
   };
 
   aboutUsToggleHandler = () => {
@@ -83,6 +89,20 @@ export default class App extends Component {
     this.setState({ showProducts: false });
     this.setState({ showAboutUs: true });
     this.setState({ showNav: true });
+    this.setState({ showPrices: false });
+  };
+
+  pricesToggleHandler = () => {
+    this.setState({ showGalery: false });
+    this.setState({ showMain: false });
+    this.setState({ showForm: false });
+    this.setState({ showMap: false });
+    this.setState({ showCell: false });
+    this.setState({ showVideos: false });
+    this.setState({ showProducts: false });
+    this.setState({ showAboutUs: false });
+    this.setState({ showNav: false });
+    this.setState({ showPrices: true });
   };
 
   videosToggleHandler = () => {
@@ -113,6 +133,22 @@ export default class App extends Component {
     this.setState({ showProducts: false });
     this.setState({ showAboutUs: false });
     this.setState({ showNav: false });
+    this.setState({ showPrices: false });
+  };
+
+  formToggleHandler = (e) => {
+    e.preventDefault();
+    // this.props.history.push("/form")
+    this.setState({ showGalery: false });
+    this.setState({ showMain: false });
+    this.setState({ showForm: true });
+    this.setState({ showMap: false });
+    this.setState({ showCell: false });
+    this.setState({ showVideos: false });
+    this.setState({ showProducts: false });
+    this.setState({ showAboutUs: false });
+    this.setState({ showNav: false });
+    this.setState({ showPrices: false });
   };
 
     mapToggleHandler = (e) => {
@@ -126,18 +162,8 @@ export default class App extends Component {
       this.setState({ showProducts: false });
       this.setState({ showAboutUs: false });
       this.setState({ showNav: false });
+      this.setState({ showPrices: false });
   };
-
-  // mapToggleHandler = (e) => {
-  //   e.preventDefault();
-  //   // this.props.history.push("/googlemaps")
-  //   this.setState((prevState) => {
-  //     return { showMap: !prevState.showMap,
-  //       showMain: !prevState.showMain,
-  //       showNav: !prevState.showNav
-  //     };
-  //   });
-  // };
   
   constructor(props) {
     super(props);
@@ -154,6 +180,7 @@ export default class App extends Component {
       isLoaded: false,
       isLoaded1: false,
       aboutUs: false,
+      showPrices: false,
       mainid: "",
       mainalt: "null",
       maintitle: "null",
@@ -171,7 +198,6 @@ export default class App extends Component {
       main3image: "null",
       aboutUsTitle:'null',
     };
-    // this.goto3ToggleHandler= this.goto3ToggleHandler.bind(this);
   }
 
   componentDidMount() {
@@ -240,7 +266,8 @@ export default class App extends Component {
         aboutUsToggleHandler={this.aboutUsToggleHandler}
         galeryToggleHandler={this.galeryToggleHandler}
         productsToggleHandler={this.productsToggleHandler}
-        mainSite3ParToggleHandler={this.mainSite3ParToggleHandler} />
+        mainSite3ParToggleHandler={this.mainSite3ParToggleHandler} 
+        pricesToggleHandler={this.pricesToggleHandler}/>
         
         </If>
         <If condition={this.state.showMain} >
@@ -279,6 +306,9 @@ export default class App extends Component {
         </If>
         <If condition={this.state.showAboutUs}>
         <AboutUsHolder/>
+        </If>
+        <If condition={this.state.showPrices}>
+        <Pricelist/>
         </If>
         </div>
       </div>

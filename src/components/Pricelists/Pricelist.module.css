@@ -1,0 +1,27 @@
+.wrapperList {
+    display: flex;
+    justify-content: center;
+}
+h2 {
+    display: flex;
+    justify-content: left;
+}
+.listitems{
+    display: flex;
+    justify-content:left; 
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 90%;
+  border: 1px solid #ddd;
+   overflow-x:auto; 
+  }
+   th, td {
+    padding: 8px;
+  }
+  tr:nth-child(even){
+    background-color: white /* #F4F3F0 */;
+;
+    ;
+  }
