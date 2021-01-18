@@ -32,6 +32,27 @@ class Navbar extends Component {
     this.setState({ clicked: !this.state.clicked });
   };
 
+  firstClose=()=>{
+    this.handleClick()
+    this.props.aboutUsToggleHandler()
+  }
+  secondClose=()=>{
+    this.handleClick()
+    this.props.galeryToggleHandler()
+  }
+  thirdClose=()=>{
+    this.handleClick()
+    this.props.productsToggleHandler()
+  }
+  fourthClose=()=>{
+    this.handleClick()
+    this.props.mainSite3ParToggleHandler()
+  }
+  fifthClose=()=>{
+    this.handleClick()
+    this.props.pricesToggleHandler()
+  }
+
   
 
   render() {
@@ -47,19 +68,19 @@ class Navbar extends Component {
           </div>
           {<ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
               <li key="1">
-                <div className="navButton" onClick={this.props.aboutUsToggleHandler}>{this.props.aboutUs}</div>
+                <div className="navButton" onClick={this.firstClose}>{this.props.aboutUs}</div>
               </li>
               <li key="2">
-                <div className="navButton" onClick={this.props.galeryToggleHandler}>Galerie</div>
+                <div className="navButton" onClick={this.secondClose}>Galerie</div>
               </li>
               <li key="3">
-                <div className="navButton" onClick={this.props.productsToggleHandler}>Produkte</div>
+                <div className="navButton" onClick={this.thirdClose}>Produkte</div>
               </li>
               <li key="4">
-                <div className="navButton" onClick={this.props.mainSite3ParToggleHandler}>Kontakt</div>
+                <div className="navButton" onClick={this.fourthClose}>Kontakt</div>
               </li>
               <li key="5">
-                <div className="navButton" onClick={this.props.pricesToggleHandler}>Preise</div>
+                <div className="navButton" onClick={this.fifthClose}>Preise</div>
               </li>
             </ul>
           }
