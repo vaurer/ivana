@@ -12,12 +12,10 @@ import AboutUsHolder from "./components/AboutUs/AboutUsHolder";
 import Pricelist from "./components/Pricelists/Pricelist";
 import * as ReactBootStrap from 'react-bootstrap';
 
-
-
 export default class App extends Component {
 
   mainSiteToggleHandler = () => {
-    this.props.history.push("/")
+    // this.props.history.push("/")
     this.setState({ showGalery: false });
     this.setState({ showMain: true });
     this.setState({ showForm: false });
@@ -31,7 +29,7 @@ export default class App extends Component {
   };
 
   mainSiteToggleHandler2 = () => {
-    this.props.history.push("/")
+    // this.props.history.push("/")
     this.setState({ showGalery: false });
     this.setState({ showMain: true });
     this.setState({ showForm: false });
@@ -45,7 +43,7 @@ export default class App extends Component {
   };
 
   mainSite3ParToggleHandler = () => {
-    this.props.history.push("/")
+    // this.props.history.push("/")
     this.setState({ showGalery: false });
     this.setState({ showMain: true });
     this.setState({ showForm: false });
@@ -58,7 +56,7 @@ export default class App extends Component {
   };
 
   galeryToggleHandler = () => {
-    this.props.history.push("/gallery")
+    // this.props.history.push("/gallery")
     this.setState({ showGalery: true });
     this.setState({ showMain: false });
     this.setState({ showForm: false });
@@ -71,7 +69,7 @@ export default class App extends Component {
   };
 
   productsToggleHandler = () => {
-    this.props.history.push("/products")
+    // this.props.history.push("/products")
     this.setState({ showGalery: false });
     this.setState({ showMain: false });
     this.setState({ showForm: false });
@@ -81,10 +79,11 @@ export default class App extends Component {
     this.setState({ showProducts: true });
     this.setState({ showAboutUs: false });
     this.setState({ showPrices: false });
+    this.setState({ showNav: true });
   };
 
   aboutUsToggleHandler = () => {
-    this.props.history.push("/aboutus")
+    // this.props.history.push("/aboutus")
     this.setState({ showGalery: false });
     this.setState({ showMain: false });
     this.setState({ showForm: false });
@@ -98,7 +97,7 @@ export default class App extends Component {
   };
 
   pricesToggleHandler = () => {
-    this.props.history.push("/prices")
+    // this.props.history.push("/prices")
     this.setState({ showGalery: false });
     this.setState({ showMain: false });
     this.setState({ showForm: false });
@@ -112,7 +111,7 @@ export default class App extends Component {
   };
 
   videosToggleHandler = () => {
-    this.props.history.push("/videos")
+    // this.props.history.push("/videos")
     this.setState((prevState) => {
       return { 
         showVideos: !prevState.showVideos,
@@ -124,7 +123,7 @@ export default class App extends Component {
 
   formToggleHandler = (e) => {
     e.preventDefault();
-    this.props.history.push("/form")
+    // this.props.history.push("/form")
     this.setState({ showGalery: false });
     this.setState({ showMain: false });
     this.setState({ showForm: true });
@@ -138,7 +137,7 @@ export default class App extends Component {
   };
 
     mapToggleHandler = (e) => {
-      this.props.history.push("/map")
+      // this.props.history.push("/map")
       e.preventDefault();
       this.setState({ showGalery: false });
       this.setState({ showMain: false });
@@ -152,8 +151,6 @@ export default class App extends Component {
       this.setState({ showPrices: false });
   };
   
-  // [appItem, setApp] = useState(null);
-  // [loading, setLoading] = useState(false);
   constructor(props) {
     super(props);
     this.state = {
@@ -252,8 +249,8 @@ export default class App extends Component {
       <div className="App">
         <If condition={!this.state.showApp} >
         {<ReactBootStrap.Spinner animation='grow' style={{ position: 'fixed', top: '50%', left: '50%'}}/>}
-        
       <Else >
+      
         <If condition={this.state.showNav} >
         <Navbar 
         aboutUs={this.state.aboutUsTitle}
@@ -263,8 +260,8 @@ export default class App extends Component {
         productsToggleHandler={this.productsToggleHandler}
         mainSite3ParToggleHandler={this.mainSite3ParToggleHandler} 
         pricesToggleHandler={this.pricesToggleHandler}/>
-        
         </If>
+        
         <If condition={this.state.showMain} >
         <ParallaxHolder 
           goto3ToggleHandler={this.goto3ToggleHandler}
@@ -283,29 +280,31 @@ export default class App extends Component {
           mapToggleHandler={this.mapToggleHandler}
           productsToggleHandler={this.productsToggleHandler}/>
         </If>
-      
-        <div>
+       
         <If condition={this.state.showGalery} >
         <Cell/>
         </If>
-        </div>
-        <div>
+      
         <If condition={this.state.showForm}>
           <Form onSubmit={(fields) => this.onSubmit(fields)} mainSiteToggleHandler={this.mainSiteToggleHandler}/>
         </If>
+
         <If condition={this.state.showMap}>
           <GoogleMaps mainSiteToggleHandler2={this.mainSiteToggleHandler2}/>
         </If>
+
         <If condition={this.state.showProducts}>
         <ProductsHolder mainSiteToggleHandler={this.mainSiteToggleHandler}/>
         </If>
+
         <If condition={this.state.showAboutUs}>
         <AboutUsHolder/>
         </If>
+
         <If condition={this.state.showPrices}>
         <Pricelist/>
         </If>
-        </div>
+       
         </Else>
         </If>
       </div>

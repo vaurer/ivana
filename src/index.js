@@ -13,22 +13,22 @@ import AboutUsHolder from "./components/AboutUs/AboutUsHolder";
 import ProductsHolder from "./components/ProductsHolder/ProductsHolder";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const routing = (
-  <Router>
-    <div>
-      <Route exact path="/" component={App}></Route>
-      <Route exact path="/gallery" component={Cell}></Route>
-      <Route exact path="/map" component={GoogleMaps}></Route>
-      <Route exact path="/form" component={Form}></Route>
-      <Route exact path="/products" component={ProductsHolder}></Route>
-      <Route exact path="/aboutus" component={AboutUsHolder}></Route>
-      <Route exact path="/prices" component={Pricelist}></Route>
+// const routing = (
+//   <Router>
+//     <div>
+//       <Route exact path="/" component={App}></Route>
+//       <Route exact path="/gallery" component={Cell}></Route>
+//       <Route exact path="/map" component={GoogleMaps}></Route>
+//       <Route exact path="/form" component={Form}></Route>
+//       <Route exact path="/products" component={ProductsHolder}></Route>
+//       <Route exact path="/aboutus" component={AboutUsHolder}></Route>
+//       <Route exact path="/prices" component={Pricelist}></Route>
       
-    </div>
-  </Router>
-);
+//     </div>
+//   </Router>
+// );
 
-ReactDOM.render(routing, document.getElementById("root"));
+ReactDOM.render(<App/>, document.getElementById("root"));
 
 // ReactDOM.render(
   // <BrowserRouter>
