@@ -2,7 +2,7 @@
 
 .MapSize{
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-
+  text-decoration: none;
 }
 .googleBox{
   box-sizing: border-box;
@@ -36,7 +36,7 @@
   width: 500px;
   padding: 1.5rem;
   transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.5);
+  background: #AFA596;
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
@@ -113,7 +113,7 @@ form {
     width: 250px;
     padding: 1.5rem;
     transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.5);
+    background: #AFA596;
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
@@ -185,7 +185,7 @@ form {
     width: 300px;
     padding: 1.5rem;
     transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.5);
+    background: #AFA596;
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
@@ -257,7 +257,7 @@ form {
     width: 300px;
     padding: 1.5rem;
     transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.5);
+    background: #AFA596;
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
@@ -329,7 +329,7 @@ form {
     width: 400px;
     padding: 1.5rem;
     transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.5);
+    background: #AFA596;
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
@@ -401,7 +401,7 @@ form {
     width: 400px;
     padding: 1.5rem;
     transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.5);
+    background: #AFA596;
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
@@ -474,7 +474,7 @@ form {
     width: 400px;
     padding: 1.5rem;
     transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.5);
+    background: #AFA596;
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
