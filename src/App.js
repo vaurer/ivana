@@ -251,7 +251,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <If condition={!this.state.showApp} >
-        {<ReactBootStrap.Spinner animation='grow' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}/>}
+        {<ReactBootStrap.Spinner animation='grow' style={{ position: 'fixed', top: '50%', left: '50%'}}/>}
         
       <Else >
         <If condition={this.state.showNav} >
