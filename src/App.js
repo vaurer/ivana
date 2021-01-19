@@ -1,20 +1,23 @@
 import "./App.css";
-import React, { Component } from "react";
+import React, { Component} from "react";
 import ParallaxHolder from './components/ParallaxHolder/ParallaxHolder'
 import Constants from "./helper/Constants";
 import Cell from './components/PhotoGrid/Cell'
-import { If } from 'rc-if-else';
+import { If, Else } from 'rc-if-else';
 import Form from './components/Footer/Form'
 import GoogleMaps from "./components/Footer/GoogleMaps";
 import Navbar from './components/Navbar/Navbar'
 import ProductsHolder from "./components/ProductsHolder/ProductsHolder";
 import AboutUsHolder from "./components/AboutUs/AboutUsHolder";
 import Pricelist from "./components/Pricelists/Pricelist";
+import * as ReactBootStrap from 'react-bootstrap';
+
+
 
 export default class App extends Component {
 
   mainSiteToggleHandler = () => {
-    // this.props.history.push("/")
+    this.props.history.push("/")
     this.setState({ showGalery: false });
     this.setState({ showMain: true });
     this.setState({ showForm: false });
@@ -28,7 +31,7 @@ export default class App extends Component {
   };
 
   mainSiteToggleHandler2 = () => {
-    // this.props.history.push("/")
+    this.props.history.push("/")
     this.setState({ showGalery: false });
     this.setState({ showMain: true });
     this.setState({ showForm: false });
@@ -42,7 +45,7 @@ export default class App extends Component {
   };
 
   mainSite3ParToggleHandler = () => {
-    // this.props.history.push("/")
+    this.props.history.push("/")
     this.setState({ showGalery: false });
     this.setState({ showMain: true });
     this.setState({ showForm: false });
@@ -55,7 +58,7 @@ export default class App extends Component {
   };
 
   galeryToggleHandler = () => {
-    // this.props.history.push("/gallery")
+    this.props.history.push("/gallery")
     this.setState({ showGalery: true });
     this.setState({ showMain: false });
     this.setState({ showForm: false });
@@ -68,6 +71,7 @@ export default class App extends Component {
   };
 
   productsToggleHandler = () => {
+    this.props.history.push("/products")
     this.setState({ showGalery: false });
     this.setState({ showMain: false });
     this.setState({ showForm: false });
@@ -80,6 +84,7 @@ export default class App extends Component {
   };
 
   aboutUsToggleHandler = () => {
+    this.props.history.push("/aboutus")
     this.setState({ showGalery: false });
     this.setState({ showMain: false });
     this.setState({ showForm: false });
@@ -93,6 +98,7 @@ export default class App extends Component {
   };
 
   pricesToggleHandler = () => {
+    this.props.history.push("/prices")
     this.setState({ showGalery: false });
     this.setState({ showMain: false });
     this.setState({ showForm: false });
@@ -101,11 +107,12 @@ export default class App extends Component {
     this.setState({ showVideos: false });
     this.setState({ showProducts: false });
     this.setState({ showAboutUs: false });
-    this.setState({ showNav: false });
+    this.setState({ showNav: true });
     this.setState({ showPrices: true });
   };
 
   videosToggleHandler = () => {
+    this.props.history.push("/videos")
     this.setState((prevState) => {
       return { 
         showVideos: !prevState.showVideos,
@@ -115,30 +122,9 @@ export default class App extends Component {
     });
   };
 
-  cellToggleHandler = () => {
-    this.setState((prevState) => {
-      return { showCell: !prevState.showCell };
-    });
-  };
-
   formToggleHandler = (e) => {
     e.preventDefault();
-    // this.props.history.push("/form")
-    this.setState({ showGalery: false });
-    this.setState({ showMain: false });
-    this.setState({ showForm: true });
-    this.setState({ showMap: false });
-    this.setState({ showCell: false });
-    this.setState({ showVideos: false });
-    this.setState({ showProducts: false });
-    this.setState({ showAboutUs: false });
-    this.setState({ showNav: false });
-    this.setState({ showPrices: false });
-  };
-
-  formToggleHandler = (e) => {
-    e.preventDefault();
-    // this.props.history.push("/form")
+    this.props.history.push("/form")
     this.setState({ showGalery: false });
     this.setState({ showMain: false });
     this.setState({ showForm: true });
@@ -152,6 +138,7 @@ export default class App extends Component {
   };
 
     mapToggleHandler = (e) => {
+      this.props.history.push("/map")
       e.preventDefault();
       this.setState({ showGalery: false });
       this.setState({ showMain: false });
@@ -165,9 +152,12 @@ export default class App extends Component {
       this.setState({ showPrices: false });
   };
   
+  // [appItem, setApp] = useState(null);
+  // [loading, setLoading] = useState(false);
   constructor(props) {
     super(props);
     this.state = {
+      showApp:false,
       showMain: true,
       showGalery: false,
       showCell:true,
@@ -222,6 +212,7 @@ export default class App extends Component {
           main3title: result2.data[2].title,
           main3text: result2.data[2].textarea,
           main3image: result2.data[2].picture.data.full_url,
+          showApp:true,
         });
       },
       (error) => {
@@ -243,6 +234,7 @@ export default class App extends Component {
                 text:result.data[0].text,
                 aboutUs:result.public,
                 aboutUsTitle:result.data[0].title,
+                showApp:true,
               });
             },
             (error) => {
@@ -258,7 +250,10 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <div>
+        <If condition={!this.state.showApp} >
+        {<ReactBootStrap.Spinner animation='grow' style={{ position: 'fixed', top: '50%', left: '50%'}}/>}
+        
+      <Else >
         <If condition={this.state.showNav} >
         <Navbar 
         aboutUs={this.state.aboutUsTitle}
@@ -288,7 +283,7 @@ export default class App extends Component {
           mapToggleHandler={this.mapToggleHandler}
           productsToggleHandler={this.productsToggleHandler}/>
         </If>
-        </div>
+      
         <div>
         <If condition={this.state.showGalery} >
         <Cell/>
@@ -311,6 +306,8 @@ export default class App extends Component {
         <Pricelist/>
         </If>
         </div>
+        </Else>
+        </If>
       </div>
     );
   }

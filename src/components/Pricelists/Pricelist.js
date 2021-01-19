@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Constants from "../../helper/Constants";
-import Category from './Caregory';
+import Category from './Category';
 import styles from './Pricelist.module.css';
 
 class Pricelist extends Component {
