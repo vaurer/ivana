@@ -57,7 +57,8 @@ class Navbar extends Component {
 
   render() {
     return (
-      <div className={`Nav ${this.state.nav && "Nav__black"}`}>
+      // <div className={`Nav ${this.state.nav && "Nav__black"}`}>
+      <div>
         <nav className="NavbarItems">
           <h1
             className="navbar-logo"
@@ -67,20 +68,20 @@ class Navbar extends Component {
             <i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i>
           </div>
           {<ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
-              <li key="1">
-                <div className="navButton" onClick={this.firstClose}>{this.props.aboutUs}</div>
+              <li key="1" className="navButton" onClick={this.firstClose}>
+                {this.props.aboutUs}
               </li>
-              <li key="2">
-                <div className="navButton" onClick={this.secondClose}>Galerie</div>
+              <li key="2" className="navButton" onClick={this.secondClose}>
+                Galerie
               </li>
-              <li key="3">
-                <div className="navButton" onClick={this.thirdClose}>Produkte</div>
+              <li key="3" className="navButton" onClick={this.thirdClose}>
+                Produkte
               </li>
-              <li key="4">
-                <div className="navButton" onClick={this.fourthClose}>Kontakt</div>
+              <li key="4" className="navButton" onClick={this.fourthClose}>
+                Kontakt
               </li>
-              <li key="5">
-                <div className="navButton" onClick={this.fifthClose}>Preise</div>
+              <li key="5" className="navButton" onClick={this.fifthClose}>
+                Preise
               </li>
             </ul>
           }
