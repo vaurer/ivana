@@ -1,15 +1,18 @@
 import "./App.css";
-import React, { Component } from "react";
+import React, { Component} from "react";
 import ParallaxHolder from './components/ParallaxHolder/ParallaxHolder'
 import Constants from "./helper/Constants";
 import Cell from './components/PhotoGrid/Cell'
-import { If } from 'rc-if-else';
+import { If, Else } from 'rc-if-else';
 import Form from './components/Footer/Form'
 import GoogleMaps from "./components/Footer/GoogleMaps";
 import Navbar from './components/Navbar/Navbar'
 import ProductsHolder from "./components/ProductsHolder/ProductsHolder";
 import AboutUsHolder from "./components/AboutUs/AboutUsHolder";
 import Pricelist from "./components/Pricelists/Pricelist";
+import * as ReactBootStrap from 'react-bootstrap';
+
+
 
 export default class App extends Component {
 
@@ -149,9 +152,12 @@ export default class App extends Component {
       this.setState({ showPrices: false });
   };
   
+  // [appItem, setApp] = useState(null);
+  // [loading, setLoading] = useState(false);
   constructor(props) {
     super(props);
     this.state = {
+      showApp:false,
       showMain: true,
       showGalery: false,
       showCell:true,
@@ -206,6 +212,7 @@ export default class App extends Component {
           main3title: result2.data[2].title,
           main3text: result2.data[2].textarea,
           main3image: result2.data[2].picture.data.full_url,
+          showApp:true,
         });
       },
       (error) => {
@@ -227,6 +234,7 @@ export default class App extends Component {
                 text:result.data[0].text,
                 aboutUs:result.public,
                 aboutUsTitle:result.data[0].title,
+                showApp:true,
               });
             },
             (error) => {
@@ -242,7 +250,10 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <div>
+        <If condition={!this.state.showApp} >
+        {<ReactBootStrap.Spinner animation='grow' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}/>}
+        
+      <Else >
         <If condition={this.state.showNav} >
         <Navbar 
         aboutUs={this.state.aboutUsTitle}
@@ -272,7 +283,7 @@ export default class App extends Component {
           mapToggleHandler={this.mapToggleHandler}
           productsToggleHandler={this.productsToggleHandler}/>
         </If>
-        </div>
+      
         <div>
         <If condition={this.state.showGalery} >
         <Cell/>
@@ -295,6 +306,8 @@ export default class App extends Component {
         <Pricelist/>
         </If>
         </div>
+        </Else>
+        </If>
       </div>
     );
   }
