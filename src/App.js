@@ -14,7 +14,7 @@ import Pricelist from "./components/Pricelists/Pricelist";
 export default class App extends Component {
 
   mainSiteToggleHandler = () => {
-    // this.props.history.push("/")
+    this.props.history.push("/")
     this.setState({ showGalery: false });
     this.setState({ showMain: true });
     this.setState({ showForm: false });
@@ -28,7 +28,7 @@ export default class App extends Component {
   };
 
   mainSiteToggleHandler2 = () => {
-    // this.props.history.push("/")
+    this.props.history.push("/")
     this.setState({ showGalery: false });
     this.setState({ showMain: true });
     this.setState({ showForm: false });
@@ -42,7 +42,7 @@ export default class App extends Component {
   };
 
   mainSite3ParToggleHandler = () => {
-    // this.props.history.push("/")
+    this.props.history.push("/")
     this.setState({ showGalery: false });
     this.setState({ showMain: true });
     this.setState({ showForm: false });
@@ -55,7 +55,7 @@ export default class App extends Component {
   };
 
   galeryToggleHandler = () => {
-    // this.props.history.push("/gallery")
+    this.props.history.push("/gallery")
     this.setState({ showGalery: true });
     this.setState({ showMain: false });
     this.setState({ showForm: false });
@@ -68,6 +68,7 @@ export default class App extends Component {
   };
 
   productsToggleHandler = () => {
+    this.props.history.push("/products")
     this.setState({ showGalery: false });
     this.setState({ showMain: false });
     this.setState({ showForm: false });
@@ -80,6 +81,7 @@ export default class App extends Component {
   };
 
   aboutUsToggleHandler = () => {
+    this.props.history.push("/aboutus")
     this.setState({ showGalery: false });
     this.setState({ showMain: false });
     this.setState({ showForm: false });
@@ -93,6 +95,7 @@ export default class App extends Component {
   };
 
   pricesToggleHandler = () => {
+    this.props.history.push("/prices")
     this.setState({ showGalery: false });
     this.setState({ showMain: false });
     this.setState({ showForm: false });
@@ -106,6 +109,7 @@ export default class App extends Component {
   };
 
   videosToggleHandler = () => {
+    this.props.history.push("/videos")
     this.setState((prevState) => {
       return { 
         showVideos: !prevState.showVideos,
@@ -115,30 +119,9 @@ export default class App extends Component {
     });
   };
 
-  cellToggleHandler = () => {
-    this.setState((prevState) => {
-      return { showCell: !prevState.showCell };
-    });
-  };
-
   formToggleHandler = (e) => {
     e.preventDefault();
-    // this.props.history.push("/form")
-    this.setState({ showGalery: false });
-    this.setState({ showMain: false });
-    this.setState({ showForm: true });
-    this.setState({ showMap: false });
-    this.setState({ showCell: false });
-    this.setState({ showVideos: false });
-    this.setState({ showProducts: false });
-    this.setState({ showAboutUs: false });
-    this.setState({ showNav: false });
-    this.setState({ showPrices: false });
-  };
-
-  formToggleHandler = (e) => {
-    e.preventDefault();
-    // this.props.history.push("/form")
+    this.props.history.push("/form")
     this.setState({ showGalery: false });
     this.setState({ showMain: false });
     this.setState({ showForm: true });
@@ -152,6 +135,7 @@ export default class App extends Component {
   };
 
     mapToggleHandler = (e) => {
+      this.props.history.push("/map")
       e.preventDefault();
       this.setState({ showGalery: false });
       this.setState({ showMain: false });
