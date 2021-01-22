@@ -2,7 +2,7 @@ import "./App.css";
 import React, { Component} from "react";
 import ParallaxHolder from './components/ParallaxHolder/ParallaxHolder'
 import Constants from "./helper/Constants";
-// import Cell from './components/PhotoGrid/Cell'
+import Cell from './components/PhotoGrid/Cell'
 import { If, Else } from 'rc-if-else';
 import Form from './components/Footer/Form'
 import GoogleMaps from "./components/Footer/GoogleMaps";
@@ -283,7 +283,7 @@ export default class App extends Component {
         </If>
        
         <If condition={this.state.showGalery} >
-        {/* <Cell/> */}
+        <Cell/>
           <MediaHolder/>
         </If>
       
