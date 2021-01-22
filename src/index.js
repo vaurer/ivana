@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import SimpleReactLightbox from 'simple-react-lightbox'
+import 'bootstrap/dist/css/bootstrap.min.css';
 // import { Route, BrowserRouter as Router } from "react-router-dom";
 // import {  BrowserRouter  } from "react-router-dom";
 // import Cell from "./components/PhotoGrid/Cell";
@@ -11,7 +13,6 @@ import reportWebVitals from "./reportWebVitals";
 // import Pricelist from "./components/Pricelists/Pricelist";
 // import AboutUsHolder from "./components/AboutUs/AboutUsHolder";
 // import ProductsHolder from "./components/ProductsHolder/ProductsHolder";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 // const routing = (
 //   <Router>
@@ -28,7 +29,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //   </Router>
 // );
 
-ReactDOM.render(<App/>, document.getElementById("root"));
+ReactDOM.render(  <React.StrictMode>
+  <SimpleReactLightbox>
+    <App />
+  </SimpleReactLightbox>
+</React.StrictMode>,
+ document.getElementById("root")
+ );
 
 // ReactDOM.render(
   // <BrowserRouter>

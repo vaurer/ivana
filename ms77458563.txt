@@ -1,0 +1,5 @@
+﻿{
+  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
+  "Domain": "ivanahairart.ch",
+  "Id": "ad53485a-fdab-4806-b91e-2dc9f5f77736"
+}
