@@ -17,10 +17,12 @@ class AboutUs extends Component {
 
   render() {
     return (
+        <div className={styles.body}>
         <div className={styles.wrapper}>
             <div className={styles.row}>
-            <div>{this.getAboutUsPictures()}</div>
+            <div className={styles.shadowPic}>{this.getAboutUsPictures()}</div>
             </div>
+        </div>
         </div>
     );
   }

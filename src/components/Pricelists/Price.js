@@ -25,6 +25,7 @@ class Price extends Component {
     }
     render() {
         return (
+            
             <tr className={styles.serviceItems}>
                 {this.getRows()}
             </tr>

@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import SimpleReactLightbox from 'simple-react-lightbox'
@@ -13,6 +12,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import Pricelist from "./components/Pricelists/Pricelist";
 // import AboutUsHolder from "./components/AboutUs/AboutUsHolder";
 // import ProductsHolder from "./components/ProductsHolder/ProductsHolder";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./index.css";
 
 // const routing = (
 //   <Router>

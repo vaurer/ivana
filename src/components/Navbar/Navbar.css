@@ -92,7 +92,7 @@
     }
     .navButton{
         text-align: center;
-        padding: 2rem;
+        padding: 0.5rem;
         width: 100%;
         display: table;
         transition: all 3s ease-in-out;

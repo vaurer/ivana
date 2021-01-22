@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Price from './Price';
+import styles from './Catogory.module.css'
 
 class Category extends Component {
     getServices = () => {
@@ -10,7 +11,7 @@ class Category extends Component {
             if (((element.category === 'Damen'))) {
                 tempName = element.category;
                 widgets.push(
-                    <tr style={{backgroundColor: "#AFA596"}}>
+                    <tr style={{backgroundColor: "#705f46"}}>
                         <th> <h2>{element.category}</h2></th>
                         <th> <h3>kurz</h3></th>
                         <th> <h3>mittel</h3></th>
@@ -35,7 +36,7 @@ class Category extends Component {
             if ((tempName == null) || (tempName !== element.category)) {
                 tempName = element.category;
                 widgets.push(
-                    <tr style={{backgroundColor: "#AFA596"}} >
+                    <tr style={{backgroundColor: "#705f46"}} >
                         <th> <h2>{element.category}</h2></th>
                         <th> <h2> </h2></th>
                         <th> <h2> </h2></th>
@@ -61,11 +62,11 @@ class Category extends Component {
     }
     render() {
         return (
-            <div >
+            <div className={styles.container}>
                 <table >
-                    <tbody>
+                    <tbody className={styles.shadow}> 
                         {this.getServices()}
-                    </tbody>
+                  </tbody>
                 </table>
             </div>
         );
