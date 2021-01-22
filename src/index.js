@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import SimpleReactLightbox from 'simple-react-lightbox'
+import 'bootstrap/dist/css/bootstrap.min.css';
 // import { Route, BrowserRouter as Router } from "react-router-dom";
 // import {  BrowserRouter  } from "react-router-dom";
 // import Cell from "./components/PhotoGrid/Cell";
@@ -28,7 +30,13 @@ import "./index.css";
 //   </Router>
 // );
 
-ReactDOM.render(<App/>, document.getElementById("root"));
+ReactDOM.render(  <React.StrictMode>
+  <SimpleReactLightbox>
+    <App />
+  </SimpleReactLightbox>
+</React.StrictMode>,
+ document.getElementById("root")
+ );
 
 // ReactDOM.render(
   // <BrowserRouter>
