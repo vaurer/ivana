@@ -17,7 +17,7 @@ class AboutUs extends Component {
 
   render() {
     return (
-        <div>
+        <div className={styles.wrapper}>
             <div className={styles.row}>
             <div>{this.getAboutUsPictures()}</div>
             </div>

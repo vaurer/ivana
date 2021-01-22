@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Constants from "../../helper/Constants";
 import Products from "../Products/Products";
+import styles from "./ProductsHolder.module.css";
 
 class ProductsHolder extends Component {
   constructor(props) {
@@ -38,8 +39,8 @@ class ProductsHolder extends Component {
 
   render() {
     return (
-      <div style={{backgroundColor:  '#a69c8f' }}>
-        <div >{this.getProducts()}</div>
+      <div className={styles.wrapper}>
+        <div className={styles.container}>{this.getProducts()}</div>
       </div>
     );
   }
