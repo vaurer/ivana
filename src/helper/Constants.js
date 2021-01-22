@@ -7,4 +7,5 @@ module.exports = {
   products: baseURL + "/ivanahairart/items/products?fields=*.*.*",
   category: baseURL + "/ivanahairart/items/service_category?fields=*.*",
   services: baseURL + "/ivanahairart/items/services?fields=*.*",
+  contact: baseURL + "/ivanahairart/items/contact?fields=*.*",
 };
