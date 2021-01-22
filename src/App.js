@@ -2,7 +2,7 @@ import "./App.css";
 import React, { Component} from "react";
 import ParallaxHolder from './components/ParallaxHolder/ParallaxHolder'
 import Constants from "./helper/Constants";
-import Cell from './components/PhotoGrid/Cell'
+// import Cell from './components/PhotoGrid/Cell'
 import { If, Else } from 'rc-if-else';
 import Form from './components/Footer/Form'
 import GoogleMaps from "./components/Footer/GoogleMaps";
@@ -11,7 +11,7 @@ import ProductsHolder from "./components/ProductsHolder/ProductsHolder";
 import AboutUsHolder from "./components/AboutUs/AboutUsHolder";
 import Pricelist from "./components/Pricelists/Pricelist";
 import * as ReactBootStrap from 'react-bootstrap';
-// import MediaHolder from "./components/Media/MediaHolder";
+import MediaHolder from "./components/Media/MediaHolder";
 
 export default class App extends Component {
 
@@ -283,8 +283,8 @@ export default class App extends Component {
         </If>
        
         <If condition={this.state.showGalery} >
-        <Cell/>
-          {/* <MediaHolder/> */}
+        {/* <Cell/> */}
+          <MediaHolder/>
         </If>
       
         <If condition={this.state.showForm}>
