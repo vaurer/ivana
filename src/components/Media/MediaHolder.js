@@ -3,7 +3,7 @@ import { SRLWrapper } from "simple-react-lightbox";
 // import { SRLWrapper } from 'simple-react-lightbox-pro'
 
 // Create an array of objects that you want to pass to the lightbox
-const elements = [
+/*const elements = [
   {
     src: '/static/images/cards/1.jpg',
     caption: 'Lorem ipsum dolor sit amet',
@@ -25,7 +25,7 @@ const elements = [
   //   autoplay: false,
   //   showControls: true
   // }
-]
+]*/
 
 function MediaHolder() {
   return  <SRLWrapper>
