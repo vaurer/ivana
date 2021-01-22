@@ -3,14 +3,14 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { Route, BrowserRouter as Router } from "react-router-dom";
+// import { Route, BrowserRouter as Router } from "react-router-dom";
 // import {  BrowserRouter  } from "react-router-dom";
-import Cell from "./components/PhotoGrid/Cell";
-import GoogleMaps from './components/Footer/GoogleMaps'
-import Form from "./components/Footer/Form";
-import Pricelist from "./components/Pricelists/Pricelist";
-import AboutUsHolder from "./components/AboutUs/AboutUsHolder";
-import ProductsHolder from "./components/ProductsHolder/ProductsHolder";
+// import Cell from "./components/PhotoGrid/Cell";
+// import GoogleMaps from './components/Footer/GoogleMaps'
+// import Form from "./components/Footer/Form";
+// import Pricelist from "./components/Pricelists/Pricelist";
+// import AboutUsHolder from "./components/AboutUs/AboutUsHolder";
+// import ProductsHolder from "./components/ProductsHolder/ProductsHolder";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // const routing = (

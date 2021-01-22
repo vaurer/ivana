@@ -74,7 +74,7 @@ class FooterContact extends Component {
         </a>
         </div>
         <div className={styles.contactForm}>
-        <a href=" " onClick={this.props.formToggleHandler} mainSiteToggleHandler={this.mainSiteToggleHandler}>
+        <a href=" " onClick={this.props.formToggleHandler} >
         <i className="far fa-envelope fa-3x"></i>
         <p>Kontaktieren Sie uns</p>
         </a>
