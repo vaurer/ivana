@@ -1,22 +1,3 @@
-/* .container {
-  position: relative;
-  font-family: Arial;
-  width: auto;
-  margin-bottom: 1vh;
-  display: flex;
-  justify-content: space-between;
-}
-
-.textBlock {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background-color: rgb(44, 36, 36);
-  color: white;
-  padding-left: 20px;
-  padding-right: 20px;
-} */
-
 .textInBox {
   color: white;
 }
@@ -25,6 +6,7 @@
   width: 100%;
   max-width: 800px;
   height: auto;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6)
 }
 
 .containerProducts {
@@ -37,14 +19,6 @@
 }
 
 .contentProducts {
-  /* margin-top: 150px;
-  position: absolute;
-  bottom: 0;
-  background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.5);
-  color: #f1f1f1;
-  width: 100%;
-  padding: 20px; */
   position: absolute;
   bottom: 0;
   right: 0;

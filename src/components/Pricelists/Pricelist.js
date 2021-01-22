@@ -59,6 +59,7 @@ class Pricelist extends Component {
                 categories={this.state.categories}
             />
             </div>
+            
         );
     }
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 // import { Route, BrowserRouter as Router } from "react-router-dom";
@@ -12,6 +11,7 @@ import reportWebVitals from "./reportWebVitals";
 // import AboutUsHolder from "./components/AboutUs/AboutUsHolder";
 // import ProductsHolder from "./components/ProductsHolder/ProductsHolder";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "./index.css";
 
 // const routing = (
 //   <Router>
