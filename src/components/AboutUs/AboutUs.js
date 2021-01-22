@@ -8,7 +8,7 @@ class AboutUs extends Component {
     let widgets = [];
     this.props.aboutUsArray.forEach((element) => {
       widgets.push(
-      <div className={styles.column}>
+      <div className={styles.column} key={element.id}>
         <img src={element.image.data.thumbnails[3].url} alt={element.image.title} style={{width:'100%'}}/>
     </div>);
     });
