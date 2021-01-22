@@ -11,7 +11,7 @@ import ProductsHolder from "./components/ProductsHolder/ProductsHolder";
 import AboutUsHolder from "./components/AboutUs/AboutUsHolder";
 import Pricelist from "./components/Pricelists/Pricelist";
 import * as ReactBootStrap from 'react-bootstrap';
-import MediaHolder from "./components/Media/MediaHolder";
+// import MediaHolder from "./components/Media/MediaHolder";
 
 export default class App extends Component {
 
@@ -284,7 +284,7 @@ export default class App extends Component {
        
         <If condition={this.state.showGalery} >
         <Cell/>
-          <MediaHolder/>
+          {/* <MediaHolder/> */}
         </If>
       
         <If condition={this.state.showForm}>
