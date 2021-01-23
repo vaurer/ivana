@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
-import { SRLWrapper } from "simple-react-lightbox";
 import Constants from "../../helper/Constants";
-// USE THE IMPORT BELOW INSTEAD IF YOU ARE USING THE PRO VERSION
-// import { SRLWrapper } from 'simple-react-lightbox-pro'
-
-// Create an array of objects that you want to pass to the lightbox
 
 class MediaHolder extends Component {
-  state = { elements:[],}
+  state = { 
+    elements:[],
+  }
 
   componentDidMount() {
     let tempdata = [];
@@ -19,8 +16,10 @@ class MediaHolder extends Component {
             isLoaded1: true,
             items: result.data,
           });
+          let temp=-1;
           this.state.items.forEach((element) => {
             
+            temp=temp+1
             console.log(element)
             if (element.isactive === true) {
               let line = {
@@ -30,10 +29,11 @@ class MediaHolder extends Component {
                     thumbnail: element.photo.data.thumbnails[3].url,
                     caption: element.name,
                     alt: element.name,
-                    items: element.fotos
-                    
+                    items: element.fotos,
+                    key: temp,
               };
               tempdata.push(line);
+              console.log(line)
             }
           });
          
@@ -50,20 +50,21 @@ class MediaHolder extends Component {
         }
       );
   };
+  
 
-  getItems = () => {
+  getFirstLevelItems = () => {
     let widgets = [];
     this.state.elements.forEach(element => {
       widgets.push(
-      <a href={element.src}>
+      <a href={element.src} element={element} onClick={this.runSecondLevel}>
           <img src={element.thumbnail} alt={element.alt} />
         </a>)
     });
     return widgets;
   };
-  
+
   render() {
-    return  <SRLWrapper>{this.getItems()}</SRLWrapper>
+    return  <div>{this.getFirstLevelItems()}</div>
   }
 }
 export default MediaHolder;
