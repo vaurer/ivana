@@ -11,11 +11,11 @@ class Category extends Component {
             if (((element.category === 'Damen'))) {
                 tempName = element.category;
                 widgets.push(
-                    <tr style={{backgroundColor: "#705f46"}}>
-                        <th> <h2>{element.category}</h2></th>
-                        <th> <h3>kurz</h3></th>
-                        <th> <h3>mittel</h3></th>
-                        <th> <h3>lang</h3></th>
+                    <tr className={styles.tableHeader}>
+                        <th> {element.category}</th>
+                        <th> kurz</th>
+                        <th> mittel</th>
+                        <th> lang</th>
                     </tr>
                 )
                 this.props.services.forEach(element => {
@@ -37,10 +37,10 @@ class Category extends Component {
                 tempName = element.category;
                 widgets.push(
                     <tr style={{backgroundColor: "#705f46"}} >
-                        <th> <h2>{element.category}</h2></th>
-                        <th> <h2> </h2></th>
-                        <th> <h2> </h2></th>
-                        <th> <h2> </h2></th>
+                        <th> {element.category}</th>
+                        <th> </th>
+                        <th> </th>
+                        <th> </th>
                     </tr>
                 )
                 this.props.services.forEach(element => {

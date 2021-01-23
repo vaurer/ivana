@@ -8,27 +8,37 @@
   /* for edge cases: */
   width: 100%;
   max-width: 100%;
+  font-size: x-small;
 }
 
-.shadow{
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6)
+.tableHeader{
+  background-color: #705f46; 
 }
 
+th {
+  font-size: larger;
+}
+.shadow {
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+}
 
 @media (min-width: 768px) {
   .container {
     width: 750px;
+    font-size: small;
   }
 }
 
 @media (min-width: 992px) {
   .container {
     width: 970px;
+    font-size: medium;
   }
 }
 
 @media (min-width: 1200px) {
   .container {
     width: 1170px;
+    font-size: medium;
   }
 }
