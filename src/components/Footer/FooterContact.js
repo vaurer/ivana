@@ -80,8 +80,10 @@ class FooterContact extends Component {
         </a>
         </div>
         <div className={styles.contactImpressum}>
+        <a href=" " onClick={this.props.impressumToggleHandler} >
         <i className="fas fa-file-contract fa-3x"></i>
           <p>Impressum</p>
+          </a>
         </div>
       </div>
     );

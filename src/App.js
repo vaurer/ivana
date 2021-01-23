@@ -12,6 +12,7 @@ import AboutUsHolder from "./components/AboutUs/AboutUsHolder";
 import Pricelist from "./components/Pricelists/Pricelist";
 import * as ReactBootStrap from 'react-bootstrap';
 import MediaHolder from "./components/Media/MediaHolder";
+import Impressum from "./components/Impressum/Impressum";
 
 export default class App extends Component {
 
@@ -27,6 +28,7 @@ export default class App extends Component {
     this.setState({ showAboutUs: false });
     this.setState({ showNav: true });
     this.setState({ showPrices: false });
+    this.setState({ showImpressum: false });
   };
 
   mainSiteToggleHandler2 = () => {
@@ -41,6 +43,7 @@ export default class App extends Component {
     this.setState({ showAboutUs: false });
      this.setState({ showNav: true });
      this.setState({ showPrices: false });
+     this.setState({ showImpressum: false });
   };
 
   mainSite3ParToggleHandler = () => {
@@ -54,6 +57,7 @@ export default class App extends Component {
     this.setState({ showProducts: false });
     this.setState({ showAboutUs: false });
     this.setState({ showPrices: false });
+    this.setState({ showImpressum: false });
   };
 
   galeryToggleHandler = () => {
@@ -67,6 +71,7 @@ export default class App extends Component {
     this.setState({ showProducts: false });
     this.setState({ showAboutUs: false });
     this.setState({ showPrices: false });
+    this.setState({ showImpressum: false });
   };
 
   productsToggleHandler = () => {
@@ -81,6 +86,7 @@ export default class App extends Component {
     this.setState({ showAboutUs: false });
     this.setState({ showPrices: false });
     this.setState({ showNav: true });
+    this.setState({ showImpressum: false });
   };
 
   aboutUsToggleHandler = () => {
@@ -95,6 +101,7 @@ export default class App extends Component {
     this.setState({ showAboutUs: true });
     this.setState({ showNav: true });
     this.setState({ showPrices: false });
+    this.setState({ showImpressum: false });
   };
 
   pricesToggleHandler = () => {
@@ -109,6 +116,7 @@ export default class App extends Component {
     this.setState({ showAboutUs: false });
     this.setState({ showNav: true });
     this.setState({ showPrices: true });
+    this.setState({ showImpressum: false });
   };
 
   videosToggleHandler = () => {
@@ -135,6 +143,7 @@ export default class App extends Component {
     this.setState({ showAboutUs: false });
     this.setState({ showNav: false });
     this.setState({ showPrices: false });
+    this.setState({ showImpressum: false });
   };
 
     mapToggleHandler = (e) => {
@@ -150,6 +159,23 @@ export default class App extends Component {
       this.setState({ showAboutUs: false });
       this.setState({ showNav: false });
       this.setState({ showPrices: false });
+      this.setState({ showImpressum: false });
+  };
+
+  impressumToggleHandler = (e) => {
+    // this.props.history.push("/prices")
+    e.preventDefault();
+    this.setState({ showGalery: false });
+    this.setState({ showMain: false });
+    this.setState({ showForm: false });
+    this.setState({ showMap: false });
+    this.setState({ showCell: false });
+    this.setState({ showVideos: false });
+    this.setState({ showProducts: false });
+    this.setState({ showAboutUs: false });
+    this.setState({ showNav: true });
+    this.setState({ showPrices: false });
+    this.setState({ showImpressum: true });
   };
   
   constructor(props) {
@@ -169,6 +195,7 @@ export default class App extends Component {
       isLoaded1: false,
       aboutUs: false,
       showPrices: false,
+      showImpressum: true,
       mainid: "",
       mainalt: "null",
       maintitle: "null",
@@ -279,7 +306,8 @@ export default class App extends Component {
           galeryToggleHandler={this.galeryToggleHandler} 
           videosToggleHandler={this.videosToggleHandler} 
           mapToggleHandler={this.mapToggleHandler}
-          productsToggleHandler={this.productsToggleHandler}/>
+          productsToggleHandler={this.productsToggleHandler}
+          impressumToggleHandler={this.impressumToggleHandler}/>
         </If>
        
         <If condition={this.state.showGalery} >
@@ -306,7 +334,11 @@ export default class App extends Component {
         <If condition={this.state.showPrices}>
         <Pricelist/>
         </If>
-       
+
+        <If condition={this.state.showImpressum}>
+        <Impressum/>
+        </If>
+        
         </Else>
         </If>
       </div>

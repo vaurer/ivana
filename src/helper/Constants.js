@@ -8,4 +8,5 @@ module.exports = {
   category: baseURL + "/ivanahairart/items/service_category?fields=*.*",
   services: baseURL + "/ivanahairart/items/services?fields=*.*",
   contact: baseURL + "/ivanahairart/items/contact?fields=*.*",
+  impressum : baseURL + "/ivanahairart/items/impressum?fields=*.*",
 };
