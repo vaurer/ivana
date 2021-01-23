@@ -7,8 +7,8 @@ import Constants from "../../helper/Constants";
 // Create an array of objects that you want to pass to the lightbox
 
 class MediaHolder extends Component {
-  state = { elements:[],
-    id:'', }
+  state = { elements:[],}
+
   componentDidMount() {
     let tempdata = [];
     fetch(Constants.photos)
@@ -20,7 +20,7 @@ class MediaHolder extends Component {
             items: result.data,
           });
           this.state.items.forEach((element) => {
-
+            
             console.log(element)
             if (element.isactive === true) {
               let line = {

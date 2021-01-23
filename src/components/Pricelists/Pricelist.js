@@ -30,7 +30,7 @@ class Pricelist extends Component {
                 categories: categories
             })
         });
-        fetch(Constants.prices)
+        fetch(Constants.services)
             .then((response) => response.json())
             .then((result) => {
                 let services = [];
