@@ -17,7 +17,7 @@ class Pricelist extends Component {
                 .then((res2) => res2.json())
                 .then((res) => {
                     let categories = [];
-                    res.data.forEach((element) => { // element in paranthesis
+                    res.data.forEach((element) => {
                         console.log('element')
                         console.log(element)
                         let cat = { 
@@ -30,11 +30,11 @@ class Pricelist extends Component {
                 categories: categories
             })
         });
-        fetch("https://cms.ivanahairart.ch/ivanahairart/items/services?fields=*.*")
+        fetch(Constants.prices)
             .then((response) => response.json())
             .then((result) => {
                 let services = [];
-                result.data.forEach((element) => { // element in paranthesis
+                result.data.forEach((element) => { 
                     let service = {
                         id: element.id,
                         category: element.category_service.category,

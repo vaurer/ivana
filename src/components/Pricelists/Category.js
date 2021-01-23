@@ -27,7 +27,6 @@ class Category extends Component {
                                 price1={element.price1}
                                 price2={element.price2}
                                 price3={element.price3}
-                            /*                                 category={element.category} */
                             />
                         );
                     }
