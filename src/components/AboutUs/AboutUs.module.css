@@ -10,6 +10,10 @@
   max-width: 100%;
 }
 
+.aboutMeTxt{
+  font-size: larger;
+}
+
 .content{
   padding-bottom: 3rem;
 }
@@ -18,6 +22,7 @@
   .container{
     width: 750px;
   }
+  
 
 }
 
@@ -48,7 +53,13 @@
 }
 
 .ivanaMain{
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6)
+  /* box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6); */
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 1px;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
 }
 
 .row{
