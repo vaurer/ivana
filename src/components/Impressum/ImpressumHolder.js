@@ -48,7 +48,7 @@ class ImpressumHolder extends Component {
         let widgets = [];
         this.state.legals.forEach((element) => {
             widgets.push(
-                <div>
+                <div key={element.headline}>
                   <h1>{element.headline}
                       </h1>  
                     {element.paragraph}
