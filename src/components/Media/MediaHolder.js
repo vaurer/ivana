@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { MediaContext } from '../../context/MediaContext';
 import Constants from '../../helper/Constants'
+import styles from './MediaHolder.module.css';
 
 class MediaHolder extends Component {
   
@@ -61,19 +62,28 @@ this.props.galeryToggleHandler()
     this.state.elements.forEach(element => {
       console.log(element.key)
       widgets.push(
+
+        
       <div  onClick={this.setGalleryInContext.bind(this)} key={element.key}>
-          <img src={element.thumbnail} alt={element.alt}/>
+        <div className={styles.picCointer}>
+          <img className={styles.onePic} src={element.thumbnail} alt={element.alt}/>
+          <div className={styles.over}>
+            <div className={styles.picGallaryHeader}>
+            {element.alt}
+            </div>
+          </div>
+          </div>
+          
         </div>)
     });
     return widgets;
   };
 
   render() {
-    // const {setGaleryName} = this.context;
-    return  <div>
-    {/* <MediaContextProvider value={{galery: this.state.galery}}> */}
+
+    return  <div className={styles.container}>
     {this.getFirstLevelItems()}
-    {/* </MediaContextProvider> */}
+    
     </div>
   }
 }

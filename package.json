@@ -17,6 +17,7 @@
     "react-scripts": "4.0.1",
     "react-spring": "^8.0.27",
     "simple-react-lightbox": "^3.5.4",
+    "style-it": "^2.1.4",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
