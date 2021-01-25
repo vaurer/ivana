@@ -12,8 +12,8 @@ import AboutUsHolder from "./components/AboutUs/AboutUsHolder";
 import Pricelist from "./components/Pricelists/Pricelist";
 import * as ReactBootStrap from 'react-bootstrap';
 import MediaHolder from "./components/Media/MediaHolder";
-import Impressum from "./components/Impressum/Impressum";
 import GaleryHolder from "./components/Media/GaleryHolder";
+import ImpressumHolder from "./components/Impressum/ImpressumHolder";
 
 export default class App extends Component {
 
@@ -354,7 +354,7 @@ export default class App extends Component {
         </If>
 
         <If condition={this.state.showImpressum}>
-        <Impressum/>
+        <ImpressumHolder/>
         </If>
         
         </Else>

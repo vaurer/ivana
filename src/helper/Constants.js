@@ -10,4 +10,6 @@ module.exports = {
   contact: baseURL + "/ivanahairart/items/contact?fields=*.*",
   impressum : baseURL + "/ivanahairart/items/impressum?fields=*.*",
   ivana : baseURL + "/ivanahairart/items/ivana?fields=*.*",
+  legal : baseURL + "/ivanahairart/items/legal?fields=*.*",
+  jobs : baseURL + "/ivanahairart/items/jobs?fields=*.*",
 };

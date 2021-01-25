@@ -66,7 +66,7 @@ this.props.galeryToggleHandler()
         
       <div  onClick={this.setGalleryInContext.bind(this)} key={element.key}>
         <div className={styles.picCointer}>
-          <img className={styles.onePic} src={element.thumbnail} alt={element.alt}/>
+          <img className={styles.onePic} src={element.thumbnail} alt={element.key}/>
           <div className={styles.over}>
             <div className={styles.picGallaryHeader}>
             {element.alt}

@@ -1,47 +1,23 @@
 import React, { Component } from 'react';
-import Constants from '../../helper/Constants';
 class Impressum extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            impressums: [],
-            isloaded: false,
-        }
-    }
-    componentDidMount() {
-        fetch(Constants.impressum)
-            .then((response) => response.json())
-            .then((result) => {
-                this.setState({
-                    name: result.data[0].name,
-                    street: result.data[0].street,
-                    zipcity: result.data[0].zipcity,
-                    phone: result.data[0].phone,
-                    email: result.data[0].email,
-                    uid: result.data[0].uid
-                });
-            },
-                (error) => {
-                    this.setState({
-                        isLoaded: true,
-                        error,
-                    });
-                }
-            );
-    }
+    state= {}
     render() {
         return (
-            <div onClick={this.props.impressumToggleHandler}>
+            <div>
                 <div>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
                     <i className="fas fa-times"
                         onClick={this.props.mainSiteToggleHandler2}
                     ></i>
-                    <div>{this.state.name}</div>
-                    <div>{this.state.street}</div>
-                    <div>{this.state.zipcity}</div>
-                    <div>{this.state.phone}</div>
-                    <div>{this.state.email}</div>
-                    <div>{this.state.uid}</div>
+                    <div>{this.props.name}</div><br></br>
+                    <div>{this.props.street}</div>
+                    <div>{this.props.zipcity}</div>
+                    <div>{this.props.phone}</div>
+                    <div>{this.props.email}</div><br></br>
+                    <div>{this.props.uid}</div>
                 </div>
             </div>
         );
