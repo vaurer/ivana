@@ -4,7 +4,6 @@ import styles from './Catogory.module.css'
 
 class Category extends Component {
     getServices = () => {
-        console.log(this.props.categories)
         let widgets = [];
         let tempName;
         this.props.categories.forEach(element => {

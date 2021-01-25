@@ -18,8 +18,6 @@ class Pricelist extends Component {
                 .then((res) => {
                     let categories = [];
                     res.data.forEach((element) => {
-                        console.log('element')
-                        console.log(element)
                         let cat = { 
                             category : element.category,
                             id : element.id
