@@ -34,7 +34,6 @@ class GaleryHolder extends Component {
         isLoaded1: true,
         elements: tempdata,
       });
-      console.log(this.state.elements)
     },
     (error) => {
       this.setState({

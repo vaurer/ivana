@@ -60,7 +60,6 @@ this.props.galeryToggleHandler()
   getFirstLevelItems = () => {
     let widgets = [];
     this.state.elements.forEach(element => {
-      console.log(element.key)
       widgets.push(
 
         

@@ -14,15 +14,16 @@ export default class ParallaxHolder extends Component {
 //   goto3ToggleHandler() {
 //    //this.parallax.scrollTo(3)
 //    alert('HELLO WORLD')
+//<i class="fas fa-cut"></i>
 // }
 
     render(){
         return(
             <div>
                 <Parallax ref={(ref) => (this.parallax = ref)} pages={4} style={{ backgroundColor: '#a69c8f'}}>
-                  <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#8d8578'}} />
-                  <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#afa596'}} />
-          
+                <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#8d8578'}} />
+                <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#afa596'}} />
+
                 <ParallaxLayer
                   offset={1}
                   speed={0.1}

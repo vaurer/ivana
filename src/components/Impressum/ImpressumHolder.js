@@ -13,8 +13,6 @@ class ImpressumHolder extends Component {
         .then((result) => {
             let legals = [];
             result.data.forEach((element) => {
-                console.log('element')
-                console.log(element)
                 let legal = {
                     idlegal: element.id,
                     headline: element.headline,

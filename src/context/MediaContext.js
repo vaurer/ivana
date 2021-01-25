@@ -9,7 +9,6 @@ class MediaContextProvider extends Component{
 
      setGaleryName=(e)=>{
      this.setState({ galeryName : e})
-     console.log("YEAH "+e)
     }
     render(){
     return(
