@@ -73,7 +73,6 @@ this.props.galeryToggleHandler()
             </div>
           </div>
           </div>
-          
         </div>)
     });
     return widgets;
