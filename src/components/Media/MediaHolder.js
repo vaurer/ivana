@@ -62,7 +62,7 @@ this.props.galeryToggleHandler()
       console.log(element.key)
       widgets.push(
       <div  onClick={this.setGalleryInContext.bind(this)} key={element.key}>
-          <img src={element.thumbnail} alt={element.alt}/>
+          <img src={element.thumbnail} alt={element.key}/>
         </div>)
     });
     return widgets;
