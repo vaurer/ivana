@@ -60,7 +60,7 @@ class AboutUsHolder extends Component {
           <div className={styles.content}>
             <h1>{this.state.title}</h1>
             <p>{this.state.text}</p>
-            <img src={this.state.teamPhoto} alt={this.state.title} style={{width:'100%'}}/>
+            <img className={styles.ivanaMain} src={this.state.teamPhoto} alt={this.state.title} style={{width:'100%'}}/>
           </div>
           <div>
             <AboutUs aboutUsArray={this.state.aboutUsArray} />

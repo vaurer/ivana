@@ -3,7 +3,7 @@
   margin-left: auto;
   padding-right: 15px;
   padding-left: 15px;
-  padding-top: 190px;
+  padding-top: 110px;
   padding-bottom: 80px;
   /* for edge cases: */
   width: 100%;
@@ -45,6 +45,10 @@
   content: "";
   clear: both;
   display: table;
+}
+
+.ivanaMain{
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6)
 }
 
 .row{
