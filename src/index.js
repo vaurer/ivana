@@ -13,6 +13,7 @@ import SimpleReactLightbox from 'simple-react-lightbox'
 // import ProductsHolder from "./components/ProductsHolder/ProductsHolder";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./index.css";
+import MediaContextProvider from "./context/MediaContext";
 
 // const routing = (
 //   <Router>
@@ -29,11 +30,14 @@ import "./index.css";
 //   </Router>
 // );
 
-ReactDOM.render(  <React.StrictMode>
+ReactDOM.render(  
+  <MediaContextProvider>
+<React.StrictMode>
   <SimpleReactLightbox>
     <App />
   </SimpleReactLightbox>
-</React.StrictMode>,
+</React.StrictMode>
+</MediaContextProvider>,
  document.getElementById("root")
  );
 

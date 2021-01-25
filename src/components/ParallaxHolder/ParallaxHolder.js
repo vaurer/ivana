@@ -26,7 +26,7 @@ export default class ParallaxHolder extends Component {
                 <ParallaxLayer
                   offset={1}
                   speed={0.1}
-                  onClick={this.props.galeryToggleHandler}
+                  onClick={this.props.mediaToggleHandler}
                   style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'all'}}>
                   <img src={this.props.src3} alt={'1'} style={{ width: 'auto' , height: '60%', opacity: 0.7 }} />
                 </ParallaxLayer>
@@ -34,7 +34,6 @@ export default class ParallaxHolder extends Component {
                 <ParallaxLayer
                   offset={2}
                   speed={0.1}
-                  onClick={this.props.videosToggleHandler}
                   style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <img src={this.props.src2} alt={'1'} style={{ width: 'auto' , height: '60%', opacity: 0.7  }}/>
                 </ParallaxLayer>
@@ -50,7 +49,7 @@ export default class ParallaxHolder extends Component {
                   offset={1}
                   speed={0.1}
                   style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'all'}}>
-                  <div className={styles.container} onClick={this.props.galeryToggleHandler}> <p className={styles.centered} >GALERY</p></div>
+                  <div className={styles.container} onClick={this.props.mediaToggleHandler}> <p className={styles.centered} >GALERY</p></div>
                 </ParallaxLayer>
 
                 <ParallaxLayer

@@ -13,6 +13,7 @@ import Pricelist from "./components/Pricelists/Pricelist";
 import * as ReactBootStrap from 'react-bootstrap';
 import MediaHolder from "./components/Media/MediaHolder";
 import Impressum from "./components/Impressum/Impressum";
+import GaleryHolder from "./components/Media/GaleryHolder";
 
 export default class App extends Component {
 
@@ -29,6 +30,7 @@ export default class App extends Component {
     this.setState({ showNav: true });
     this.setState({ showPrices: false });
     this.setState({ showImpressum: false });
+    this.setState({ showMedia: false });
   };
 
   mainSiteToggleHandler2 = () => {
@@ -44,6 +46,7 @@ export default class App extends Component {
      this.setState({ showNav: true });
      this.setState({ showPrices: false });
      this.setState({ showImpressum: false });
+     this.setState({ showMedia: false });
   };
 
   mainSite3ParToggleHandler = () => {
@@ -58,6 +61,7 @@ export default class App extends Component {
     this.setState({ showAboutUs: false });
     this.setState({ showPrices: false });
     this.setState({ showImpressum: false });
+    this.setState({ showMedia: false });
   };
 
   galeryToggleHandler = () => {
@@ -72,6 +76,22 @@ export default class App extends Component {
     this.setState({ showAboutUs: false });
     this.setState({ showPrices: false });
     this.setState({ showImpressum: false });
+    this.setState({ showMedia: false });
+  };
+
+  mediaToggleHandler = () => {
+    // this.props.history.push("/gallery")
+    this.setState({ showGalery: false });
+    this.setState({ showMain: false });
+    this.setState({ showForm: false });
+    this.setState({ showMap: false });
+    this.setState({ showCell: false });
+    this.setState({ showVideos: false });
+    this.setState({ showProducts: false });
+    this.setState({ showAboutUs: false });
+    this.setState({ showPrices: false });
+    this.setState({ showImpressum: false });
+    this.setState({ showMedia: true });
   };
 
   productsToggleHandler = () => {
@@ -87,6 +107,7 @@ export default class App extends Component {
     this.setState({ showPrices: false });
     this.setState({ showNav: true });
     this.setState({ showImpressum: false });
+    this.setState({ showMedia: false });
   };
 
   aboutUsToggleHandler = () => {
@@ -102,6 +123,7 @@ export default class App extends Component {
     this.setState({ showNav: true });
     this.setState({ showPrices: false });
     this.setState({ showImpressum: false });
+    this.setState({ showMedia: false });
   };
 
   pricesToggleHandler = () => {
@@ -117,17 +139,7 @@ export default class App extends Component {
     this.setState({ showNav: true });
     this.setState({ showPrices: true });
     this.setState({ showImpressum: false });
-  };
-
-  videosToggleHandler = () => {
-    // this.props.history.push("/videos")
-    this.setState((prevState) => {
-      return { 
-        showVideos: !prevState.showVideos,
-        showMain: !prevState.showMain,
-        showCell: !prevState.showCell
-      };
-    });
+    this.setState({ showMedia: false });
   };
 
   formToggleHandler = (e) => {
@@ -144,6 +156,7 @@ export default class App extends Component {
     this.setState({ showNav: false });
     this.setState({ showPrices: false });
     this.setState({ showImpressum: false });
+    this.setState({ showMedia: false });
   };
 
     mapToggleHandler = (e) => {
@@ -160,6 +173,7 @@ export default class App extends Component {
       this.setState({ showNav: false });
       this.setState({ showPrices: false });
       this.setState({ showImpressum: false });
+      this.setState({ showMedia: false });
   };
 
   impressumToggleHandler = (e) => {
@@ -176,6 +190,7 @@ export default class App extends Component {
     this.setState({ showNav: true });
     this.setState({ showPrices: false });
     this.setState({ showImpressum: true });
+    this.setState({ showMedia: false });
   };
   
   constructor(props) {
@@ -186,7 +201,6 @@ export default class App extends Component {
       showGalery: false,
       showCell:true,
       showForm:false,
-      showVideos:false,
       showMap:false,
       showProducts:false,
       showNav:true,
@@ -196,6 +210,7 @@ export default class App extends Component {
       aboutUs: false,
       showPrices: false,
       showImpressum: true,
+      showMedia:false,
       mainid: "",
       mainalt: "null",
       maintitle: "null",
@@ -274,6 +289,7 @@ export default class App extends Component {
 
   render() {
     return (
+     
       <div className="App">
         <If condition={!this.state.showApp} >
         {<ReactBootStrap.Spinner animation='grow' style={{ position: 'fixed', top: '50%', left: '50%'}}/>}
@@ -284,10 +300,10 @@ export default class App extends Component {
         aboutUs={this.state.aboutUsTitle}
         mainSiteToggleHandler={this.mainSiteToggleHandler} 
         aboutUsToggleHandler={this.aboutUsToggleHandler}
-        galeryToggleHandler={this.galeryToggleHandler}
         productsToggleHandler={this.productsToggleHandler}
         mainSite3ParToggleHandler={this.mainSite3ParToggleHandler} 
-        pricesToggleHandler={this.pricesToggleHandler}/>
+        pricesToggleHandler={this.pricesToggleHandler}
+        mediaToggleHandler={this.mediaToggleHandler}/>
         </If>
         
         <If condition={this.state.showMain} >
@@ -303,16 +319,18 @@ export default class App extends Component {
           src3={this.state.main3image} 
           maintitle3={this.state.main3title} 
           formToggleHandler={this.formToggleHandler} 
-          galeryToggleHandler={this.galeryToggleHandler} 
-          videosToggleHandler={this.videosToggleHandler} 
           mapToggleHandler={this.mapToggleHandler}
           productsToggleHandler={this.productsToggleHandler}
-          impressumToggleHandler={this.impressumToggleHandler}/>
+          impressumToggleHandler={this.impressumToggleHandler}
+          mediaToggleHandler={this.mediaToggleHandler}/>
         </If>
-       
+        
+        <If condition={this.state.showMedia} >
+          <MediaHolder galeryToggleHandler={this.galeryToggleHandler}/>
+        </If>
+
         <If condition={this.state.showGalery} >
-        {/* <Cell/> */}
-          <MediaHolder/>
+          <GaleryHolder/>
         </If>
       
         <If condition={this.state.showForm}>
@@ -341,7 +359,9 @@ export default class App extends Component {
         
         </Else>
         </If>
+        
       </div>
+      
     );
   }
 }

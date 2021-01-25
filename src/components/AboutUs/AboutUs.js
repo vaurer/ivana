@@ -4,7 +4,6 @@ import styles from "./AboutUs.module.css";
 class AboutUs extends Component {
 
   getAboutUsPictures = () => {
-    console.log(this.props.aboutUsArray)
     let widgets = [];
     this.props.aboutUsArray.forEach((element) => {
       widgets.push(

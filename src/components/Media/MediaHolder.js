@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
-import Constants from "../../helper/Constants";
+import { MediaContext } from '../../context/MediaContext';
+import Constants from '../../helper/Constants'
 
 class MediaHolder extends Component {
+  
+  static contextType = MediaContext;
+
   state = { 
     elements:[],
+    items:[]
   }
 
   componentDidMount() {
@@ -20,20 +25,15 @@ class MediaHolder extends Component {
           this.state.items.forEach((element) => {
             
             temp=temp+1
-            console.log(element)
             if (element.isactive === true) {
               let line = {
-                    width: 1024,
-                    height: 'auto',
                     src: element.photo.data.thumbnails[3].url,
                     thumbnail: element.photo.data.thumbnails[3].url,
-                    caption: element.name,
                     alt: element.name,
-                    items: element.fotos,
                     key: temp,
+                    element: element
               };
               tempdata.push(line);
-              console.log(line)
             }
           });
          
@@ -50,21 +50,31 @@ class MediaHolder extends Component {
         }
       );
   };
-  
+
+setGalleryInContext(e){
+  this.context.setGaleryName(e.target.alt)
+this.props.galeryToggleHandler()
+}
 
   getFirstLevelItems = () => {
     let widgets = [];
     this.state.elements.forEach(element => {
+      console.log(element.key)
       widgets.push(
-      <a href={element.src} element={element} onClick={this.runSecondLevel}>
-          <img src={element.thumbnail} alt={element.alt} />
-        </a>)
+      <div  onClick={this.setGalleryInContext.bind(this)} key={element.key}>
+          <img src={element.thumbnail} alt={element.alt}/>
+        </div>)
     });
     return widgets;
   };
 
   render() {
-    return  <div>{this.getFirstLevelItems()}</div>
+    // const {setGaleryName} = this.context;
+    return  <div>
+    {/* <MediaContextProvider value={{galery: this.state.galery}}> */}
+    {this.getFirstLevelItems()}
+    {/* </MediaContextProvider> */}
+    </div>
   }
 }
 export default MediaHolder;

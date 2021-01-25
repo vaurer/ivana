@@ -38,7 +38,7 @@ class Navbar extends Component {
   }
   secondClose=()=>{
     this.handleClick()
-    this.props.galeryToggleHandler()
+    this.props.mediaToggleHandler()
   }
   thirdClose=()=>{
     this.handleClick()
