@@ -263,18 +263,18 @@ export default class App extends Component {
       }
     );
 
-    fetch(Constants.aboutURL)
+    fetch(Constants.ivana)
           .then((res) => res.json())
           .then(
             (result) => {
+             
               this.setState({
                 isLoaded: true,
-                aboutUsArray: result.data,
-                title:result.data[0].title,
-                text:result.data[0].text,
-                aboutUs:result.public,
-                aboutUsTitle:result.data[0].title,
-                showApp:true,
+                // title: result.data[0].title,
+                // text: result.data[0].text ,
+                aboutUs: result.public,
+                aboutUsTitle: result.data[0].title, //nav title
+                showApp: true,
               });
             },
             (error) => {
