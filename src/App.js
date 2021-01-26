@@ -208,7 +208,7 @@ export default class App extends Component {
       isLoaded1: false,
       aboutUs: false,
       showPrices: false,
-      showImpressum: true,
+      showImpressum: false,
       showMedia:false,
       mainid: "",
       mainalt: "null",
