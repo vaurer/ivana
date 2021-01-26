@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { MediaContext } from '../../context/MediaContext';
 import Constants from '../../helper/Constants'
 import styles from './MediaHolder.module.css';
+import { SRLWrapper } from "simple-react-lightbox";
 
 class MediaHolder extends Component {
   
@@ -81,8 +82,8 @@ this.props.galeryToggleHandler()
 
     return  <div className={styles.container}>
     {this.getFirstLevelItems()}
-    
     </div>
+    // return  <SRLWrapper items={this.state.elements}>{this.getFirstLevelItems()}</SRLWrapper>
   }
 }
 export default MediaHolder;

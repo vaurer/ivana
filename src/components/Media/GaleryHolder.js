@@ -23,7 +23,7 @@ class GaleryHolder extends Component {
       this.state.items.fotos.forEach(element => {
         let line = {
         src: element.directus_files_id.data.full_url,
-        thumbnail:element.directus_files_id.data.thumbnails[5].url,
+        thumbnail:element.directus_files_id.data.thumbnails[2].url,
         caption: element.directus_files_id.title,
         width: 1024,
         height: 'auto'
@@ -55,8 +55,10 @@ class GaleryHolder extends Component {
   };
 
   render() {
-    return  <SRLWrapper>{this.getItems()}</SRLWrapper>
+    // return  <SRLWrapper>{this.getItems()}</SRLWrapper>
     // return <div><p>Vedran</p></div>
+    // return <ImageGallery items={this.state.elements} />
+    return  <SRLWrapper items={this.state.elements}>{this.getItems()}</SRLWrapper>
   }
 }
 export default GaleryHolder;
