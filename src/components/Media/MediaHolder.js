@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { MediaContext } from '../../context/MediaContext';
 import Constants from '../../helper/Constants'
 import styles from './MediaHolder.module.css';
-import { SRLWrapper } from "simple-react-lightbox";
 
 class MediaHolder extends Component {
   
