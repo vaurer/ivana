@@ -93,18 +93,19 @@ this.props.galeryToggleHandler()
   render() {
 
 
-    return  (<div >
-      <GridList cellHeight={300}  spacing={30} >
+    return  (
+      <div className={styles.holderRoot}>
+      <GridList cellHeight={300}  spacing={30} className={styles.gridList}>
         <GridListTile key="Subheader" cols={4} style={{ height: 'auto' }}>
           <ListSubheader component="div"></ListSubheader>
         </GridListTile>
         {this.state.elements.map((tile) => (
-          <GridListTile key={tile.img}>
-            <img src={tile.img} alt={tile.title} />
+          <GridListTile key={tile.key}>
+            <img src={tile.src} alt={tile.key} onClick={this.setGalleryInContext.bind(this)} key={tile.key}/>
             <GridListTileBar
-              title={tile.title}
+              title={tile.alt}
               actionIcon={
-                <IconButton aria-label={`info about ${tile.title}`} >
+                <IconButton aria-label={`info about ${tile.title}`} className={styles.icon}>
                   <InfoIcon />
                 </IconButton>
               }
@@ -112,8 +113,8 @@ this.props.galeryToggleHandler()
           </GridListTile>
         ))}
       </GridList>
-    </div>)
-
+    </div>
+    )
   }
 }
 export default MediaHolder;

@@ -59,3 +59,19 @@
   }
 }
 @import "~react-image-gallery/styles/css/image-gallery.css";
+
+.gridList {
+  width: 1000;
+  height: 1000;
+}
+
+.holderRoot{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: 'space-around';
+  overflow: 'hidden';
+}
+
+.icon{
+  color: 'rgba(255, 255, 255, 0.54)';
+}

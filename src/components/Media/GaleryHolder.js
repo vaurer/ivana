@@ -47,17 +47,14 @@ class GaleryHolder extends Component {
     let widgets = [];
     this.state.elements.forEach(element => {
       widgets.push(
-      <a href={element.src} key={element.caption}>
+      <img href={element.src} key={element.caption} alt='!'>
           <img src={element.thumbnail} alt={element.caption}/>
-        </a>)
+        </img>)
     });
     return widgets;
   };
 
   render() {
-    // return  <SRLWrapper>{this.getItems()}</SRLWrapper>
-    // return <div><p>Vedran</p></div>
-    // return <ImageGallery items={this.state.elements} />
     return  <SRLWrapper items={this.state.elements}>{this.getItems()}</SRLWrapper>
   }
 }
