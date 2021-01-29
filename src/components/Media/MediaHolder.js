@@ -1,7 +1,18 @@
 import React, { Component } from 'react';
 import { MediaContext } from '../../context/MediaContext';
 import Constants from '../../helper/Constants'
+// import TitlebarGridList from './GridList';
 import styles from './MediaHolder.module.css';
+
+
+// import React, {useContext} from 'react';
+// import { makeStyles } from '@material-ui/core/styles';
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
+import GridListTileBar from '@material-ui/core/GridListTileBar';
+import ListSubheader from '@material-ui/core/ListSubheader';
+import IconButton from '@material-ui/core/IconButton';
+import InfoIcon from '@material-ui/icons/Info';
 
 class MediaHolder extends Component {
   
@@ -9,7 +20,7 @@ class MediaHolder extends Component {
 
   state = { 
     elements:[],
-    items:[]
+    items:[],
   }
 
   componentDidMount() {
@@ -42,6 +53,7 @@ class MediaHolder extends Component {
             isLoaded1: true,
             elements: tempdata,
           });
+
         },
         (error) => {
           this.setState({
@@ -50,6 +62,7 @@ class MediaHolder extends Component {
           });
         }
       );
+  
   };
 
 setGalleryInContext(e){
@@ -79,11 +92,32 @@ this.props.galeryToggleHandler()
 
   render() {
 
-    return  <div className={styles.container}>
-    {this.getFirstLevelItems()}
-    </div>
-    // return  <SRLWrapper items={this.state.elements}>{this.getFirstLevelItems()}</SRLWrapper>
+
+    return  (<div >
+      <GridList cellHeight={300}  spacing={30} >
+        <GridListTile key="Subheader" cols={4} style={{ height: 'auto' }}>
+          <ListSubheader component="div"></ListSubheader>
+        </GridListTile>
+        {this.state.elements.map((tile) => (
+          <GridListTile key={tile.img}>
+            <img src={tile.img} alt={tile.title} />
+            <GridListTileBar
+              title={tile.title}
+              actionIcon={
+                <IconButton aria-label={`info about ${tile.title}`} >
+                  <InfoIcon />
+                </IconButton>
+              }
+            />
+          </GridListTile>
+        ))}
+      </GridList>
+    </div>)
+
   }
 }
 export default MediaHolder;
 
+// return  <div className={styles.container}>
+// {this.getFirstLevelItems()}
+// </div>

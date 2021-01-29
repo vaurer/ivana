@@ -4,12 +4,14 @@ export const MediaContext = createContext();
 
 class MediaContextProvider extends Component{
     state={
-       galeryName:''
+       galeryName:'',
+
     }
 
      setGaleryName=(e)=>{
      this.setState({ galeryName : e})
     }
+
     render(){
     return(
         <MediaContext.Provider value={{...this.state, setGaleryName : this.setGaleryName}}>
