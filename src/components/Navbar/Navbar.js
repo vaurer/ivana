@@ -52,6 +52,10 @@ class Navbar extends Component {
     this.handleClick()
     this.props.pricesToggleHandler()
   }
+  sixthClose=()=>{
+    this.handleClick()
+    this.props.jobsToggleHandler()
+  }
 
   
 
@@ -82,6 +86,9 @@ class Navbar extends Component {
               </li>
               <li key="5" className="navButton" onClick={this.fifthClose}>
                 Preise
+              </li>
+              <li key="6" className="navButton" onClick={this.sixthClose}>
+                Jobs
               </li>
             </ul>
           }

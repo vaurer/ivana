@@ -13,8 +13,10 @@ import * as ReactBootStrap from 'react-bootstrap';
 import MediaHolder from "./components/Media/MediaHolder";
 import GaleryHolder from "./components/Media/GaleryHolder";
 import ImpressumHolder from "./components/Impressum/ImpressumHolder";
+import Jobs from "./components/Jobs/Jobs";
 
 export default class App extends Component {
+
 
   mainSiteToggleHandler = () => {
     // this.props.history.push("/")
@@ -30,6 +32,7 @@ export default class App extends Component {
     this.setState({ showPrices: false });
     this.setState({ showImpressum: false });
     this.setState({ showMedia: false });
+    this.setState({ showJobs: false });   
   };
 
   mainSiteToggleHandler2 = () => {
@@ -46,6 +49,7 @@ export default class App extends Component {
      this.setState({ showPrices: false });
      this.setState({ showImpressum: false });
      this.setState({ showMedia: false });
+     this.setState({ showJobs: false });   
   };
 
   mainSite3ParToggleHandler = () => {
@@ -61,6 +65,7 @@ export default class App extends Component {
     this.setState({ showPrices: false });
     this.setState({ showImpressum: false });
     this.setState({ showMedia: false });
+    this.setState({ showJobs: false });   
   };
 
   galeryToggleHandler = () => {
@@ -76,6 +81,7 @@ export default class App extends Component {
     this.setState({ showPrices: false });
     this.setState({ showImpressum: false });
     this.setState({ showMedia: false });
+    this.setState({ showJobs: false });   
   };
 
   mediaToggleHandler = () => {
@@ -91,6 +97,7 @@ export default class App extends Component {
     this.setState({ showPrices: false });
     this.setState({ showImpressum: false });
     this.setState({ showMedia: true });
+    this.setState({ showJobs: false });   
   };
 
   productsToggleHandler = () => {
@@ -107,6 +114,7 @@ export default class App extends Component {
     this.setState({ showNav: true });
     this.setState({ showImpressum: false });
     this.setState({ showMedia: false });
+    this.setState({ showJobs: false });   
   };
 
   aboutUsToggleHandler = () => {
@@ -123,6 +131,7 @@ export default class App extends Component {
     this.setState({ showPrices: false });
     this.setState({ showImpressum: false });
     this.setState({ showMedia: false });
+    this.setState({ showJobs: false });   
   };
 
   pricesToggleHandler = () => {
@@ -139,6 +148,7 @@ export default class App extends Component {
     this.setState({ showPrices: true });
     this.setState({ showImpressum: false });
     this.setState({ showMedia: false });
+    this.setState({ showJobs: false });   
   };
 
   formToggleHandler = (e) => {
@@ -156,6 +166,7 @@ export default class App extends Component {
     this.setState({ showPrices: false });
     this.setState({ showImpressum: false });
     this.setState({ showMedia: false });
+    this.setState({ showJobs: false });   
   };
 
     mapToggleHandler = (e) => {
@@ -173,6 +184,7 @@ export default class App extends Component {
       this.setState({ showPrices: false });
       this.setState({ showImpressum: false });
       this.setState({ showMedia: false });
+      this.setState({ showJobs: false });   
   };
 
   impressumToggleHandler = (e) => {
@@ -190,6 +202,24 @@ export default class App extends Component {
     this.setState({ showPrices: false });
     this.setState({ showImpressum: true });
     this.setState({ showMedia: false });
+    this.setState({ showJobs: false });   
+  };
+
+  jobsToggleHandler = () => {
+    // this.props.history.push("/prices")
+    this.setState({ showGalery: false });
+    this.setState({ showMain: false });
+    this.setState({ showForm: false });
+    this.setState({ showMap: false });
+    this.setState({ showCell: false });
+    this.setState({ showVideos: false });
+    this.setState({ showProducts: false });
+    this.setState({ showAboutUs: false });
+    this.setState({ showNav: true });
+    this.setState({ showPrices: false });
+    this.setState({ showImpressum: false });
+    this.setState({ showMedia: false });
+    this.setState({ showJobs: true });    
   };
   
   constructor(props) {
@@ -210,6 +240,7 @@ export default class App extends Component {
       showPrices: false,
       showImpressum: false,
       showMedia:false,
+      showJobs:false,
       mainid: "",
       mainalt: "null",
       maintitle: "null",
@@ -302,7 +333,8 @@ export default class App extends Component {
         productsToggleHandler={this.productsToggleHandler}
         mainSite3ParToggleHandler={this.mainSite3ParToggleHandler} 
         pricesToggleHandler={this.pricesToggleHandler}
-        mediaToggleHandler={this.mediaToggleHandler}/>
+        mediaToggleHandler={this.mediaToggleHandler}
+        jobsToggleHandler={this.jobsToggleHandler}/>
         </If>
         
         <If condition={this.state.showMain} >
@@ -321,7 +353,8 @@ export default class App extends Component {
           mapToggleHandler={this.mapToggleHandler}
           productsToggleHandler={this.productsToggleHandler}
           impressumToggleHandler={this.impressumToggleHandler}
-          mediaToggleHandler={this.mediaToggleHandler}/>
+          mediaToggleHandler={this.mediaToggleHandler}
+          jobsToggleHandler={this.jobsToggleHandler}/>
         </If>
         
         <If condition={this.state.showMedia} >
@@ -354,6 +387,9 @@ export default class App extends Component {
 
         <If condition={this.state.showImpressum}>
         <ImpressumHolder/>
+        </If>
+        <If condition={this.state.showJobs}>
+        <Jobs/>
         </If>
         
         </Else>
