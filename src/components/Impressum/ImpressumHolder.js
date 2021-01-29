@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Impressum from "./Impressum";
 import Legal from "./Legal";
 import Constants from '../../helper/Constants';
+import styles from './ImpressumHolder.module.css';
+
 class ImpressumHolder extends Component {
     state = {
         legals: [],
@@ -48,8 +50,8 @@ class ImpressumHolder extends Component {
         let widgets = [];
         this.state.legals.forEach((element) => {
             widgets.push(
-                <div key={element.headline}>
-                  <h1>{element.headline}
+                <div className={styles.legalWrapper} key={element.headline}>
+                  <h1 className={styles.legalHeader}>{element.headline}
                       </h1>  
                     {element.paragraph}
                 </div>
@@ -59,7 +61,7 @@ class ImpressumHolder extends Component {
     }; 
     render() {
         return (
-            <div >
+            <div className={styles.container}>
                 <Impressum
                     key={this.state.idlegal}
                     name={this.state.name}
