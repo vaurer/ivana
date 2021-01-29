@@ -26,8 +26,12 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding-top: 1rem;
   font-size: medium;
+  text-decoration: none;
+}
+
+.wrapper:hover a {
+  text-decoration: none;
 }
 
 .header h1 {
@@ -98,7 +102,8 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding-top: 6rem;
+    padding-top: 3rem;
+    font-size: small;
   }
 
   .header h1 {
