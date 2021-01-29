@@ -27,13 +27,16 @@ p {
   flex-direction: column;
   justify-content: space-around;
   padding-top: 1rem;
+  font-size: medium;
 }
 
 .header h1 {
   color: black;
+  font-size: x-large ;
 }
 .header {
   text-align: center;
+  
 }
 
 .ContactText {
@@ -43,6 +46,7 @@ p {
 .ContactText h2 {
   text-align: center;
   text-transform: uppercase;
+  font-size: x-large ;
 }
 .googleMap {
   padding: 1rem;

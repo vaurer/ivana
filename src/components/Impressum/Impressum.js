@@ -5,13 +5,6 @@ class Impressum extends Component {
         return (
             <div>
                 <div>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                    <i className="fas fa-times"
-                        onClick={this.props.mainSiteToggleHandler2}
-                    ></i>
                     <div>{this.props.name}</div><br></br>
                     <div>{this.props.street}</div>
                     <div>{this.props.zipcity}</div>
