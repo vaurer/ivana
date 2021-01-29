@@ -14,6 +14,7 @@ import MediaHolder from "./components/Media/MediaHolder";
 import GaleryHolder from "./components/Media/GaleryHolder";
 import ImpressumHolder from "./components/Impressum/ImpressumHolder";
 
+
 export default class App extends Component {
 
   mainSiteToggleHandler = () => {
@@ -79,7 +80,7 @@ export default class App extends Component {
   };
 
   mediaToggleHandler = () => {
-    // this.props.history.push("/gallery")
+    // this.props.history.push("/media")
     this.setState({ showGalery: false });
     this.setState({ showMain: false });
     this.setState({ showForm: false });
@@ -176,7 +177,7 @@ export default class App extends Component {
   };
 
   impressumToggleHandler = (e) => {
-    // this.props.history.push("/prices")
+    // this.props.history.push("/impressum")
     e.preventDefault();
     this.setState({ showGalery: false });
     this.setState({ showMain: false });

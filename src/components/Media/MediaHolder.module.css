@@ -75,3 +75,13 @@
 .icon{
   color: 'rgba(255, 255, 255, 0.54)';
 }
+
+.galeryRoot {
+  flex-grow: 1;
+}
+
+.paper {
+  padding: spacing(1);
+  text-align: 'center';
+ 
+}
