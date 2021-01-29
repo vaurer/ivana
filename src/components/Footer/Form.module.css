@@ -107,121 +107,62 @@ form {
 
 @media screen and (max-width: 325px) {
   .boxForm {
-    position: absolute;
-    top: 50%;
-    left: 50%;
     width: 250px;
-    padding: 1.5rem;
-    transform: translate(-50%, -50%);
-    background: #AFA596;
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
   }
 
   .row h1 {
     font-size: small;
-    text-align: center;
   }
 
   input {
-    width: 100%;
     padding: 5px 0;
     font-size: 14px;
-    color: #fff;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
-    margin-bottom: 5px;
   }
 
   textarea {
-    width: 100%;
-    padding: 10px 0;
     font-size: 14px;
-    color: #fff;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
   }
 
   .row label {
-    display: flex;
-    color: black;
     font-size: 9px;
   }
 
   .closeIframe {
     position: relative;
     top: -10px;
-    left: 180px;
+    left: 170px;
   }
 
   .row i {
-    color: black;
     font-size: small;
   }
 
   form {
-    padding: 10px 10px;
-    color: black;
     font-size: 14px;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: 0.5s;
     margin-top: 10px;
-    letter-spacing: 2px;
   }
 }
 
 @media screen and (min-width: 326px) and (max-width: 376px) {
   .boxForm {
-    position: absolute;
-    top: 50%;
-    left: 50%;
     width: 300px;
-    padding: 1.5rem;
-    transform: translate(-50%, -50%);
-    background: #AFA596;
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
   }
 
   .row h1 {
     font-size: 16px;
-    text-align: center;
   }
 
   input {
-    width: 100%;
     padding: 5px 0;
     font-size: 14px;
-    color: #fff;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
     margin-bottom: 10px;
   }
 
   textarea {
-    width: 100%;
-    padding: 10px 0;
     font-size: 14px;
-    color: #fff;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
   }
 
   .row label {
-    display: flex;
-    color: black;
     font-size: 12px;
   }
 
@@ -232,68 +173,35 @@ form {
   }
 
   .row i {
-    color: black;
     font-size: small;
   }
 
   form {
     padding: 10px 10px;
-    color: black;
-    font-size: 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: 0.5s;
     margin-top: 10px;
-    letter-spacing: 2px;
   }
 }
 
 @media screen and (min-width: 377px) and (max-width: 409px){
   .boxForm {
-    position: absolute;
-    top: 50%;
-    left: 50%;
     width: 300px;
-    padding: 1.5rem;
-    transform: translate(-50%, -50%);
-    background: #AFA596;
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
   }
 
   .row h1 {
     font-size: 16px;
-    text-align: center;
   }
 
   input {
-    width: 100%;
     padding: 5px 0;
     font-size: 14px;
-    color: #fff;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
     margin-bottom: 10px;
   }
 
   textarea {
-    width: 100%;
-    padding: 10px 0;
     font-size: 14px;
-    color: #fff;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
   }
 
   .row label {
-    display: flex;
-    color: black;
     font-size: 12px;
   }
 
@@ -304,68 +212,35 @@ form {
   }
 
   .row i {
-    color: black;
     font-size: small;
   }
 
   form {
     padding: 10px 10px;
-    color: black;
-    font-size: 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: 0.5s;
     margin-top: 10px;
-    letter-spacing: 2px;
   }
 }
 
 @media screen and (min-width: 410px) and (max-width: 480px){
   .boxForm {
-    position: absolute;
-    top: 50%;
-    left: 50%;
     width: 400px;
-    padding: 1.5rem;
-    transform: translate(-50%, -50%);
-    background: #AFA596;
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
   }
 
   .row h1 {
     font-size: 16px;
-    text-align: center;
   }
 
   input {
-    width: 100%;
     padding: 5px 0;
     font-size: 14px;
-    color: #fff;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
     margin-bottom: 10px;
   }
 
   textarea {
-    width: 100%;
-    padding: 10px 0;
     font-size: 14px;
-    color: #fff;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
   }
 
   .row label {
-    display: flex;
-    color: black;
     font-size: 12px;
   }
 
@@ -376,68 +251,31 @@ form {
   }
 
   .row i {
-    color: black;
     font-size: small;
   }
 
   form {
     padding: 10px 10px;
-    color: black;
-    font-size: 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: 0.5s;
     margin-top: 10px;
-    letter-spacing: 2px;
   }
 }
 
 @media screen and (min-width: 481px) and (max-width: 680px) {
   .boxForm {
-    position: absolute;
-    top: 50%;
-    left: 50%;
     width: 400px;
-    padding: 1.5rem;
-    transform: translate(-50%, -50%);
-    background: #AFA596;
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
   }
 
   .row h1 {
     font-size: 20px;
-    text-align: center;
   }
 
   input {
-    width: 100%;
     padding: 5px 0;
     font-size: 16px;
-    color: #fff;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
     margin-bottom: 10px;
   }
 
-  textarea {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
-  }
-
   .row label {
-    display: flex;
-    color: black;
     font-size: 12px;
   }
 
@@ -448,69 +286,32 @@ form {
   }
 
   .row i {
-    color: black;
     font-size: small;
 
   }
 
   form {
     padding: 10px 10px;
-    color: black;
-    font-size: 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: 0.5s;
     margin-top: 10px;
-    letter-spacing: 2px;
   }
 }
 
 @media screen and (min-width: 681px) and (max-width: 980px) {
   .boxForm {
-    position: absolute;
-    top: 50%;
-    left: 50%;
     width: 400px;
-    padding: 1.5rem;
-    transform: translate(-50%, -50%);
-    background: #AFA596;
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
   }
 
   .row h1 {
     font-size: 18px;
-    text-align: center;
   }
 
   input {
-    width: 100%;
     padding: 5px 0;
     font-size: 16px;
-    color: #fff;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
     margin-bottom: 10px;
   }
 
-  textarea {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
-  }
-
   .row label {
-    display: flex;
-    color: black;
     font-size: 12px;
   }
 
@@ -521,19 +322,11 @@ form {
   }
 
   .row i {
-    color: black;
     font-size: small;
   }
 
   form {
     padding: 10px 10px;
-    color: black;
-    font-size: 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: 0.5s;
     margin-top: 10px;
-    letter-spacing: 2px;
   }
 }
