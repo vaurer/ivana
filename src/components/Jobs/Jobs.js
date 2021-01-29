@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Constants from '../../helper/Constants';
+import styles from './Jobs.module.css';
 
 
 class Jobs extends Component {
@@ -46,8 +47,8 @@ class Jobs extends Component {
         let widgets = [];
         this.state.jobs.forEach((element) => {
             widgets.push(
-                <div key={element.id} >
-                    <div ><h2>{element.name}</h2></div>
+                <div className={styles.row} key={element.id} >
+                    <div className={styles.headline}>{element.name}</div>
                     <div>{element.description}</div>
                 </div>
             );
@@ -56,15 +57,14 @@ class Jobs extends Component {
     };
     render() {
         return (
-            <div >                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <h1>{this.state.name}</h1>
+            <div className={styles.container}>
+                {this.state.name}
                 {this.getJobs()}
-                <p>Sende uns deine Bewerbung an:</p>
-                <div >{this.state.email}</div>
-                <div>oder melde dich telefonisch bei:</div>
+                <div className={styles.row}>
+                <div className={styles.headline}>Sende uns deine Bewerbung an</div>
+                {this.state.email}
+                </div>
+                <div>oder melde dich telefonisch bei</div>
                 <div>{this.state.phone}</div>
             </div>
         );

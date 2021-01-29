@@ -1,0 +1,43 @@
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 110px;
+  padding-bottom: 80px;
+  /* for edge cases: */
+  width: 100%;
+  max-width: 100%;
+  font-size: small;
+}
+
+.row{
+    margin-top: 2rem;
+}
+
+.headline{
+    font-size: x-large;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+    font-size: medium;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+
+  .headline{
+    font-size: xx-large;
+}
+}
