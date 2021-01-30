@@ -94,9 +94,10 @@ this.props.galeryToggleHandler()
 
 
     return  (
+      <div className={styles.container}>
       <div className={styles.holderRoot}>
       <GridList cellHeight={300}  spacing={30} className={styles.gridList}>
-        <GridListTile key="Subheader" cols={4} style={{ height: 'auto' }}>
+        <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
           <ListSubheader component="div"></ListSubheader>
         </GridListTile>
         {this.state.elements.map((tile) => (
@@ -113,6 +114,7 @@ this.props.galeryToggleHandler()
           </GridListTile>
         ))}
       </GridList>
+    </div>
     </div>
     )
   }
