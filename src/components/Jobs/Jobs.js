@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Constants from '../../helper/Constants';
 import styles from './Jobs.module.css';
 
-
 class Jobs extends Component {
     state = {
         jobs: [],
@@ -25,12 +24,12 @@ class Jobs extends Component {
                     jobs: jobs,
                 })
             });
-        fetch(Constants.contact)  // change impressum to contact!!!!
+        fetch(Constants.contact)  
             .then((response2) => response2.json())
             .then((result2) => {
                 this.setState({
                     id: result2.data[0].id,
-                    phone: result2.data[0].phonenumber, // change phone to phonenumber
+                    phone: result2.data[0].phonenumber, 
                     email: result2.data[0].email,
                 });
             },
@@ -43,7 +42,7 @@ class Jobs extends Component {
             );
     }
 
-    getJobs3 = () => {
+    getJobs = () => {
         let widgets = [];
         let lastItem = this.state.jobs[this.state.jobs.length - 1]
       
@@ -74,16 +73,14 @@ class Jobs extends Component {
                         <div >{this.state.phone}</div>
                     </div>) 
             }
-        }
-        console.log('END ' + widgets)
-        
+        } 
         return widgets;
     };
 
     render() {
         return (
             <div className={styles.container}>
-                {this.getJobs3()}
+                {this.getJobs()}
                 
             </div>
         );
