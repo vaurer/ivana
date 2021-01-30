@@ -26,14 +26,14 @@ class ImpressumHolder extends Component {
                 legals: legals
             })
         } );
-        fetch(Constants.impressum)
+        fetch(Constants.contact)
         .then((resp) => resp.json())
         .then((res) => {
             this.setState({
                 name: res.data[0].name,
                 street: res.data[0].street,
-                zipcity: res.data[0].zipcity,
-                phone: res.data[0].phone,
+                zipcity: res.data[0].zipcode,
+                phone: res.data[0].phonenumber,
                 email: res.data[0].email,
                 uid: res.data[0].uid
             });

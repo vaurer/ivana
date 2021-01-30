@@ -14,6 +14,9 @@
 .row{
     margin-top: 2rem;
 }
+.bold{
+  font-weight: bold;
+}
 
 .headline{
     font-size: x-large;
