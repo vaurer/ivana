@@ -41,7 +41,7 @@
 .nav-menu{
     display: grid;
     grid-template-columns: repeat(12, auto);
-    grid-gap: 1rem;
+    grid-gap: 0.5rem;
     list-style: none;
     text-align: center;
     width: 70vw;
