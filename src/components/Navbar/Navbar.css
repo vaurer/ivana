@@ -82,6 +82,7 @@
         left: -100%;
         opacity: 1;
         transition: all 1s ease;
+        overflow-y: scroll;
         
     }
     .nav-menu.active{
@@ -89,6 +90,7 @@
         opacity: 1;
         transition: all 1s ease;
         z-index: 1;
+        overflow-y: scroll;
     }
     .navButton{
         text-align: center;
