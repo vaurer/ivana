@@ -85,3 +85,21 @@
   text-align: 'center';
  
 }
+
+@media only screen and (max-width: 359px) and (min-width: 200px)  {
+
+  .gridList {
+    width: 280px;
+    height: 1000;
+  }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 360px){
+
+  .gridList {
+    width: 360px;
+    height: 1000;
+  }
+
+}
+
