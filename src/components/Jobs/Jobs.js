@@ -6,7 +6,7 @@ class Jobs extends Component {
     state = {
         jobs: [],
     }
-    
+
     componentDidMount() {
         fetch(Constants.jobs)
             .then((response) => response.json())
@@ -57,7 +57,7 @@ class Jobs extends Component {
             this.state.jobs.forEach((element) => {
                 if (element.isactive === true) {
                     widgets.push(
-                        <div  key={element.id} className={styles.row}   >
+                        <div key={element.id} className={styles.row} >
                             <div className={styles.headline}>{element.name}</div>
                             <div>{element.description}</div>
                         </div>
