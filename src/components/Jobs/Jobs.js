@@ -5,8 +5,8 @@ import styles from './Jobs.module.css';
 class Jobs extends Component {
     state = {
         jobs: [],
-/*         jobs2: [] */
     }
+    
     componentDidMount() {
         fetch(Constants.jobs)
             .then((response) => response.json())
@@ -46,7 +46,6 @@ class Jobs extends Component {
     getJobs = () => {
         let widgets = [];
         let lastItem = this.state.jobs[this.state.jobs.length - 1]
-        console.log("LastItem: " + lastItem);
 
         if ((this.state.jobs === null)) {
             widgets.push(
@@ -66,9 +65,7 @@ class Jobs extends Component {
                 }
             },
             )
-
-        if (lastItem && widgets.length > 0) {  //WTF!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! TODO fix this shit
-            console.log("Widgets Länge1: " + widgets.length)
+        if (lastItem && widgets.length > 0) {  
             widgets.push(
                 <div className={styles.row} key={this.state.id}>
                     <div>
@@ -79,11 +76,9 @@ class Jobs extends Component {
                     <div >{this.state.phone}</div>
                 </div>)
         } else if (lastItem && widgets.length === 0) {
-            console.log("Widgets Länge2: " + widgets.length);
             widgets.push(
             <div className={styles.headline}>Derzeit können wir leider keine Stellen anbieten.</div>)
         }
-
         return widgets;
     };
 
