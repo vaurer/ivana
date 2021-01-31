@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { SRLWrapper } from "simple-react-lightbox";
 import { MediaContext } from '../../context/MediaContext';
 import Constants from '../../helper/Constants'
+import styles from './GaleryHolder.module.css';
 
 
 class GaleryHolder extends Component {
@@ -48,15 +49,14 @@ class GaleryHolder extends Component {
     let widgets = [];
     this.state.elements.forEach((element) => {
       widgets.push(
-        <img alt={element.caption}
-        sizes="(min-width: 960px) 33vw, (min-width: 640px) 50vw, 100vw"
+        <img className={styles.galleryImg} alt={element.caption}
         src={element.thumbnail}
         imgixParams={{
           fit: "crop",
           fm: "jpg"
         }}
-        width={500}
-        height={500}
+        // width={500}
+        // height={500}
         />
       );
     });
@@ -65,7 +65,9 @@ class GaleryHolder extends Component {
 
   render() {
     return (
+      <div className={styles.container}>
       <SRLWrapper items={this.state.elements}>{this.getItems()}</SRLWrapper>
+      </div>
     );
   }
 }
