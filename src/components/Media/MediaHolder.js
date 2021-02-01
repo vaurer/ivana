@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { MediaContext } from '../../context/MediaContext';
+// import { MediaContext } from '../../context/MediaContext';
 import Constants from '../../helper/Constants'
 import styles from './MediaHolder.module.css';
 import GridList from '@material-ui/core/GridList';
@@ -13,7 +13,7 @@ import { SRLWrapper } from "simple-react-lightbox";
 
 class MediaHolder extends Component {
   
-  static contextType = MediaContext;
+  // static contextType = MediaContext;
 
   state = { 
     elements:[],

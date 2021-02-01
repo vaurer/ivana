@@ -5,12 +5,12 @@ import reportWebVitals from "./reportWebVitals";
 import SimpleReactLightbox from 'simple-react-lightbox'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./index.css";
-import MediaContextProvider from "./context/MediaContext";
+// import MediaContextProvider from "./context/MediaContext";
 import { BrowserRouter } from "react-router-dom";
 
 
 ReactDOM.render(
-  <MediaContextProvider>
+  // <MediaContextProvider>
     <React.StrictMode>
       <SimpleReactLightbox>
         <BrowserRouter>
@@ -18,7 +18,8 @@ ReactDOM.render(
         </BrowserRouter>
       </SimpleReactLightbox>
     </React.StrictMode>
-  </MediaContextProvider>,
+  // </MediaContextProvider>
+  ,
 
   document.getElementById("root")
 );
