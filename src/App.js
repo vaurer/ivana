@@ -11,7 +11,7 @@ import AboutUsHolder from "./components/AboutUs/AboutUsHolder";
 import Pricelist from "./components/Pricelists/Pricelist";
 import * as ReactBootStrap from 'react-bootstrap';
 import MediaHolder from "./components/Media/MediaHolder";
-import GaleryHolder from "./components/Media/GaleryHolder";
+// import GaleryHolder from "./components/Media/GaleryHolder";
 import ImpressumHolder from "./components/Impressum/ImpressumHolder";
 import Jobs from "./components/Jobs/Jobs";
 import {Switch, Route} from "react-router-dom";
@@ -130,7 +130,7 @@ export default class App extends Component {
          </Fragment>
        } />
 
-          <Route path='/gallery' exact component={GaleryHolder}/>
+          {/* <Route path='/gallery' exact component={GaleryHolder}/> */}
       
           <Route path='/form' exact  render={() => <Form onSubmit={(fields) => this.onSubmit(fields)} mainSiteToggleHandler={this.mainSiteToggleHandler}/>} />
 

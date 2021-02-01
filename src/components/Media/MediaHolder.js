@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { MediaContext } from '../../context/MediaContext';
+// import { MediaContext } from '../../context/MediaContext';
 import Constants from '../../helper/Constants'
 import styles from './MediaHolder.module.css';
 import GridList from '@material-ui/core/GridList';
@@ -13,7 +13,7 @@ import { SRLWrapper } from "simple-react-lightbox";
 
 class MediaHolder extends Component {
   
-  static contextType = MediaContext;
+  // static contextType = MediaContext;
 
   state = { 
     elements:[],
@@ -174,26 +174,3 @@ class MediaHolder extends Component {
   }
 }
 export default MediaHolder;
-
-
-{/* <div className={styles.container}>
-      <div className={styles.holderRoot}>
-      <GridList cellHeight={300}  spacing={10} className={styles.gridList}>
-        <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-          <ListSubheader component="div"></ListSubheader>
-        </GridListTile>
-        {this.state.elements.map((tile) => (
-          <GridListTile key={tile.key}>
-            <img src={tile.src} alt={tile.key} onClick={this.setGalleryInContext.bind(this)} key={tile.key}/>
-            <GridListTileBar
-              title={tile.alt}
-              actionIcon={
-                <IconButton aria-label={`info about ${tile.title}`} className={styles.icon}>
-                </IconButton>
-              }
-            />
-          </GridListTile>
-        ))}
-      </GridList>
-    </div>
-    </div> */}
