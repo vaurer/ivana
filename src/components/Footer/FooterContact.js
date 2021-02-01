@@ -61,29 +61,29 @@ class FooterContact extends Component {
           <p>
           Termine unter
           </p>
-          <a href={"tel:" + this.state.phonenumber}>
+          <div href={"tel:" + this.state.phonenumber}>
             <p>{this.state.phonenumber}</p>
-          </a>
+          </div>
         </div>
-        <div className={styles.googleMap} onClick={this.props.mapToggleHandler}>
+        <div className={styles.googleMap} onClick={(event) =>  window.location.href='/map'}>
         
-        <a href=" " >
+        <div >
         <i className="fas fa-map-marked-alt fa-3x"></i>
         <p>{this.state.name} in Google Maps anzeigen</p>
         <p>Hauptstraße 18 / 9424 Rheineck</p>
-        </a>
+        </div>
         </div>
         <div className={styles.contactForm}>
-        <a href=" " onClick={this.props.formToggleHandler} >
+        <div  onClick={(event) =>  window.location.href='/form'} >
         <i className="far fa-envelope fa-3x"></i>
         <p>Kontaktieren Sie uns</p>
-        </a>
+        </div>
         </div>
         <div className={styles.contactImpressum}>
-        <a href=" " onClick={this.props.impressumToggleHandler} >
+        <div onClick={(event) =>  window.location.href='/impressum'} >
         <i className="fas fa-file-contract fa-3x"></i>
           <p>Impressum</p>
-          </a>
+          </div>
         </div>
       </div>
     );

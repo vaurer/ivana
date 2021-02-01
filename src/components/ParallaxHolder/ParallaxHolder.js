@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons.cjs";
 import styles from "./ParallaxHolder.module.css";
 import FooterHolder from "../Footer/FooterHolder";
+// import { Link } from "@material-ui/core";
+
 
 export default class ParallaxHolder extends Component {
   constructor(props) {
@@ -27,7 +29,7 @@ export default class ParallaxHolder extends Component {
                 <ParallaxLayer
                   offset={1}
                   speed={0.1}
-                  onClick={this.props.mediaToggleHandler}
+                  onClick={(event) =>  window.location.href='/'}
                   style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'all'}}>
                   <img src={this.props.src3} alt={'1'} style={{ width: 'auto' , height: '60%', opacity: 0.7 }} />
                 </ParallaxLayer>
@@ -43,21 +45,21 @@ export default class ParallaxHolder extends Component {
                   offset={3}
                   speed={-0}
                   style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                  <FooterHolder formToggleHandler={this.props.formToggleHandler} mapToggleHandler={this.props.mapToggleHandler} impressumToggleHandler={this.props.impressumToggleHandler}/>
+                  <FooterHolder />
                 </ParallaxLayer>
 
                 <ParallaxLayer
                   offset={1}
                   speed={0.1}
                   style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'all'}}>
-                  <div className={styles.container} onClick={this.props.mediaToggleHandler}> <p className={styles.centered} >GALERY</p></div>
+                  <div className={styles.container} onClick={(event) =>  window.location.href='/media'}> <p className={styles.centered} >GALERY</p></div>
                 </ParallaxLayer>
 
                 <ParallaxLayer
                   offset={2}
                   speed={0.1}
                   style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'all'}}>
-                  <div className={styles.container} onClick={this.props.productsToggleHandler}> <p className={styles.centered}>PRODUKTE</p></div>
+                  <div className={styles.container} onClick={(event) =>  window.location.href='/products'}> <p className={styles.centered}>PRODUKTE</p></div>
                 </ParallaxLayer>
                 
                 <ParallaxLayer

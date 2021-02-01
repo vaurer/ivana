@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 import { MediaContext } from '../../context/MediaContext';
 import Constants from '../../helper/Constants'
-// import TitlebarGridList from './GridList';
 import styles from './MediaHolder.module.css';
-
-
-// import React, {useContext} from 'react';
-// import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
-// import InfoIcon from '@material-ui/icons/Info';
+import { If, Else, ElIf } from 'rc-if-else';
+import * as ReactBootStrap from 'react-bootstrap';
+import { SRLWrapper } from "simple-react-lightbox";
 
 class MediaHolder extends Component {
   
@@ -20,7 +17,11 @@ class MediaHolder extends Component {
 
   state = { 
     elements:[],
+    gallery:[],
     items:[],
+    showGallery:false,
+    showMedia:false,
+    galeryNumber:''
   }
 
   componentDidMount() {
@@ -50,7 +51,7 @@ class MediaHolder extends Component {
           });
          
           this.setState({
-            isLoaded1: true,
+            showMedia: true,
             elements: tempdata,
           });
 
@@ -65,17 +66,15 @@ class MediaHolder extends Component {
   
   };
 
-setGalleryInContext(e){
-  this.context.setGaleryName(e.target.alt)
-this.props.galeryToggleHandler()
+  setGalleryInState(e){
+  this.setState({galeryNumber: e.target.alt, showGallery:false});
+  this.getGalery()
 }
 
   getFirstLevelItems = () => {
     let widgets = [];
     this.state.elements.forEach(element => {
       widgets.push(
-
-        
       <div  onClick={this.setGalleryInContext.bind(this)} key={element.key}>
         <div className={styles.picCointer}>
           <img className={styles.onePic} src={element.thumbnail} alt={element.key}/>
@@ -90,11 +89,94 @@ this.props.galeryToggleHandler()
     return widgets;
   };
 
+  getGalery() {
+    let tempdata2 = [];
+    fetch(Constants.photos)
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            items: result.data[this.state.galeryNumber].fotos,
+          });
+          this.state.items.forEach((element) => {
+            let line2 = {
+              src: element.directus_files_id.data.full_url,
+              thumbnail: element.directus_files_id.data.full_url,
+              caption: element.directus_files_id.title,
+              width: 1024,
+              height: "auto",
+            };
+            tempdata2.push(line2);
+          });
+          this.setState({
+            gallery: tempdata2,
+            showMedia:false,
+            showGallery: true,
+          });
+
+        },
+        (error) => {
+          this.setState({
+            error,
+          });
+        }
+      );
+  }
+  getItems = () => {
+    let widgets = [];
+    this.state.gallery.forEach((element) => {
+      widgets.push(
+        <img className={styles.galleryImg} alt={element.caption}
+        src={element.thumbnail}
+        imgixParams={{
+          fit: "crop",
+          fm: "jpg"
+        }}
+        // width={500}
+        // height={500}
+        />
+      );
+    });
+    return widgets;
+  };
+
   render() {
-
-
     return  (
-      <div className={styles.container}>
+<If condition={this.state.showMedia} >
+<div className={styles.container}>
+      <div className={styles.holderRoot}>
+      <GridList cellHeight={300}  spacing={10} className={styles.gridList}>
+        <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
+          <ListSubheader component="div"></ListSubheader>
+        </GridListTile>
+        {this.state.elements.map((tile) => (
+          <GridListTile key={tile.key}>
+            <img src={tile.src} alt={tile.key} onClick={this.setGalleryInState.bind(this)} key={tile.key}/>
+            <GridListTileBar
+              title={tile.alt}
+              actionIcon={
+                <IconButton aria-label={`info about ${tile.title}`} className={styles.icon}>
+                </IconButton>
+              }
+            />
+          </GridListTile>
+        ))}
+      </GridList>
+    </div>
+    </div>
+        <ElIf condition={this.state.showGallery}>      <div className={styles.container}>
+      <SRLWrapper items={this.state.elements}>{this.getItems()}</SRLWrapper>
+      </div></ElIf>
+        <Else>{<ReactBootStrap.Spinner animation='grow' style={{ position: 'fixed', top: '50%', left: '50%'}}/>}</Else>
+    </If>
+    
+    )
+  }
+}
+export default MediaHolder;
+
+
+{/* <div className={styles.container}>
       <div className={styles.holderRoot}>
       <GridList cellHeight={300}  spacing={10} className={styles.gridList}>
         <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
@@ -107,7 +189,6 @@ this.props.galeryToggleHandler()
               title={tile.alt}
               actionIcon={
                 <IconButton aria-label={`info about ${tile.title}`} className={styles.icon}>
-                  {/* <InfoIcon /> */}
                 </IconButton>
               }
             />
@@ -115,12 +196,4 @@ this.props.galeryToggleHandler()
         ))}
       </GridList>
     </div>
-    </div>
-    )
-  }
-}
-export default MediaHolder;
-
-// return  <div className={styles.container}>
-// {this.getFirstLevelItems()}
-// </div>
+    </div> */}

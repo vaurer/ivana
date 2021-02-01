@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { MenuItems } from "./MenuItems";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
 class Navbar extends Component {
@@ -17,7 +17,6 @@ class Navbar extends Component {
 
   handleScroll = () => {
     if (window.pageYOffset > 340) {
-      console.log("if (window.pageYOffset > 340)");
       if (!this.state.nav) {
         this.setState({ nav: true });
       }
@@ -28,68 +27,29 @@ class Navbar extends Component {
     }
   };
 
-  handleClick = () => {
-    this.setState({ clicked: !this.state.clicked });
-  };
-
-  firstClose=()=>{
-    this.handleClick()
-    this.props.aboutUsToggleHandler()
-  }
-  secondClose=()=>{
-    this.handleClick()
-    this.props.mediaToggleHandler()
-  }
-  thirdClose=()=>{
-    this.handleClick()
-    this.props.productsToggleHandler()
-  }
-  fourthClose=()=>{
-    this.handleClick()
-    this.props.mainSite3ParToggleHandler()
-  }
-  fifthClose=()=>{
-    this.handleClick()
-    this.props.pricesToggleHandler()
-  }
-  sixthClose=()=>{
-    this.handleClick()
-    this.props.jobsToggleHandler()
-  }
-
-  
+  // handleClick = () => {
+  //   this.setState({ clicked: !this.state.clicked });
+  // };
 
   render() {
     return (
-      // <div className={`Nav ${this.state.nav && "Nav__black"}`}>
-      <div>
+      <div >
         <nav className="NavbarItems">
           <h1
             className="navbar-logo"
-            onClick={this.props.mainSiteToggleHandler}>
+            onClick={event =>  window.location.href='/'}>
+         
             Ivanahairart{" "}</h1>
           <div className="menu-icon" onClick={this.handleClick}>
             <i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i>
           </div>
           {<ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
-              <li key="1" className="navButton" onClick={this.firstClose}>
-                {this.props.aboutUs}
-              </li>
-              <li key="2" className="navButton" onClick={this.secondClose}>
-                Galerie
-              </li>
-              <li key="3" className="navButton" onClick={this.thirdClose}>
-                Produkte
-              </li>
-              <li key="4" className="navButton" onClick={this.fourthClose}>
-                Kontakt
-              </li>
-              <li key="5" className="navButton" onClick={this.fifthClose}>
-                Preise
-              </li>
-              <li key="6" className="navButton" onClick={this.sixthClose}>
-                Jobs
-              </li>
+              <NavLink key="1" className="navButton" to='/aboutus'>Ivana</NavLink>
+              <NavLink key="2" className="navButton" to='/media'>Galerie</NavLink>
+              <NavLink key="3" className="navButton" to='/products'>Produkte</NavLink>
+              <NavLink key="4" className="navButton" to='/'>Kontakt</NavLink>
+              <NavLink key="5" className="navButton" to='/prices'>Preise</NavLink>
+              <NavLink key="6" className="navButton" to='/jobs'>Jobs</NavLink>
             </ul>
           }
         </nav>
