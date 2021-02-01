@@ -65,7 +65,7 @@ class FooterContact extends Component {
             <p>{this.state.phonenumber}</p>
           </div>
         </div>
-        <div className={styles.googleMap} onClick={(event) =>  window.location.href='/map'}>
+        <div className={styles.googleMap} onClick={event =>  window.location.href='/map'}>
         
         <div >
         <i className="fas fa-map-marked-alt fa-3x"></i>
@@ -74,13 +74,13 @@ class FooterContact extends Component {
         </div>
         </div>
         <div className={styles.contactForm}>
-        <div  onClick={(event) =>  window.location.href='/form'} >
+        <div  onClick={event =>  window.location.href='/form'} >
         <i className="far fa-envelope fa-3x"></i>
         <p>Kontaktieren Sie uns</p>
         </div>
         </div>
         <div className={styles.contactImpressum}>
-        <div onClick={(event) =>  window.location.href='/impressum'} >
+        <div onClick={event =>  window.location.href='/impressum'} >
         <i className="fas fa-file-contract fa-3x"></i>
           <p>Impressum</p>
           </div>

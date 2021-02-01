@@ -44,9 +44,9 @@ class Navbar extends Component {
           </div>
           {<ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
               <li key="11"><NavLink key="1" className="navButton" to='/aboutus' onClick={this.handleClick}>Ivana</NavLink></li>
-              <li key="12"><NavLink key="2" className="navButton" to='/media'onClick={this.handleClick}>Galerie</NavLink></li>
+              <li key="12"><NavLink key="2" className="navButton" to='/media' onClick={this.handleClick}>Galerie</NavLink></li>
               <li key="13"><NavLink key="3" className="navButton" to='/products'onClick={this.handleClick}>Produkte</NavLink></li>
-              <li key="14"><NavLink key="4" className="navButton" to='/'onClick={this.handleClick}>Kontakt</NavLink></li>
+              <li key="14"><NavLink key="4" className="navButton" to='/' onClick={this.handleClick}>Kontakt</NavLink></li>
               <li key="15"><NavLink key="5" className="navButton" to='/prices' onClick={this.handleClick}>Preise</NavLink></li>
               <li key="16"><NavLink key="6" className="navButton" to='/jobs' onClick={this.handleClick}>Jobs</NavLink></li>
             </ul>
