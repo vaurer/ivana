@@ -54,8 +54,7 @@ class Pricelist extends Component {
                 <Category
                 key={this.state.id}
                 services={this.state.services}
-                categories={this.state.categories}
-            />
+                categories={this.state.categories}/>
             </div>
             
         );

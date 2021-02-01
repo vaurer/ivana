@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import styles from './Pricelist.module.css';
 class Price extends Component {
+    
     getRows = () => {
         let widgets = [];
         if (this.props.price2 === null) {
             widgets.push(
-                <React.Fragment key={this.props.id}>  {/* the shortcut of React.Fragment are empty tags */}
+                <React.Fragment key={this.props.id}> 
                     <td>{this.props.name}</td>
                     <td colSpan="3">{this.props.price1}</td>
                 </React.Fragment>
@@ -13,7 +14,7 @@ class Price extends Component {
         }
         else {
             widgets.push(
-                <React.Fragment key={this.props.id} >
+                <React.Fragment key={this.props.id}>
                     <td>{this.props.name}</td>
                     <td>{this.props.price1}</td>
                     <td>{this.props.price2}</td>
@@ -25,12 +26,7 @@ class Price extends Component {
         return widgets;
     }
     render() {
-        return (
-
-            <tr className={styles.serviceItems}>
-                {this.getRows()}
-            </tr>
-        );
+        return (<tr className={styles.serviceItems}>{this.getRows()}</tr>);
     }
 }
 export default Price;
