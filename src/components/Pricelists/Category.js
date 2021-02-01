@@ -10,7 +10,7 @@ class Category extends Component {
             if (((element.category === 'Damen'))) {
                 tempName = element.category;
                 widgets.push(
-                    <tr className={styles.tableHeader}>
+                    <tr  className={styles.tableHeader}>
                         <th> {element.category}</th>
                         <th> kurz</th>
                         <th> mittel</th>
@@ -21,6 +21,7 @@ class Category extends Component {
                     if (element.category === tempName) {
                         widgets.push(
                             <Price
+                                key={element.id}
                                 id={element.id}
                                 name={element.name}
                                 price1={element.price1}
@@ -34,7 +35,7 @@ class Category extends Component {
             if ((tempName == null) || (tempName !== element.category)) {
                 tempName = element.category;
                 widgets.push(
-                    <tr style={{backgroundColor: "#705f46"}} >
+                    <tr style={{ backgroundColor: "#705f46" }} >
                         <th> {element.category}</th>
                         <th> </th>
                         <th> </th>
@@ -45,6 +46,7 @@ class Category extends Component {
                     if (element.category === tempName) {
                         widgets.push(
                             <Price
+                                key={element.id}
                                 id={element.id}
                                 name={element.name}
                                 price1={element.price1}
@@ -62,9 +64,9 @@ class Category extends Component {
         return (
             <div className={styles.container}>
                 <table className={styles.shadow}>
-                    <tbody > 
+                    <tbody >
                         {this.getServices()}
-                  </tbody>
+                    </tbody>
                 </table>
             </div>
         );

@@ -5,27 +5,28 @@ class Price extends Component {
         let widgets = [];
         if (this.props.price2 === null) {
             widgets.push(
-                <React.Fragment>  {/* the shortcut of React.Fragment are empty tags */}
+                <React.Fragment key={this.props.id}>  {/* the shortcut of React.Fragment are empty tags */}
                     <td>{this.props.name}</td>
-                    <td colSpan="3" > {this.props.price1}</td>
+                    <td colSpan="3">{this.props.price1}</td>
                 </React.Fragment>
             )
         }
         else {
             widgets.push(
-                <>
+                <React.Fragment key={this.props.id} >
                     <td>{this.props.name}</td>
-                    <td> {this.props.price1}</td>
-                    <td> {this.props.price2}</td>
+                    <td>{this.props.price1}</td>
+                    <td>{this.props.price2}</td>
                     <td>{this.props.price3}</td>
-                </>
+                </React.Fragment>
             )
-        }
+        } widgets = widgets.sort();
+
         return widgets;
     }
     render() {
         return (
-            
+
             <tr className={styles.serviceItems}>
                 {this.getRows()}
             </tr>
