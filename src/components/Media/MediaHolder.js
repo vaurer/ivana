@@ -100,6 +100,7 @@ class MediaHolder extends Component {
           });
           this.state.items.forEach((element) => {
             let line2 = {
+              key : element.directus_files_id.title,
               src: element.directus_files_id.data.full_url,
               thumbnail: element.directus_files_id.data.full_url,
               caption: element.directus_files_id.title,
@@ -124,11 +125,14 @@ class MediaHolder extends Component {
   }
   getItems = () => {
     let widgets = [];
+    let x = 0
     this.state.gallery.forEach((element) => {
+      x++
       widgets.push(
         <img className={styles.galleryImg} alt={element.caption}
+        key={x}
         src={element.thumbnail}
-        imgixParams={{
+        imgixparams={{
           fit: "crop",
           fm: "jpg"
         }}
