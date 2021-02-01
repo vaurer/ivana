@@ -41,7 +41,7 @@ class GoogleMaps extends Component {
           <div className={styles.googleMapClose}>
             <i
               className="fas fa-times"
-              onClick={this.props.mainSiteToggleHandler2} 
+              onClick={event =>  window.location.href='/'}
             ></i>
           </div>
         </div>

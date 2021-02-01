@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { Component} from "react";
+import React, { Component, Fragment} from "react";
 import ParallaxHolder from './components/ParallaxHolder/ParallaxHolder'
 import Constants from "./helper/Constants";
 import { If, Else } from 'rc-if-else';
@@ -14,234 +14,14 @@ import MediaHolder from "./components/Media/MediaHolder";
 import GaleryHolder from "./components/Media/GaleryHolder";
 import ImpressumHolder from "./components/Impressum/ImpressumHolder";
 import Jobs from "./components/Jobs/Jobs";
+import {Switch, Route} from "react-router-dom";
 
 
 export default class App extends Component {
 
-
-  mainSiteToggleHandler = () => {
-    // this.props.history.push("/")
-    this.setState({ showGalery: false });
-    this.setState({ showMain: true });
-    this.setState({ showForm: false });
-    this.setState({ showMap: false });
-    this.setState({ showCell: false });
-    this.setState({ showVideos: false });
-    this.setState({ showProducts: false });
-    this.setState({ showAboutUs: false });
-    this.setState({ showNav: true });
-    this.setState({ showPrices: false });
-    this.setState({ showImpressum: false });
-    this.setState({ showMedia: false });
-    this.setState({ showJobs: false });   
-  };
-
-  mainSiteToggleHandler2 = () => {
-    // this.props.history.push("/")
-    this.setState({ showGalery: false });
-    this.setState({ showMain: true });
-    this.setState({ showForm: false });
-    this.setState({ showMap: false });
-    this.setState({ showCell: false });
-    this.setState({ showVideos: false });
-    this.setState({ showProducts: false });
-    this.setState({ showAboutUs: false });
-     this.setState({ showNav: true });
-     this.setState({ showPrices: false });
-     this.setState({ showImpressum: false });
-     this.setState({ showMedia: false });
-     this.setState({ showJobs: false });   
-  };
-
-  mainSite3ParToggleHandler = () => {
-    // this.props.history.push("/")
-    this.setState({ showGalery: false });
-    this.setState({ showMain: true });
-    this.setState({ showForm: false });
-    this.setState({ showMap: false });
-    this.setState({ showCell: false });
-    this.setState({ showVideos: false });
-    this.setState({ showProducts: false });
-    this.setState({ showAboutUs: false });
-    this.setState({ showPrices: false });
-    this.setState({ showImpressum: false });
-    this.setState({ showMedia: false });
-    this.setState({ showJobs: false });   
-  };
-
-  galeryToggleHandler = () => {
-    // this.props.history.push("/gallery")
-    this.setState({ showGalery: true });
-    this.setState({ showMain: false });
-    this.setState({ showForm: false });
-    this.setState({ showMap: false });
-    this.setState({ showCell: false });
-    this.setState({ showVideos: false });
-    this.setState({ showProducts: false });
-    this.setState({ showAboutUs: false });
-    this.setState({ showPrices: false });
-    this.setState({ showImpressum: false });
-    this.setState({ showMedia: false });
-    this.setState({ showJobs: false });   
-  };
-
-  mediaToggleHandler = () => {
-    // this.props.history.push("/media")
-    this.setState({ showGalery: false });
-    this.setState({ showMain: false });
-    this.setState({ showForm: false });
-    this.setState({ showMap: false });
-    this.setState({ showCell: false });
-    this.setState({ showVideos: false });
-    this.setState({ showProducts: false });
-    this.setState({ showAboutUs: false });
-    this.setState({ showPrices: false });
-    this.setState({ showImpressum: false });
-    this.setState({ showMedia: true });
-    this.setState({ showJobs: false });   
-  };
-
-  productsToggleHandler = () => {
-    // this.props.history.push("/products")
-    this.setState({ showGalery: false });
-    this.setState({ showMain: false });
-    this.setState({ showForm: false });
-    this.setState({ showMap: false });
-    this.setState({ showCell: false });
-    this.setState({ showVideos: false });
-    this.setState({ showProducts: true });
-    this.setState({ showAboutUs: false });
-    this.setState({ showPrices: false });
-    this.setState({ showNav: true });
-    this.setState({ showImpressum: false });
-    this.setState({ showMedia: false });
-    this.setState({ showJobs: false });   
-  };
-
-  aboutUsToggleHandler = () => {
-    // this.props.history.push("/aboutus")
-    this.setState({ showGalery: false });
-    this.setState({ showMain: false });
-    this.setState({ showForm: false });
-    this.setState({ showMap: false });
-    this.setState({ showCell: false });
-    this.setState({ showVideos: false });
-    this.setState({ showProducts: false });
-    this.setState({ showAboutUs: true });
-    this.setState({ showNav: true });
-    this.setState({ showPrices: false });
-    this.setState({ showImpressum: false });
-    this.setState({ showMedia: false });
-    this.setState({ showJobs: false });   
-  };
-
-  pricesToggleHandler = () => {
-    // this.props.history.push("/prices")
-    this.setState({ showGalery: false });
-    this.setState({ showMain: false });
-    this.setState({ showForm: false });
-    this.setState({ showMap: false });
-    this.setState({ showCell: false });
-    this.setState({ showVideos: false });
-    this.setState({ showProducts: false });
-    this.setState({ showAboutUs: false });
-    this.setState({ showNav: true });
-    this.setState({ showPrices: true });
-    this.setState({ showImpressum: false });
-    this.setState({ showMedia: false });
-    this.setState({ showJobs: false });   
-  };
-
-  formToggleHandler = (e) => {
-    e.preventDefault();
-    // this.props.history.push("/form")
-    this.setState({ showGalery: false });
-    this.setState({ showMain: false });
-    this.setState({ showForm: true });
-    this.setState({ showMap: false });
-    this.setState({ showCell: false });
-    this.setState({ showVideos: false });
-    this.setState({ showProducts: false });
-    this.setState({ showAboutUs: false });
-    this.setState({ showNav: false });
-    this.setState({ showPrices: false });
-    this.setState({ showImpressum: false });
-    this.setState({ showMedia: false });
-    this.setState({ showJobs: false });   
-  };
-
-    mapToggleHandler = (e) => {
-      // this.props.history.push("/map")
-      e.preventDefault();
-      this.setState({ showGalery: false });
-      this.setState({ showMain: false });
-      this.setState({ showForm: false });
-      this.setState({ showMap: true });
-      this.setState({ showCell: false });
-      this.setState({ showVideos: false });
-      this.setState({ showProducts: false });
-      this.setState({ showAboutUs: false });
-      this.setState({ showNav: false });
-      this.setState({ showPrices: false });
-      this.setState({ showImpressum: false });
-      this.setState({ showMedia: false });
-      this.setState({ showJobs: false });   
-  };
-
-  impressumToggleHandler = (e) => {
-    // this.props.history.push("/impressum")
-    e.preventDefault();
-    this.setState({ showGalery: false });
-    this.setState({ showMain: false });
-    this.setState({ showForm: false });
-    this.setState({ showMap: false });
-    this.setState({ showCell: false });
-    this.setState({ showVideos: false });
-    this.setState({ showProducts: false });
-    this.setState({ showAboutUs: false });
-    this.setState({ showNav: true });
-    this.setState({ showPrices: false });
-    this.setState({ showImpressum: true });
-    this.setState({ showMedia: false });
-    this.setState({ showJobs: false });   
-  };
-
-  jobsToggleHandler = () => {
-    // this.props.history.push("/prices")
-    this.setState({ showGalery: false });
-    this.setState({ showMain: false });
-    this.setState({ showForm: false });
-    this.setState({ showMap: false });
-    this.setState({ showCell: false });
-    this.setState({ showVideos: false });
-    this.setState({ showProducts: false });
-    this.setState({ showAboutUs: false });
-    this.setState({ showNav: true });
-    this.setState({ showPrices: false });
-    this.setState({ showImpressum: false });
-    this.setState({ showMedia: false });
-    this.setState({ showJobs: true });    
-  };
-  
   constructor(props) {
     super(props);
     this.state = {
-      showApp:false,
-      showMain: true,
-      showGalery: false,
-      showCell:true,
-      showForm:false,
-      showMap:false,
-      showProducts:false,
-      showNav:true,
-      showAboutUs:false,
-      isLoaded: false,
-      isLoaded1: false,
-      aboutUs: false,
-      showPrices: false,
-      showImpressum: false,
-      showMedia:false,
-      showJobs:false,
       mainid: "",
       mainalt: "null",
       maintitle: "null",
@@ -301,8 +81,6 @@ export default class App extends Component {
              
               this.setState({
                 isLoaded: true,
-                // title: result.data[0].title,
-                // text: result.data[0].text ,
                 aboutUs: result.public,
                 aboutUsTitle: result.data[0].title, //nav title
                 showApp: true,
@@ -325,73 +103,80 @@ export default class App extends Component {
         <If condition={!this.state.showApp} >
         {<ReactBootStrap.Spinner animation='grow' style={{ position: 'fixed', top: '50%', left: '50%'}}/>}
       <Else >
-      
-        <If condition={this.state.showNav} >
-        <Navbar 
-        aboutUs={this.state.aboutUsTitle}
-        mainSiteToggleHandler={this.mainSiteToggleHandler} 
-        aboutUsToggleHandler={this.aboutUsToggleHandler}
-        productsToggleHandler={this.productsToggleHandler}
-        mainSite3ParToggleHandler={this.mainSite3ParToggleHandler} 
-        pricesToggleHandler={this.pricesToggleHandler}
-        mediaToggleHandler={this.mediaToggleHandler}
-        jobsToggleHandler={this.jobsToggleHandler}/>
-        </If>
+      <Switch>
         
-        <If condition={this.state.showMain} >
-        <ParallaxHolder 
-          goto3ToggleHandler={this.goto3ToggleHandler}
-          show={this.state.showMain}
-          alt={this.state.mainalt}
-          src={this.state.mainimage}
-          maintext={this.state.maintext} 
-          maintitle={this.state.maintitle} 
-          src2={this.state.main2image} 
-          maintitle2={this.state.main2title} 
-          src3={this.state.main3image} 
-          maintitle3={this.state.main3title} 
-          formToggleHandler={this.formToggleHandler} 
-          mapToggleHandler={this.mapToggleHandler}
-          productsToggleHandler={this.productsToggleHandler}
-          impressumToggleHandler={this.impressumToggleHandler}
-          mediaToggleHandler={this.mediaToggleHandler}
-          jobsToggleHandler={this.jobsToggleHandler}/>
-        </If>
-        
-        <If condition={this.state.showMedia} >
-          <MediaHolder galeryToggleHandler={this.galeryToggleHandler}/>
-        </If>
+        <Route path='/' exact render={() =>
+          <Fragment>
+            <ParallaxHolder 
+                  show={this.state.showMain}
+                  alt={this.state.mainalt}
+                  src={this.state.mainimage}
+                  maintext={this.state.maintext} 
+                  maintitle={this.state.maintitle} 
+                  src2={this.state.main2image} 
+                  maintitle2={this.state.main2title} 
+                  src3={this.state.main3image} 
+                  maintitle3={this.state.main3title} />
+            <Navbar 
+                aboutUs={this.state.aboutUsTitle}/>
+          </Fragment>
+        }/>
 
-        <If condition={this.state.showGalery} >
-          <GaleryHolder/>
-        </If>
+          <Route path='/media' exact render={() =>
+           <Fragment>
+           <Navbar 
+                aboutUs={this.state.aboutUsTitle}/>
+          <MediaHolder />
+         </Fragment>
+       } />
+
+          <Route path='/gallery' exact component={GaleryHolder}/>
       
-        <If condition={this.state.showForm}>
-          <Form onSubmit={(fields) => this.onSubmit(fields)} mainSiteToggleHandler={this.mainSiteToggleHandler}/>
-        </If>
+          <Route path='/form' exact  render={() => <Form onSubmit={(fields) => this.onSubmit(fields)} mainSiteToggleHandler={this.mainSiteToggleHandler}/>} />
 
-        <If condition={this.state.showMap}>
-          <GoogleMaps mainSiteToggleHandler2={this.mainSiteToggleHandler2}/>
-        </If>
+          <Route path='/map' exact component={GoogleMaps}/>
+          
+          <Route path='/products' exact  render={() =>
+            <Fragment>
+            <Navbar 
+                aboutUs={this.state.aboutUsTitle}/>
+            <ProductsHolder/>
+            </Fragment>
+            } />
 
-        <If condition={this.state.showProducts}>
-        <ProductsHolder mainSiteToggleHandler={this.mainSiteToggleHandler}/>
-        </If>
+          <Route path='/aboutus' exact  render={() =>
+            <Fragment>
+            <Navbar 
+                aboutUs={this.state.aboutUsTitle}/>
+            <AboutUsHolder/>
+            </Fragment>
+            } />
 
-        <If condition={this.state.showAboutUs}>
-        <AboutUsHolder/>
-        </If>
+          <Route path='/impressum' exact render={() =>
+            <Fragment>
+            <Navbar 
+                aboutUs={this.state.aboutUsTitle}/>
+            <ImpressumHolder/>
+            </Fragment>
+            } />
 
-        <If condition={this.state.showPrices}>
-        <Pricelist/>
-        </If>
+            <Route path='/jobs' exact render={() =>
+            <Fragment>
+            <Navbar 
+                aboutUs={this.state.aboutUsTitle}/>
+            <Jobs/>
+            </Fragment>
+            } />
 
-        <If condition={this.state.showImpressum}>
-        <ImpressumHolder/>
-        </If>
-        <If condition={this.state.showJobs}>
-        <Jobs/>
-        </If>
+            <Route path='/prices' exact render={() =>
+            <Fragment>
+            <Navbar 
+                aboutUs={this.state.aboutUsTitle}/>
+            <Pricelist/>
+            </Fragment>
+            } />
+
+          </Switch>
         
         </Else>
         </If>
