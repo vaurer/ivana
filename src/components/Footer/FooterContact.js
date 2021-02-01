@@ -65,7 +65,7 @@ class FooterContact extends Component {
             <p>{this.state.phonenumber}</p>
           </div>
         </div>
-        <div className={styles.googleMap} onClick={event =>  window.location.href='/map'}>
+        <div className={styles.googleMap} onClick={event => window.location.href='/map'}>
         
         <div >
         <i className="fas fa-map-marked-alt fa-3x"></i>
