@@ -174,26 +174,3 @@ class MediaHolder extends Component {
   }
 }
 export default MediaHolder;
-
-
-{/* <div className={styles.container}>
-      <div className={styles.holderRoot}>
-      <GridList cellHeight={300}  spacing={10} className={styles.gridList}>
-        <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-          <ListSubheader component="div"></ListSubheader>
-        </GridListTile>
-        {this.state.elements.map((tile) => (
-          <GridListTile key={tile.key}>
-            <img src={tile.src} alt={tile.key} onClick={this.setGalleryInContext.bind(this)} key={tile.key}/>
-            <GridListTileBar
-              title={tile.alt}
-              actionIcon={
-                <IconButton aria-label={`info about ${tile.title}`} className={styles.icon}>
-                </IconButton>
-              }
-            />
-          </GridListTile>
-        ))}
-      </GridList>
-    </div>
-    </div> */}

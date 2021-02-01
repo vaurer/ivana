@@ -27,9 +27,9 @@ class Navbar extends Component {
     }
   };
 
-  // handleClick = () => {
-  //   this.setState({ clicked: !this.state.clicked });
-  // };
+  handleClick = () => {
+    this.setState({ clicked: !this.state.clicked });
+  };
 
   render() {
     return (
@@ -38,18 +38,17 @@ class Navbar extends Component {
           <h1
             className="navbar-logo"
             onClick={event =>  window.location.href='/'}>
-         
             Ivanahairart{" "}</h1>
           <div className="menu-icon" onClick={this.handleClick}>
             <i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i>
           </div>
           {<ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
-              <NavLink key="1" className="navButton" to='/aboutus'>Ivana</NavLink>
-              <NavLink key="2" className="navButton" to='/media'>Galerie</NavLink>
-              <NavLink key="3" className="navButton" to='/products'>Produkte</NavLink>
-              <NavLink key="4" className="navButton" to='/'>Kontakt</NavLink>
-              <NavLink key="5" className="navButton" to='/prices'>Preise</NavLink>
-              <NavLink key="6" className="navButton" to='/jobs'>Jobs</NavLink>
+              <li key="11"><NavLink key="1" className="navButton" to='/aboutus' onClick={this.handleClick}>Ivana</NavLink></li>
+              <li key="12"><NavLink key="2" className="navButton" to='/media'onClick={this.handleClick}>Galerie</NavLink></li>
+              <li key="13"><NavLink key="3" className="navButton" to='/products'onClick={this.handleClick}>Produkte</NavLink></li>
+              <li key="14"><NavLink key="4" className="navButton" to='/'onClick={this.handleClick}>Kontakt</NavLink></li>
+              <li key="15"><NavLink key="5" className="navButton" to='/prices' onClick={this.handleClick}>Preise</NavLink></li>
+              <li key="16"><NavLink key="6" className="navButton" to='/jobs' onClick={this.handleClick}>Jobs</NavLink></li>
             </ul>
           }
         </nav>
