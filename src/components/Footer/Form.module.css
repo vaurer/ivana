@@ -16,7 +16,7 @@
 
 .googleMapClose i{
   color: black;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 /* Form Css */
@@ -35,7 +35,7 @@
   top: 50%;
   left: 50%;
   width: 500px;
-  padding: 1.5rem;
+  padding: 24px;
   transform: translate(-50%, -50%);
   background: #AFA596;
   box-sizing: border-box;
@@ -58,7 +58,7 @@ input:hover {
 input {
   width: 100%;
   padding: 10px 0;
-  font-size: 20px;
+  font-size: 1.25rem;
   color: #fff;
   border: none;
   border-bottom: 1px solid #fff;
@@ -70,7 +70,7 @@ input {
 textarea {
   width: 100%;
   padding: 10px 0;
-  font-size: 16px;
+  font-size: 1rem;
   color: #fff;
   border: none;
   border-bottom: 1px solid #fff;
@@ -80,7 +80,7 @@ textarea {
 .row label {
   display: flex;
   color: black;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .closeIframe {
@@ -97,7 +97,7 @@ textarea {
 form {
   padding: 10px 20px;
   color: black;
-  font-size: 16px;
+  font-size: 1rem;
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
@@ -117,15 +117,15 @@ form {
 
   input {
     padding: 5px 0;
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 
   textarea {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 
   .row label {
-    font-size: 9px;
+    font-size: 0.563rem;
   }
 
   .closeIframe {
@@ -139,7 +139,7 @@ form {
   }
 
   form {
-    font-size: 14px;
+    font-size: 0.875rem;
     margin-top: 10px;
   }
 }
@@ -155,16 +155,16 @@ form {
 
   input {
     padding: 5px 0;
-    font-size: 14px;
+    font-size: 0.875rem;
     margin-bottom: 10px;
   }
 
   textarea {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 
   .row label {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 
   .closeIframe {
@@ -194,16 +194,16 @@ form {
 
   input {
     padding: 5px 0;
-    font-size: 14px;
+    font-size: 0.875rem;
     margin-bottom: 10px;
   }
 
   textarea {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 
   .row label {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 
   .closeIframe {
@@ -233,16 +233,16 @@ form {
 
   input {
     padding: 5px 0;
-    font-size: 14px;
+    font-size: 0.875rem;
     margin-bottom: 10px;
   }
 
   textarea {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 
   .row label {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 
   .closeIframe {
@@ -272,12 +272,12 @@ form {
 
   input {
     padding: 5px 0;
-    font-size: 16px;
+    font-size: 1rem;
     margin-bottom: 10px;
   }
 
   .row label {
-    font-size: 12px;
+    font-size: 0.75;
   }
 
   .closeIframe {
@@ -308,12 +308,12 @@ form {
 
   input {
     padding: 5px 0;
-    font-size: 16px;
+    font-size: 1rem;
     margin-bottom: 10px;
   }
 
   .row label {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 
   .closeIframe {
