@@ -38,9 +38,9 @@ class Category extends Component {
             widgets.push(
                 <tr key={this.getKey()} style={{ backgroundColor: "#705f46" }}>
                     <th>{element.category}</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
+                    <th>{element.short}</th>
+                    <th>{element.medium}</th>
+                    <th>{element.long}</th>
                 </tr>
             )
             this.props.services.forEach(element => {
