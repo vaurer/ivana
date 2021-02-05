@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import styles from "./Form.module.css";
 
-
 class Form extends Component {
   constructor(props) {
     super(props);
@@ -11,6 +10,8 @@ class Form extends Component {
       userEmail: "",
       message: "",
       userTelefonNummber: "",
+
+      notification: "",
     };
   }
   changeHandler = (e) => {
@@ -19,24 +20,58 @@ class Form extends Component {
     });
   };
 
-  onSubmit = (e) => {
-   
-      e.preventDefault()
-      this.props.history.push('/media');
-  
+  createFormDataObj = (data) => {
+    const formData = new FormData();
+    Object.keys(data).forEach((k) => {
+      formData.append(k, data[k]);
+    });
+    return formData;
   };
-  showlala=()=>{
-    alert('lala')
-  }
+
+  onSubmit = (event) => {
+    event.preventDefault();
+
+    const data = {
+      "form-name": "contact",
+      name: "Andreas",
+      email: "test@test.com",
+      message: "Hallo",
+    };
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(this.createFormDataObj(data)).toString(),
+    })
+      .then(() => {
+        this.setState({
+          notification: "Daten wurden abgeschickt",
+        });
+        // TODO Felder leeren
+      })
+      .catch((error) => {
+        console.log(error);
+        this.setState({
+          notification: "Fehlerlein..." + error,
+        });
+      });
+  };
+  showlala = () => {
+    alert("lala");
+  };
   render() {
     return (
       <div>
         <div className={styles.box}>
           <div className={styles.boxForm}>
-            <form name="contact" method="post"  onSubmit={this.onSubmit}>
+            <form name="contact" method="post" onSubmit={this.onSubmit}>
+              <h1>Nofitification:{this.state.notification}</h1>{" "}
               <input type="hidden" name="form-name" value="contact" />
               <div className={styles.row}>
-                <div className={styles.closeIframe} onClick={event =>  window.location.href='/'}>
+                <div
+                  className={styles.closeIframe}
+                  onClick={(event) => (window.location.href = "/")}
+                >
                   <i className="fas fa-times"></i>
                 </div>
               </div>
