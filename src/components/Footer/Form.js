@@ -19,6 +19,7 @@ class Form extends Component {
   };
   onSubmit = (e) => {
     this.props.onSubmit(this.state);
+    alert("data submitted");
     this.setState({
       firstName: "",
       lastName: "",
@@ -35,7 +36,7 @@ class Form extends Component {
       <div>
         <div className={styles.box}>
           <div className={styles.boxForm}>
-            <form name="contact" method="post">
+            <form name="contact" method="post"  onSubmit={this.onSubmit}>
               <input type="hidden" name="form-name" value="contact" />
               <div className={styles.row}>
                 <div className={styles.closeIframe} onClick={event =>  window.location.href='/'}>
