@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styles from "./Form.module.css";
 
+
 class Form extends Component {
   constructor(props) {
     super(props);
@@ -17,16 +18,12 @@ class Form extends Component {
       [e.target.name]: e.target.value,
     });
   };
+
   onSubmit = (e) => {
-    this.props.onSubmit(this.state);
-    alert("data submitted");
-    this.setState({
-      firstName: "",
-      lastName: "",
-      userEmail: "",
-      message: "",
-      userTelefonNummber: "",
-    });
+   
+      e.preventDefault()
+      this.props.history.push('/media');
+  
   };
   showlala=()=>{
     alert('lala')
@@ -36,7 +33,7 @@ class Form extends Component {
       <div>
         <div className={styles.box}>
           <div className={styles.boxForm}>
-            <form name="contact" method="post"  action="/test.html">
+            <form name="contact" method="post"  onSubmit={this.onSubmit}>
               <input type="hidden" name="form-name" value="contact" />
               <div className={styles.row}>
                 <div className={styles.closeIframe} onClick={event =>  window.location.href='/'}>
