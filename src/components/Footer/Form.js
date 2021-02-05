@@ -36,7 +36,7 @@ class Form extends Component {
       <div>
         <div className={styles.box}>
           <div className={styles.boxForm}>
-            <form name="contact" method="post"  onSubmit={this.onSubmit}>
+            <form name="contact" method="post"  action="/media">
               <input type="hidden" name="form-name" value="contact" />
               <div className={styles.row}>
                 <div className={styles.closeIframe} onClick={event =>  window.location.href='/'}>
