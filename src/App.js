@@ -11,7 +11,6 @@ import AboutUsHolder from "./components/AboutUs/AboutUsHolder";
 import Pricelist from "./components/Pricelists/Pricelist";
 import * as ReactBootStrap from 'react-bootstrap';
 import MediaHolder from "./components/Media/MediaHolder";
-// import GaleryHolder from "./components/Media/GaleryHolder";
 import ImpressumHolder from "./components/Impressum/ImpressumHolder";
 import Jobs from "./components/Jobs/Jobs";
 import {Switch, Route} from "react-router-dom";
