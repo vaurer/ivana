@@ -32,10 +32,6 @@ class Navbar extends Component {
     this.setState({ clicked: !this.state.clicked });
   };
 
-  // handleClick2 = () => {
-  //   this.setState({ clicked: !this.state.clicked });
-  //   goto3ToggleHandler();
-  // };
 
   render() {
     return (
