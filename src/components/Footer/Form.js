@@ -33,9 +33,11 @@ class Form extends Component {
 
     const data = {
       "form-name": "contact",
-      name: "Andreas",
-      email: "test@test.com",
-      message: "Hallo",
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      message: this.state.message,
+      userEmail: this.state.userEmail,
+      userTelefonNummber: this.state.userTelefonNummber
     };
 
     fetch("/", {
