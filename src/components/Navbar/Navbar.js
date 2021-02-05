@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
+// import ParallaxHolder from '../ParallaxHolder/ParallaxHolder'
 
 class Navbar extends Component {
   state = {
@@ -30,6 +31,11 @@ class Navbar extends Component {
   handleClick = () => {
     this.setState({ clicked: !this.state.clicked });
   };
+
+  // handleClick2 = () => {
+  //   this.setState({ clicked: !this.state.clicked });
+  //   goto3ToggleHandler();
+  // };
 
   render() {
     return (

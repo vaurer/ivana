@@ -128,8 +128,6 @@ export default class App extends Component {
           <MediaHolder />
          </Fragment>
        } />
-
-          {/* <Route path='/gallery' exact component={GaleryHolder}/> */}
       
           <Route path='/form' exact  render={() => <Form onSubmit={(fields) => this.onSubmit(fields)} mainSiteToggleHandler={this.mainSiteToggleHandler}/>} />
 

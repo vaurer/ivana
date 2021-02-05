@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons.cjs";
 import styles from "./ParallaxHolder.module.css";
 import FooterHolder from "../Footer/FooterHolder";
-// import { Link } from "@material-ui/core";
 
 
 export default class ParallaxHolder extends Component {
@@ -10,13 +9,10 @@ export default class ParallaxHolder extends Component {
     super(props);
     this.state = {
     };
-    // this.goto3ToggleHandler = this.goto3ToggleHandler.bind(this);
   }
 
 //   goto3ToggleHandler() {
-//    //this.parallax.scrollTo(3)
-//    alert('HELLO WORLD')
-//<i class="fas fa-cut"></i>
+//    this.parallax.scrollTo(3)
 // }
 
     render(){
