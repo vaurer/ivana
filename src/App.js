@@ -102,6 +102,7 @@ export default class App extends Component {
         <If condition={!this.state.showApp} >
         {<ReactBootStrap.Spinner animation='grow' style={{ position: 'fixed', top: '50%', left: '50%'}}/>}
       <Else >
+      <Navbar aboutUs={this.state.aboutUsTitle}/>
       <Switch>
         
         <Route path='/' exact render={() =>
@@ -116,15 +117,13 @@ export default class App extends Component {
                   maintitle2={this.state.main2title} 
                   src3={this.state.main3image} 
                   maintitle3={this.state.main3title} />
-            <Navbar 
-                aboutUs={this.state.aboutUsTitle}/>
+            
           </Fragment>
         }/>
 
           <Route path='/media' exact render={() =>
            <Fragment>
-           <Navbar 
-                aboutUs={this.state.aboutUsTitle}/>
+           
           <MediaHolder />
          </Fragment>
        } />
@@ -135,24 +134,21 @@ export default class App extends Component {
           
           <Route path='/products' exact  render={() =>
             <Fragment>
-            <Navbar 
-                aboutUs={this.state.aboutUsTitle}/>
+           
             <ProductsHolder/>
             </Fragment>
             } />
 
           <Route path='/aboutus' exact  render={() =>
             <Fragment>
-            <Navbar 
-                aboutUs={this.state.aboutUsTitle}/>
+            
             <AboutUsHolder/>
             </Fragment>
             } />
 
           <Route path='/impressum' exact render={() =>
             <Fragment>
-            <Navbar 
-                aboutUs={this.state.aboutUsTitle}/>
+            
             <ImpressumHolder/>
             </Fragment>
             } />
@@ -167,8 +163,7 @@ export default class App extends Component {
 
             <Route path='/prices' exact render={() =>
             <Fragment>
-            <Navbar 
-                aboutUs={this.state.aboutUsTitle}/>
+           
             <Pricelist/>
             </Fragment>
             } />
