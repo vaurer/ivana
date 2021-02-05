@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Constants from "../../helper/Constants";
 import Products from "../Products/Products";
 import styles from "./ProductsHolder.module.css";
+import { If, Else } from 'rc-if-else';
+import * as ReactBootStrap from 'react-bootstrap';
 
 class ProductsHolder extends Component {
   constructor(props) {
@@ -9,6 +11,7 @@ class ProductsHolder extends Component {
     this.state = {
       isLoaded: false,
       productsArray: [],
+      showMedia:false,
     };
   }
   componentDidMount() {
@@ -19,6 +22,7 @@ class ProductsHolder extends Component {
           this.setState({
             isLoaded: true,
             productsArray: result.data,
+            showMedia:true,
           });
         },
         (error) => {
@@ -39,9 +43,12 @@ class ProductsHolder extends Component {
 
   render() {
     return (
+      <If condition={this.state.showMedia} >
       <div className={styles.wrapper}>
         <div className={styles.container}>{this.getProducts()}</div>
       </div>
+      <Else>{<ReactBootStrap.Spinner animation='grow' style={{ position: 'fixed', top: '50%', left: '50%'}}/>}</Else>
+    </If>
     );
   }
 }
