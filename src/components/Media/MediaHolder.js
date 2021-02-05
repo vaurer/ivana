@@ -40,8 +40,8 @@ class MediaHolder extends Component {
             temp=temp+1
             if (element.isactive === true) {
               let line = {
-                    src: element.photo.data.thumbnails[3].url,
-                    thumbnail: element.photo.data.thumbnails[3].url,
+                    src: element.photo.data.thumbnails[5].url,
+                    thumbnail: element.photo.data.thumbnails[5].url,
                     alt: element.name,
                     key: temp,
                     element: element
