@@ -61,6 +61,12 @@
     color: black;
     /* color: brown; */
 }
+ .navButton:focus{
+    border-bottom: 1px solid black;
+    cursor: default;
+    text-decoration: none;
+    color: black;
+} 
 .fa-bars{
     color:black;
 }
