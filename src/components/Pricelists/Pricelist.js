@@ -20,6 +20,9 @@ class Pricelist extends Component {
                     res.data.forEach((element) => {
                         let cat = { 
                             category : element.category,
+                            short: element.short,
+                            medium:  element.medium,
+                            long:  element.long,
                             id : element.id
                     }
                         categories.push(cat);

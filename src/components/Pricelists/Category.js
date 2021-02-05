@@ -33,66 +33,38 @@ class Category extends Component {
         let widgets = [];
         let tempName;
         this.props.categories.forEach(element => {
+            tempName = element.category;
 
-            if (((element.category === 'Damen'))) {
-                tempName = element.category;
-                widgets.push(
-                    <tr key={this.getKey4()} className={styles.tableHeader}>
-                        <th>{element.category}</th>
-                        <th>kurz</th>
-                        <th>mittel</th>
-                        <th>lang</th>
-                    </tr>
-                )
-                this.props.services.forEach(element => {
-                    // console.log(element);
-                    if (element.category === tempName) {
-                        widgets.push(
-                            <Price
-                                key={this.getKey2()}
-                                id={element.id}
-                                name={element.name}
-                                price1={element.price1}
-                                price2={element.price2}
-                                price3={element.price3}
-                            />
-                        );
-                    }
-                });
-            }
-            if ((tempName == null) || (tempName !== element.category)) {
-                tempName = element.category;
-
-                widgets.push(
-                    <tr key={this.getKey()} style={{ backgroundColor: "#705f46" }}>
-                        <th>{element.category}</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                )
-                this.props.services.forEach(element => {
-                    if (element.category === tempName) {
-                        widgets.push(
-                            <Price
-                                key={this.getKey3()}
-                                id={element.id}
-                                name={element.name}
-                                price1={element.price1}
-                                price2={element.price2}
-                                price3={element.price3}
-                            />
-                        );
-                    }
-                });
-            }
+            widgets.push(
+                <tr key={this.getKey()} style={{ backgroundColor: "#705f46" }}>
+                    <th>{element.category}</th>
+                    <th>{element.short}</th>
+                    <th>{element.medium}</th>
+                    <th>{element.long}</th>
+                </tr>
+            )
+            this.props.services.forEach(element => {
+                if (element.category === tempName) {
+                    widgets.push(
+                        <Price
+                            key={this.getKey3()}
+                            id={element.id}
+                            name={element.name}
+                            price1={element.price1}
+                            price2={element.price2}
+                            price3={element.price3}
+                        />
+                    );
+                }
+            });
         });
         return widgets;
     }
     render() {
         return (
             <div className={styles.container}>
-                <table className={styles.shadow}><tbody>{this.getServices()}</tbody></table>
+                <table className={styles.shadow}><tbody>{this.getServices()}</tbody>
+                </table>
             </div>
         );
     }

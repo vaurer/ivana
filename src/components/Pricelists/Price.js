@@ -6,8 +6,6 @@ class Price extends Component {
     if (this.props.price2 === null) {
       widgets.push(
         <React.Fragment key={this.props.id}>
-          {" "}
-          {/* the shortcut of React.Fragment are empty tags */}
           <td>{this.props.name}</td>
           <td colSpan="3">{this.props.price1}</td>
         </React.Fragment>
