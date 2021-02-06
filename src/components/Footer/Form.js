@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import styles from "./Form.module.css";
+import { If, Else } from 'rc-if-else';
+import Success from './Success.js'
 
 class Form extends Component {
   constructor(props) {
@@ -10,7 +12,7 @@ class Form extends Component {
       userEmail: "",
       message: "",
       userTelefonNummber: "",
-
+      sended: false,
       notification: "",
     };
   }
@@ -48,26 +50,27 @@ class Form extends Component {
       .then(() => {
         this.setState({
           notification: "Daten wurden abgeschickt",
+          sended: true,
         });
         // TODO Felder leeren
+        console.log(this.state.notification)
       })
       .catch((error) => {
         console.log(error);
         this.setState({
-          notification: "Fehlerlein..." + error,
+          notification: "Fehlerlein... " + error,
+          sended: true,
         });
+        console.log(this.state.notification)
       });
-  };
-  showlala = () => {
-    alert("lala");
   };
   render() {
     return (
+      <If condition={!this.state.sended} >
       <div>
         <div className={styles.box}>
           <div className={styles.boxForm}>
             <form name="contact" method="post" onSubmit={this.onSubmit}>
-              <h1>Nofitification:{this.state.notification}</h1>{" "}
               <input type="hidden" name="form-name" value="contact" />
               <div className={styles.row}>
                 <div
@@ -139,6 +142,8 @@ class Form extends Component {
           </div>
         </div>
       </div>
+   <Else><Success/></Else>
+  </If>
     );
   }
 }

@@ -37,7 +37,7 @@ export default class ParallaxHolder extends Component {
                   <img src={this.props.src2} alt={'1'} style={{ width: 'auto' , height: '60%', opacity: 0.7  }}/>
                 </ParallaxLayer>
                 
-                <ParallaxLayer
+                <ParallaxLayer className="Footer"
                   offset={3}
                   speed={-0}
                   style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
