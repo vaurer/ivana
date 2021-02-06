@@ -9,8 +9,17 @@
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   text-align: center;
   border-radius: 12px;
+  text-decoration: none;
 }
 
+.navButton{
+    text-decoration: none;
+    color: black;
+}
+.navButton:hover{
+    text-decoration: none;
+    color: black;
+}
 .container {
   margin-right: auto;
   margin-left: auto;
@@ -21,7 +30,9 @@
   /* for edge cases: */
   width: 100%;
   max-width: 100%;
+  text-decoration: none;
 }
+
 
 @media (min-width: 768px) {
   .container {
