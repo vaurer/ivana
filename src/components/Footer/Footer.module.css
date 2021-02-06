@@ -110,7 +110,7 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding-top: 3rem;
+    padding-top: 1.5rem;
     font-size: small;
   }
 
@@ -132,6 +132,9 @@ p {
   .googleMap {
     padding: 0.2rem;
     text-align: center;
+  }
+  .contactInstagram{
+    padding: 0.2rem;
   }
   /* .googleMapShows{
         padding-bottom: 20rem;

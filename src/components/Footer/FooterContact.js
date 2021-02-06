@@ -79,10 +79,10 @@ class FooterContact extends Component {
             <i className="fas fa-file-contract fa-3x"></i>
             <p>Impressum</p>
           </div>
-          
           <div className={styles.contactInstagram}>
+            <a rel="noopener noreferrer" href="https://www.instagram.com/viv.ivana/?igshid=1hd17ok370b5t" target="_blank">
             <i class="fab fa-instagram-square fa-3x"></i>
-            <a rel="noopener noreferrer" href="https://www.instagram.com/viv.ivana/?igshid=1hd17ok370b5t" target="_blank"><p>Instagram</p></a>
+            <p>Instagram</p></a>
           </div>
         </div>
       </div>
