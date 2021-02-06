@@ -1,5 +1,6 @@
 .NavbarItems{
-    background: transparent;
+    /* background: transparent; */
+    background: #a69c8fe5;
     backdrop-filter: blur(7px);
     height: 80px;
     display: flex;
@@ -39,6 +40,7 @@
     font-size: 2.5rem;
 }
 .nav-menu{
+    /* background: #a69c8fe5; */
     display: grid;
     grid-template-columns: repeat(12, auto);
     grid-gap: 0.5rem;
@@ -80,6 +82,7 @@
         z-index: 3000;
     }
     .nav-menu{
+        background: #a69c8fe5;
         backdrop-filter: blur(5px);
         display: flex;
         flex-direction: column;
@@ -88,7 +91,7 @@
         position: absolute;
         top: 80px;
         left: -100%;
-        opacity: 1;
+        opacity: 0;
         transition: all 1s ease;
         font-size: x-large;
         padding: 0;
@@ -97,6 +100,7 @@
     .nav-menu.active{
         left: 0;
         opacity: 1;
+        backdrop-filter: blur(5px);
         /* transition: all 1s ease; */
         z-index: 1;
     }

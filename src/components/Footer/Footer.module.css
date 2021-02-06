@@ -77,6 +77,10 @@ p {
   text-align: center;
 }
 
+.contactInstagram{
+  padding: 1rem;
+}
+
 @media screen and (max-width: 960px) {
   a {
     /* background-color: rgb(184, 137, 228); */

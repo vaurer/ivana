@@ -38,12 +38,12 @@ class GoogleMaps extends Component {
               allowFullScreen
             ></iframe>
           </div>
-          <div className={styles.googleMapClose}>
+          {/* <div className={styles.googleMapClose}>
             <i
               className="fas fa-times"
               onClick={event =>  window.location.href='/'}
             ></i>
-          </div>
+          </div> */}
         </div>
       </div>
     );
