@@ -155,8 +155,6 @@ export default class App extends Component {
 
             <Route path='/jobs' exact render={() =>
             <Fragment>
-            <Navbar 
-                aboutUs={this.state.aboutUsTitle}/>
             <Jobs/>
             </Fragment>
             } />
