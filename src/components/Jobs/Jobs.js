@@ -72,7 +72,7 @@ class Jobs extends Component {
                         <div className={styles.bold}>Sende uns deine Bewerbung an</div>
                         {this.state.email}
                     </div>
-                    <div className={styles.bold}>oder melde dich telefonisch bei</div>
+                    <div className={styles.bold}>oder melde dich telefonisch unter</div>
                     <div >{this.state.phone}</div>
                 </div>)
         } else if (lastItem && widgets.length === 0) {
