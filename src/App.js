@@ -161,7 +161,6 @@ export default class App extends Component {
 
             <Route path='/prices' exact render={() =>
             <Fragment>
-           
             <Pricelist/>
             </Fragment>
             } />
