@@ -37,7 +37,18 @@ export default class App extends Component {
       main3text: "null",
       main3image: "null",
       aboutUsTitle:'null',
+      goto3:false
     };
+  }
+
+  scroollto3=()=>{
+   
+    this.setState({
+      goto3:true,
+    } );
+    setTimeout(function() {
+      this.setState({goto3: false})
+  }.bind(this), 3000);
   }
 
   componentDidMount() {
@@ -102,12 +113,13 @@ export default class App extends Component {
         <If condition={!this.state.showApp} >
         {<ReactBootStrap.Spinner animation='grow' style={{ position: 'fixed', top: '50%', left: '50%'}}/>}
       <Else >
-      <Navbar aboutUs={this.state.aboutUsTitle}/>
+      <Navbar aboutUs={this.state.aboutUsTitle} scroollto3={this.scroollto3}/>
       <Switch>
         
         <Route path='/' exact render={() =>
           <Fragment>
             <ParallaxHolder 
+                  goto3={this.state.goto3}
                   show={this.state.showMain}
                   alt={this.state.mainalt}
                   src={this.state.mainimage}

@@ -11,9 +11,10 @@ export default class ParallaxHolder extends Component {
     };
   }
 
-//   goto3ToggleHandler() {
-//    this.parallax.scrollTo(3)
-// }
+  componentDidMount=()=> {
+    if(this.props.goto3===true){ this.parallax.scrollTo(3)}
+  }
+
 
     render(){
         return(
