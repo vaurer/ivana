@@ -66,7 +66,7 @@ class Form extends Component {
   };
   render() {
     return (
-      <If condition={this.state.sended} >
+      <If condition={!this.state.sended} >
       <div>
         <div className={styles.box}>
           <div className={styles.boxForm}>
