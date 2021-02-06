@@ -54,6 +54,7 @@ class Pricelist extends Component {
     render() {
         return (
             <div key={this.state.id} className={styles.wrapperList} onClick={this.props.pricesToggleHandler}>
+               
                 <Category
                 key={this.state.id}
                 services={this.state.services}

@@ -85,6 +85,7 @@ class Jobs extends Component {
     render() {
         return (
             <div className={styles.container}  >
+                <h1>Jobs</h1>
                {this.getJobs()}
 
             </div>

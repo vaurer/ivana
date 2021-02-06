@@ -45,7 +45,9 @@ class ProductsHolder extends Component {
     return (
       <If condition={this.state.showMedia} >
       <div className={styles.wrapper}>
-        <div className={styles.container}>{this.getProducts()}</div>
+        <div className={styles.container}>
+        <div className={styles.content}><h1>Produkte</h1>{this.getProducts()}</div>
+      </div>
       </div>
       <Else>{<ReactBootStrap.Spinner animation='grow' style={{ position: 'fixed', top: '50%', left: '50%'}}/>}</Else>
     </If>

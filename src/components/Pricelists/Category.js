@@ -63,8 +63,11 @@ class Category extends Component {
     render() {
         return (
             <div className={styles.container}>
-                <table className={styles.shadow}><tbody>{this.getServices()}</tbody>
-                </table>
+                <div className={styles.content}>
+                    <h1>Preise</h1>
+                    <table className={styles.shadow}><tbody>{this.getServices()}</tbody>
+                    </table>
+                </div>
             </div>
         );
     }

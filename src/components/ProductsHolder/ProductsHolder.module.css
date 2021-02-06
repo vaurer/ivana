@@ -7,13 +7,15 @@
     margin-left: auto;
     padding-right: 15px;
     padding-left: 15px;
-    padding-top: 90px;
+    padding-top: 110px;
     padding-bottom: 80px;
     /* for edge cases: */
     width: 100%;
     max-width: 100%;
   }
-  
+  .content{
+    padding-bottom: 3rem;
+  }
   @media (min-width: 768px) {
     .container{
       width: 750px;
