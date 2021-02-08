@@ -49,14 +49,14 @@ export default class ParallaxHolder extends Component {
                   offset={1}
                   speed={0.1}
                   style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'all'}} onClick={event =>  window.location.href='/media'}>
-                  <div className={styles.container} > <p className={styles.centered} >GALERY</p></div>
+                  <div className={styles.container} > <p className={styles.centered} >Galerie</p></div>
                 </ParallaxLayer>
 
                 <ParallaxLayer
                   offset={2}
                   speed={0.1}
                   style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'all'}} onClick={event =>  window.location.href='/products'}>
-                  <div className={styles.container}> <p className={styles.centered}>PRODUKTE</p></div>
+                  <div className={styles.container}> <p className={styles.centered}>Produkte</p></div>
                 </ParallaxLayer>
                 
                 <ParallaxLayer
