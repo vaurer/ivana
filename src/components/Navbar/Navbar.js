@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
-// import ParallaxHolder from '../ParallaxHolder/ParallaxHolder'
 
 class Navbar extends Component {
   state = {
@@ -41,10 +40,12 @@ class Navbar extends Component {
     return (
       <div >
         <nav className="NavbarItems">
-          <h1
+          {/* <h1
             className="navbar-logo"
             onClick={event =>  window.location.href='/'}>
-            Ivanahairart{" "}</h1>
+            Ivanahairart{" "}</h1> */}
+            <img className="navbar-logo" src='../../Logo.png' alt="logo" onClick={event =>  window.location.href='/'}/>
+      
           <div className="menu-icon" onClick={this.handleClick}>
             <i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i>
           </div>
