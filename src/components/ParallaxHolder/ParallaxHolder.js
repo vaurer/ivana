@@ -15,6 +15,11 @@ export default class ParallaxHolder extends Component {
     if(this.props.goto3===true){ this.parallax.scrollTo(3)}
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.goto3 === true) {
+      this.parallax.scrollTo(3)
+    }
+  }
 
     render(){
         return(

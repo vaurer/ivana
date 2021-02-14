@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { Component, Fragment} from "react";
+import React, { Component} from "react";
 import ParallaxHolder from './components/ParallaxHolder/ParallaxHolder'
 import Constants from "./helper/Constants";
 import { If, Else } from 'rc-if-else';
@@ -14,7 +14,6 @@ import MediaHolder from "./components/Media/MediaHolder";
 import ImpressumHolder from "./components/Impressum/ImpressumHolder";
 import Jobs from "./components/Jobs/Jobs";
 import {Switch, Route} from "react-router-dom";
-
 
 export default class App extends Component {
 
@@ -43,7 +42,6 @@ export default class App extends Component {
   }
 
   scroollto3=()=>{
-   
     this.setState({
       goto3:true,
     } );
@@ -89,7 +87,6 @@ export default class App extends Component {
           .then((res) => res.json())
           .then(
             (result) => {
-             
               this.setState({
                 isLoaded: true,
                 aboutUs: result.public,
@@ -102,7 +99,6 @@ export default class App extends Component {
                 isLoaded: true,
                 error,
               });
-              
             }
           );
   }
@@ -114,88 +110,42 @@ export default class App extends Component {
   }
   navbarDisplay=()=>{
     this.setState({
-      navbar:'inline-block'
+      navbar:''
     } );
   }
 
   render() {
     return (
-     
       <div className="App">
         <If condition={!this.state.showApp} >
         {<ReactBootStrap.Spinner animation='grow' style={{ position: 'fixed', top: '50%', left: '50%'}}/>}
-      <Else >
-      <Navbar aboutUs={this.state.aboutUsTitle} scroollto3={this.scroollto3} navbar={this.state.navbar}/>
-      <Switch>
-        
-        <Route path='/' exact render={() =>
-          <Fragment>
-            <ParallaxHolder 
-                  goto3={this.state.goto3}
-                  show={this.state.showMain}
-                  alt={this.state.mainalt}
-                  src={this.state.mainimage}
-                  maintext={this.state.maintext} 
-                  maintitle={this.state.maintitle} 
-                  src2={this.state.main2image} 
-                  maintitle2={this.state.main2title} 
-                  src3={this.state.main3image} 
-                  maintitle3={this.state.main3title} />
-            
-          </Fragment>
-        }/>
-
-          <Route path='/media' exact render={() =>
-           <Fragment>
-           
-          <MediaHolder />
-         </Fragment>
-       } />
-      
-          <Route path='/form' exact  render={() => <Form onSubmit={(fields) => this.onSubmit(fields)} navbarHide={this.navbarHide} navbarDisplay={this.navbarDisplay}/>} />
-
-          <Route path='/map' exact  render={() => <GoogleMaps navbarHide={this.navbarHide} navbarDisplay={this.navbarDisplay}/>}/>
-          
-          <Route path='/products' exact  render={() =>
-            <Fragment>
-           
-            <ProductsHolder/>
-            </Fragment>
-            } />
-
-          <Route path='/aboutus' exact  render={() =>
-            <Fragment>
-            
-            <AboutUsHolder/>
-            </Fragment>
-            } />
-
-          <Route path='/impressum' exact render={() =>
-            <Fragment>
-            
-            <ImpressumHolder/>
-            </Fragment>
-            } />
-
-            <Route path='/jobs' exact render={() =>
-            <Fragment>
-            <Jobs/>
-            </Fragment>
-            } />
-
-            <Route path='/prices' exact render={() =>
-            <Fragment>
-            <Pricelist/>
-            </Fragment>
-            } />
-
+        <Else >
+          <Navbar aboutUs={this.state.aboutUsTitle} scroollto3={this.scroollto3} navbar={this.state.navbar}/>
+          <Switch>
+            <Route path='/' exact render={() =>
+              <ParallaxHolder 
+                    goto3={this.state.goto3}
+                    show={this.state.showMain}
+                    alt={this.state.mainalt}
+                    src={this.state.mainimage}
+                    maintext={this.state.maintext} 
+                    maintitle={this.state.maintitle} 
+                    src2={this.state.main2image} 
+                    maintitle2={this.state.main2title} 
+                    src3={this.state.main3image} 
+                    maintitle3={this.state.main3title} />}/>
+            <Route path='/media' exact render={() => <MediaHolder /> } />
+            <Route path='/form' exact  render={() => <Form onSubmit={(fields) => this.onSubmit(fields)} navbarHide={this.navbarHide} navbarDisplay={this.navbarDisplay}/>} />
+            <Route path='/map' exact  render={() => <GoogleMaps navbarHide={this.navbarHide} navbarDisplay={this.navbarDisplay}/>}/>        
+            <Route path='/products' exact  render={() => <ProductsHolder/>} />
+            <Route path='/aboutus' exact  render={() => <AboutUsHolder/>} />
+            <Route path='/impressum' exact render={() => <ImpressumHolder/>} />
+            <Route path='/jobs' exact render={() => <Jobs/>} />
+            <Route path='/prices' exact render={() => <Pricelist/> } />
           </Switch>
-        
         </Else>
         </If>
-        
       </div>
-      
     );
   }
 }
