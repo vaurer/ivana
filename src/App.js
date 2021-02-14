@@ -37,7 +37,8 @@ export default class App extends Component {
       main3text: "null",
       main3image: "null",
       aboutUsTitle:'null',
-      goto3:false
+      goto3:false,
+      navbar:'inline-block'
     };
   }
 
@@ -106,6 +107,17 @@ export default class App extends Component {
           );
   }
 
+  navbarHide=()=>{
+    this.setState({
+      navbar:'none'
+    } );
+  }
+  navbarDisplay=()=>{
+    this.setState({
+      navbar:'inline-block'
+    } );
+  }
+
   render() {
     return (
      
@@ -113,7 +125,7 @@ export default class App extends Component {
         <If condition={!this.state.showApp} >
         {<ReactBootStrap.Spinner animation='grow' style={{ position: 'fixed', top: '50%', left: '50%'}}/>}
       <Else >
-      <Navbar aboutUs={this.state.aboutUsTitle} scroollto3={this.scroollto3}/>
+      <Navbar aboutUs={this.state.aboutUsTitle} scroollto3={this.scroollto3} navbar={this.state.navbar}/>
       <Switch>
         
         <Route path='/' exact render={() =>
@@ -140,9 +152,9 @@ export default class App extends Component {
          </Fragment>
        } />
       
-          <Route path='/form' exact  render={() => <Form onSubmit={(fields) => this.onSubmit(fields)} mainSiteToggleHandler={this.mainSiteToggleHandler}/>} />
+          <Route path='/form' exact  render={() => <Form onSubmit={(fields) => this.onSubmit(fields)} navbarHide={this.navbarHide} navbarDisplay={this.navbarDisplay}/>} />
 
-          <Route path='/map' exact component={GoogleMaps}/>
+          <Route path='/map' exact  render={() => <GoogleMaps navbarHide={this.navbarHide} navbarDisplay={this.navbarDisplay}/>}/>
           
           <Route path='/products' exact  render={() =>
             <Fragment>

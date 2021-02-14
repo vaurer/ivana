@@ -16,6 +16,14 @@ class Form extends Component {
       notification: "",
     };
   }
+
+  componentDidMount(){
+    this.props.navbarHide()
+  }
+  componentWillUnmount(){
+    this.props.navbarDisplay()
+  }
+
   changeHandler = (e) => {
     this.setState({
       [e.target.name]: e.target.value,

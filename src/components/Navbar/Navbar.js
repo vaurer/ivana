@@ -38,14 +38,9 @@ class Navbar extends Component {
 
   render() {
     return (
-      <div >
+      <div style={{display: this.props.navbar}}>
         <nav className="NavbarItems">
-          {/* <h1
-            className="navbar-logo"
-            onClick={event =>  window.location.href='/'}>
-            Ivanahairart{" "}</h1> */}
             <img className="navbar-logo" src='../../Logo.png' alt="logo" onClick={event =>  window.location.href='/'}/>
-      
           <div className="menu-icon" onClick={this.handleClick}>
             <i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i>
           </div>

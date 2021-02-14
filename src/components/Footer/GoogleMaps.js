@@ -8,6 +8,7 @@ class GoogleMaps extends Component {
   };
 
   componentDidMount(){
+    this.props.navbarHide()
     let width= window.screen.width;
     let height= 0;
     let heightOld= 0;
@@ -21,6 +22,10 @@ class GoogleMaps extends Component {
         width: width,
         height: height,
     }) 
+  }
+
+  componentWillUnmount(){
+    this.props.navbarDisplay()
   }
 
   render() {
@@ -38,12 +43,12 @@ class GoogleMaps extends Component {
               allowFullScreen
             ></iframe>
           </div>
-          {/* <div className={styles.googleMapClose}>
+          <div className={styles.googleMapClose}>
             <i
               className="fas fa-times"
               onClick={event =>  window.location.href='/'}
             ></i>
-          </div> */}
+          </div>
         </div>
       </div>
     );

@@ -81,7 +81,7 @@ class FooterContact extends Component {
           </div>
           <div className={styles.contactInstagram}>
             <a rel="noopener noreferrer" href="https://www.instagram.com/viv.ivana/?igshid=1hd17ok370b5t" target="_blank">
-            <i class="fab fa-instagram-square fa-3x"></i>
+            <i className="fab fa-instagram-square fa-3x"></i>
             <p>Instagram</p></a>
           </div>
         </div>
