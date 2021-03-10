@@ -13,6 +13,7 @@
     top: 0;
     z-index: 3000;
     width: 100%;
+
 }
 
 /* .Nav__black{
@@ -83,6 +84,7 @@
     .NavbarItems{
         position: fixed;
         z-index: 3000;
+
     }
     .nav-menu{
         /* background: #a69c8fe5; */

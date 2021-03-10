@@ -149,7 +149,7 @@ class MediaHolder extends Component {
 <If condition={this.state.showMedia} >
   <div className={styles.container}>
     <div className={styles.holderRoot}>
-      <h1 className={styles.title}>Galerie</h1>
+      {/* <h1 className={styles.title}>Galerie</h1> */}
       <GridList cellHeight={300}  spacing={10} className={styles.gridList}>
         <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
           <ListSubheader component="div"></ListSubheader>
